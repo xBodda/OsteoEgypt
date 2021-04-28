@@ -1,14 +1,19 @@
 :root {
-    --blue: #1e90ff;
-    --white: #ffffff;
+    --primary: #0D3953;
+    --secondary: #C9932E;
+    --heading: #118CA0;
+    --para: #0D3953;
 }
 
 * {
     background-color: #000;
     color:white;
-    font-family: 'Tajawal', sans-serif;
+    /* font-family: 'Tajawal', sans-serif; */
+    font-family: 'Nunito Sans', sans-serif;
 }
 
 body {
-    font-family: 'Tajawal', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
