@@ -1,4 +1,14 @@
-*{
+:root {
+    --blue: #1e90ff;
+    --white: #ffffff;
+}
+
+* {
     background-color: #000;
     color:white;
+    font-family: 'Tajawal', sans-serif;
+}
+
+body {
+    font-family: 'Tajawal', sans-serif;
 }
