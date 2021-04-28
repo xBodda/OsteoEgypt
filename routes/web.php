@@ -16,7 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'App\Http\Controllers\PagesController@home');
 Route::get('/about', 'App\Http\Controllers\PagesController@about');
 Route::get( '/services', 'App\Http\Controllers\PagesController@services');
-Route::get('/css', 'App\Http\Controllers\PagesController@css');
 
 // Route::get('/', function () {
 //     return view('pages.index');
@@ -29,3 +28,5 @@ Route::get('/css', 'App\Http\Controllers\PagesController@css');
 // Route::get('/services', function () {
 //     return view('pages.services');
 // });
+
+
