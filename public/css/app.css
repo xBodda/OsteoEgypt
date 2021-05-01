@@ -141,7 +141,6 @@ a {
 }
   
 #footer .links {
-    display: flex;
     width: 100%;
     justify-content: center;
 }
@@ -166,22 +165,93 @@ a {
   
 #footer .footer-end {
     background: #0F1617;
-    padding: 15px 7%;
     color: #999;
-    height: 60px;
-}
-  
-#footer .footer-end .legal {
-    float: right;
+    height: 90px;
+    padding: 15px 7%;
 }
   
 #footer .social {
-    float: left;
+    float: right;
     display: flex;
+    margin: 20px 0;
 }
   
 #footer .social a {
-    margin-right: 15px;
+    margin-right: 40px;
+    width: 30px;
+    height: 30px;
+}
+
+#footer .social a i {
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    color: #0F1617;
+    padding: 10px;
+    border-radius: 50%;
+    text-align: center;
+    transition: all .2s ease-in;
+}
+
+#footer .social a i.fa-facebook-f:hover {
+    background-color: #3b5998;
+    color: white;
+}
+
+#footer .social a i.fa-instagram:hover {
+    background-color: #8a3ab9;
+    color: white;
+}
+
+#footer .social a i.fa-linkedin-in:hover {
+    background-color: #0077b5;
+    color: white;
+}
+
+#footer .social a i.fa-twitter:hover {
+    background-color: #00acee;
+    color: white;
+}
+
+#footer .social a i.fa-youtube:hover {
+    background-color: #FF0000;
+    color: white;
+}
+
+.search-input {
+    margin-top: 8px;
+    padding-left: 45px;
+    height: 50px;
+    outline: none;
+    font-size: 17px;
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+    background: none;
+    border: none;
+    border-bottom: 2px solid white;
+}
+  
+.icon {
+    font-size: 21px;
+    color: white;
+    position: absolute;
+    left: 15px;
+    z-index: 1;
+    bottom: 15px;
+    cursor: pointer;
+}
+  
+.search-label {
+    position: relative;
+    display: block;
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 15px;
+    cursor: default;
+    text-align: left;
 }
 
 :is(#footer) .contact-icons, .contact-heading{

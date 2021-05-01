@@ -88,33 +88,43 @@
                 </div>
             </div>
           </div>
-          <div class="links fl-1">
-            <div class="col">
-              <ul>
-                <li><a href=''>CLINIC</a></li>
-                <li><a href=''>OSTEOEGYPT</a></li>
-                <li><a href=''>EDUCATION</a></li>
-                <li><a href=''>FIND OSTEOPATH</a></li>
-                <li><a href=''>OSTEOPATHY</a></li>
-                <li><a href=''>RESEARCH</a></li>
-              </ul>
+          <div class="">
+            <div class="links flex">
+              <div class="col">
+                <ul>
+                  <li><a href=''>CLINIC</a></li>
+                  <li><a href=''>OSTEOEGYPT</a></li>
+                  <li><a href=''>EDUCATION</a></li>
+                  <li><a href=''>FIND OSTEOPATH</a></li>
+                  <li><a href=''>OSTEOPATHY</a></li>
+                  <li><a href=''>RESEARCH</a></li>
+                </ul>
+              </div>
+              <div class="col">
+                <ul>
+                  <li><a href=''>HOW OSTEOPATHY WORKS?</a></li>
+                  <li><a href=''>OUR DOCTORS</a></li>
+                  <li><a href="">MEDICAL SERVICES</a></li>
+                  <li><a href="">FAQ</a></li>
+                  <li><a href="">REQUEST AN APPOINTMENT</a></li>
+                  <li><a href="">CONTACT US</a></li>
+                </ul>
+              </div>
             </div>
-            <div class="col">
-              <ul>
-                <li><a href=''>HOW OSTEOPATHY WORKS?</a></li>
-                <li><a href=''>OUR DOCTORS</a></li>
-                <li><a href="">MEDICAL SERVICES</a></li>
-                <li><a href="">FAQ</a></li>
-                <li><a href="">REQUEST AN APPOINTMENT</a></li>
-                <li><a href="">CONTACT US</a></li>
-              </ul>
-            </div>
+            <label class="search-label" for="name">
+              <i class="fas fa-search icon"></i>
+              <input class="search-input" type="text" name="fullname" id="name" placeholder=" SEARCH WEBSITE HERE ..." required />
+          </label>
           </div>
         </div>
       
         <div class="footer-end">
           <div class="social">
-            
+            <a href=""><i class="fab fa-facebook-f"></i></a>
+            <a href=""><i class="fab fa-instagram"></i></a>
+            <a href=""><i class="fab fa-linkedin-in"></i></a>
+            <a href=""><i class="fab fa-twitter"></i></a>
+            <a href=""><i class="fab fa-youtube"></i></a>
           </div>
         </div>
       </div>
