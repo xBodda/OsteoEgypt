@@ -1,4 +1,9 @@
-@import url(variables.css);
+:root {
+    --primary: #0D3953;
+    --secondary: #C9932E;
+    --heading: #118CA0;
+    --para: #0D3953;
+}
 
 * {
     font-family: 'Nunito Sans', sans-serif;
@@ -193,30 +198,15 @@ a {
     transition: all .2s ease-in;
 }
 
-#footer .social a i.fa-facebook-f:hover {
-    background-color: #3b5998;
-    color: white;
-}
+#footer .social a i.fa-facebook-f:hover {background-color: #3b5998;color: white;}
 
-#footer .social a i.fa-instagram:hover {
-    background-color: #8a3ab9;
-    color: white;
-}
+#footer .social a i.fa-instagram:hover {background-color: #8a3ab9;color: white;}
 
-#footer .social a i.fa-linkedin-in:hover {
-    background-color: #0077b5;
-    color: white;
-}
+#footer .social a i.fa-linkedin-in:hover {background-color: #0077b5;color: white;}
 
-#footer .social a i.fa-twitter:hover {
-    background-color: #00acee;
-    color: white;
-}
+#footer .social a i.fa-twitter:hover {background-color: #00acee;color: white;}
 
-#footer .social a i.fa-youtube:hover {
-    background-color: #FF0000;
-    color: white;
-}
+#footer .social a i.fa-youtube:hover {background-color: #FF0000;color: white;}
 
 .search-input {
     margin-top: 8px;
@@ -312,3 +302,150 @@ a {
     border-color:red;
     background:rgba(255,0,0,0.1);
 }
+
+
+.box-container{
+    width:100%;
+    margin:0 auto;
+    display:flex;
+    flex-wrap: wrap;
+}
+.box-container .image{
+    flex:45%;
+    background-image:url('../image/doctor-blue-background.jpg');
+    background-size: cover;
+    background-position: center;
+    position:relative;
+}
+.box-container .image .logo{
+    width:300px;
+    height:200px;
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+    background-image: url('../png/logo_grey.png');
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    background-repeat: no-repeat;
+}
+
+.box-container .form-container{
+    flex:max(55%,500px);
+    height:100%;
+    padding:30px;
+    background-color:white;
+    border-radius: 0 20px 20px 0;
+}
+
+.box-container .form-container .heading{
+    color:var(--heading);
+    font-size:1.5em;
+}
+
+.login-with-container{
+    padding:20px 0;
+}
+.login-with-button{
+    width:100%;
+    padding:15px;
+    background:#E84234;
+    color:white;
+    margin-bottom:10px;
+    border-radius: 10px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.login-with-button.blue{
+    background-color: #3A5998;
+}
+.login-with-button img{
+    margin:0 10px;
+}
+
+.sep-or{
+    width:100%;
+    height:1px;
+    border-top:1px solid #9FBFE6;
+    position: relative;
+}
+.sep-or::before{
+    content:"or";
+    position: absolute;
+    width:10%;
+    min-width: 50px;
+    height:4px;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+.form-container form{
+    margin-top:40px;
+    width:100%;
+    font-size:17px
+}
+.form-container form input{
+    width:100%;
+    padding:20px 20px;
+    margin-bottom:10px;
+    background-color: #F7F9FC;
+    color:#678bb4;
+    border:1px solid #A8C4E5;
+    font-size:17px;
+    border-radius:5px;
+}
+.form-container form input::-moz-placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color:#A8C4E5;
+  opacity: 1;
+}
+.form-container form input:-ms-input-placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color:#A8C4E5;
+  opacity: 1;
+}
+.form-container form input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color:#A8C4E5;
+  opacity: 1;
+}
+
+.form-container form .submit-button-container{
+    width:100%;
+    position: relative;
+    cursor: pointer;
+}
+.form-container form .submit-button-container::after{
+    content:"";
+    right:50px;
+    top:50%;
+    transform:translateY(-50%);
+    width:30px;
+    height:30px;
+    background-image: url('../svg/arrow.svg');
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    background-repeat: no-repeat;
+}
+
+.form-container form .submit-button{
+    background-color: #C9932E;
+    padding:20px;
+    text-align: center;
+    color:white;
+    border-radius:40px;
+    border:0;
+    cursor: pointer;
+    text-transform: capitalize;
+    margin:20px 0;
+}
+
+.form-container form input.error{
+    background-color:rgba(255,0,0,0.07);
+    border:1px solid red;
+}
+

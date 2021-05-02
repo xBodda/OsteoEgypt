@@ -11,7 +11,12 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css/master.css', [
+mix.js('resources/js/app.js', 'public/assets/js')
+    .postCss('resources/css/app.css', 'public/assets/css/master.css', [
         //
-    ]);
+    ]).options({
+        processCssUrls: false
+    });
+mix.postCss('resources/css/box_container.css', 'public/assets/css/master.css').options({
+    processCssUrls: false
+});
