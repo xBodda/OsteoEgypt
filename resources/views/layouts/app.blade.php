@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/master.css') }}" rel="stylesheet">
     <title>@yield('title') | OsteoEgypt</title>
 </head>
 
@@ -37,7 +37,7 @@
         <div class="sep"></div>
         <div class="second-header flex">
             <div class="logo fl-1 flex">
-                <img src="{{ asset('png/logo.png') }}" alt="">
+                <img src="{{ asset('assets/png/logo.png') }}" alt="">
             </div>
             <div class="nav-section fl-1 flex">
 
@@ -66,12 +66,14 @@
             </div>
         </div>
     </div>
-    @yield('contents')
+    <div class="wrapper">
+        @yield('contents')
+    </div>
     <div id="footer">
         <div class="f flex">
             <div class="logo fl-1">
                 <a rel="canonical" href="/">
-                    <img src="{{ asset('png/logo_grey.png') }}">
+                    <img src="{{ asset('assets/png/logo_grey.png') }}">
                 </a>
                 <div class="content">
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, exercitationem? Ut adipisci reprehenderit?

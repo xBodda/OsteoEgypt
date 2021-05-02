@@ -5,6 +5,7 @@
 @endsection
 
 @section('contents')
+
     @if(session('status'))
         <div class="alert alert-fail">
             {{ session('status') }}
