@@ -194,30 +194,15 @@ a {
     transition: all .2s ease-in;
 }
 
-#footer .social a i.fa-facebook-f:hover {
-    background-color: #3b5998;
-    color: white;
-}
+#footer .social a i.fa-facebook-f:hover {background-color: #3b5998;color: white;}
 
-#footer .social a i.fa-instagram:hover {
-    background-color: #8a3ab9;
-    color: white;
-}
+#footer .social a i.fa-instagram:hover {background-color: #8a3ab9;color: white;}
 
-#footer .social a i.fa-linkedin-in:hover {
-    background-color: #0077b5;
-    color: white;
-}
+#footer .social a i.fa-linkedin-in:hover {background-color: #0077b5;color: white;}
 
-#footer .social a i.fa-twitter:hover {
-    background-color: #00acee;
-    color: white;
-}
+#footer .social a i.fa-twitter:hover {background-color: #00acee;color: white;}
 
-#footer .social a i.fa-youtube:hover {
-    background-color: #FF0000;
-    color: white;
-}
+#footer .social a i.fa-youtube:hover {background-color: #FF0000;color: white;}
 
 .search-input {
     margin-top: 8px;

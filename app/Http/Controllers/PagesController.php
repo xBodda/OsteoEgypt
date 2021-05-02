@@ -21,4 +21,9 @@ class PagesController extends Controller
         return view('pages.about');
     }
 
+    public function signup()
+    {
+        return view('pages.signup');
+    }
+
 }
