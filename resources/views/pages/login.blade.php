@@ -30,10 +30,10 @@
                     </div>
                 @endif
                 @csrf
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" value="{{ old('email') }}" placeholder="Your Email Address">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Password">
+
+                <x-input type="text" message="Email Address" placeholder="Your Email Address" value="{{ old('email') }}" />
+                <x-input type="password" message="Password" placeholder="Password" />
+
                 <div class="submit-button-container">
                     <input type="submit" class="submit-button" value="Sign In">
                 </div>
