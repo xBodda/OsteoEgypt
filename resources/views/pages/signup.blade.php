@@ -11,15 +11,15 @@
         </div>
         <div class="form-container">
             <div class="heading">
-                <h1>Sign Up</h1>
+                <h1 class="text-4xl">Sign Up</h1>
             </div>
             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam.</p>
             <div class="login-with-container">
                 <div class="login-with-button">
-                    <img src="{{ asset('assets/svg/google.svg') }}" alt="google logo white" width="20px"> Login with Google
+                    <img src="{{ asset('assets/svg/google.svg') }}" alt="google logo white" width="20px"> Sign Up with Google
                 </div>
                 <div class="login-with-button blue">
-                    <img src="{{ asset('assets/svg/facebook-square.svg') }}" alt="facebook logo white" width="20px"> Login with Facebook
+                    <img src="{{ asset('assets/svg/facebook-square.svg') }}" alt="facebook logo white" width="20px"> Sign Up with Facebook
                 </div>
             </div>
             <div class="sep-or"></div>

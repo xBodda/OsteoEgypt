@@ -11,7 +11,7 @@
         </div>
         <div class="form-container">
             <div class="heading">
-                <h1>Log In</h1>
+                <h1 class="text-4xl">Log In</h1>
             </div>
             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam.</p>
             <div class="login-with-container">
