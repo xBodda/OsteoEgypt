@@ -9,12 +9,12 @@ module.exports = {
   theme: {
     extend: {},
     colors:{
-        
+
         red: colors.red,
         blueGray: {
             lightest:"#F7F9FC",
             light:'#A8C4E5',
-            DEFAULT:"#678bb4",0d3953
+            DEFAULT:"#678bb4",
             dark:"#0d3953",
             darkest:"#0F1617",
         },
