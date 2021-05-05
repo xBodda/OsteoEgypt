@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\SignUpController;
@@ -24,9 +25,10 @@ Route::post('/login', [ LoginController::class, 'login']);
 Route::get('/signup', [SignUpController::class, 'index'])->name('signup');
 Route::post('/signup', [SignUpController::class, 'store']);
 Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
+Route::get('/appointment-booking', [AppointmentController::class, 'index'])->name('appointment-booking');
 
-// Route::get('/', function () {
-//     return view('pages.index');
+// Route::get('/test', function () {
+//     return view('pages.test');
 // });
 
 // Route::get('/about', function () {
