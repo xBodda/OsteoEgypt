@@ -10,13 +10,10 @@ const mix = require('laravel-mix');
  | file for the application as well as bundling up all the JS files.
  |
  */
-
 mix.js('resources/js/app.js', 'public/assets/js')
     .postCss('resources/css/app.css', 'public/assets/css/master.css', [
-        //
+        require("tailwindcss"),
     ]).options({
         processCssUrls: false
     });
-mix.postCss('resources/css/box_container.css', 'public/assets/css/master.css').options({
-    processCssUrls: false
-});
+

@@ -91,9 +91,6 @@
     width:100%;
     padding:20px 20px;
     margin-bottom:10px;
-    background-color: #F7F9FC;
-    color:#678bb4;
-    border:1px solid #A8C4E5;
     font-size:17px;
     border-radius:5px;
     outline: none;
@@ -102,7 +99,10 @@
   color:#A8C4E5;
   opacity: 1;
 }
-
+.form-container form .error input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color:#000;
+  opacity: 0.7;
+}
 .form-container form .submit-button-container{
     width:100%;
     position: relative;
