@@ -11,11 +11,15 @@ class Appointment extends Model
 
     protected $fillable = [
         'user_id',
-        'appointment_type' => 'datetime',
+        'appointment_available_time_id',
     ];
 
-    public function user()
-    {
+    function user(){
         return $this->belongsTo(User::class);
+    }
+
+    function appointment_available_time()
+    {
+        return $this->belongsTo(AppointmentAvailableTime::class);
     }
 }

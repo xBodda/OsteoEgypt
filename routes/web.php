@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\Auth\SignUpController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,12 +22,13 @@ Route::get('/about', 'App\Http\Controllers\PagesController@about')->name('about'
 Route::get( '/services', 'App\Http\Controllers\PagesController@services')->name('services');
 Route::get('/login', [LoginController::class,'index'])->name( 'login');
 Route::post('/login', [ LoginController::class, 'login']);
-Route::get('/signup', [SignupController::class, 'index'])->name('signup');
-Route::post('/signup', [SignupController::class, 'signup']);
+Route::get('/signup', [SignUpController::class, 'index'])->name('signup');
+Route::post('/signup', [SignUpController::class, 'store']);
 Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
+Route::get('/appointment-booking', [AppointmentController::class, 'index'])->name('appointment-booking');
 
-// Route::get('/', function () {
-//     return view('pages.index');
+// Route::get('/test', function () {
+//     return view('pages.test');
 // });
 
 // Route::get('/about', function () {

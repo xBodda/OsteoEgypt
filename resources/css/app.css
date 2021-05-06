@@ -1,4 +1,6 @@
+
 @import url(variables.css);
+@import url(box_container.css);
 
 * {
     font-family: 'Nunito Sans', sans-serif;
@@ -312,3 +314,7 @@ a {
     border-color:red;
     background:rgba(255,0,0,0.1);
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

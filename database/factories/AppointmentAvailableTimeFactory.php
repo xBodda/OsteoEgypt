@@ -3,18 +3,16 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Models\Appointment;
-use App\Models\User;
 use App\Models\AppointmentAvailableTime;
 
-class AppointmentFactory extends Factory
+class AppointmentAvailableTimeFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Appointment::class;
+    protected $model = AppointmentAvailableTime::class;
 
     /**
      * Define the model's default state.
@@ -24,8 +22,7 @@ class AppointmentFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => User::all()->random()->id,
-            'appointment_available_time_id' => AppointmentAvailableTime::all()->random()->id,
+            'appointment_time' => $this->faker->dateTimeBetween('-30 days','+30 days'),
         ];
     }
 }
