@@ -110,7 +110,7 @@ a {
 }
 
 #footer {
-    margin-top: 30px;
+    margin-top: 50px;
     background: #1D2E30;
     position: relative;
     bottom: 0;
@@ -198,15 +198,30 @@ a {
     transition: all .2s ease-in;
 }
 
-#footer .social a i.fa-facebook-f:hover {background-color: #3b5998;color: white;}
+#footer .social a i.fa-facebook-f:hover {
+    background-color: #3b5998;
+    color: white;
+}
 
-#footer .social a i.fa-instagram:hover {background-color: #8a3ab9;color: white;}
+#footer .social a i.fa-instagram:hover {
+    background-color: #8a3ab9;
+    color: white;
+}
 
-#footer .social a i.fa-linkedin-in:hover {background-color: #0077b5;color: white;}
+#footer .social a i.fa-linkedin-in:hover {
+    background-color: #0077b5;
+    color: white;
+}
 
-#footer .social a i.fa-twitter:hover {background-color: #00acee;color: white;}
+#footer .social a i.fa-twitter:hover {
+    background-color: #00acee;
+    color: white;
+}
 
-#footer .social a i.fa-youtube:hover {background-color: #FF0000;color: white;}
+#footer .social a i.fa-youtube:hover {
+    background-color: #FF0000;
+    color: white;
+}
 
 .search-input {
     margin-top: 8px;
@@ -272,7 +287,7 @@ a {
 
 .wrapper{
     margin-top:50px;
-    min-height:100%;
+    /* min-height:100%; */
     width:100%;
     padding:0 144px;
 }
@@ -309,6 +324,8 @@ a {
     margin:0 auto;
     display:flex;
     flex-wrap: wrap;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 0 20px 20px 0;
 }
 .box-container .image{
     flex:45%;
@@ -399,6 +416,7 @@ a {
     border:1px solid #A8C4E5;
     font-size:17px;
     border-radius:5px;
+    outline: none;
 }
 .form-container form input::-moz-placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color:#A8C4E5;
@@ -443,7 +461,7 @@ a {
     text-transform: capitalize;
     margin:20px 0;
 }
-
+ 
 .form-container form input.error{
     background-color:rgba(255,0,0,0.07);
     border:1px solid red;
