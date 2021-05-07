@@ -26,4 +26,9 @@ class PagesController extends Controller
         return view('pages.signup');
     }
 
+    public function contact()
+    {
+        return view('pages.contact');
+    }
+
 }

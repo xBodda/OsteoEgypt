@@ -26,6 +26,7 @@ Route::get('/', 'App\Http\Controllers\PagesController@home')->name('home');
 Route::get('/about', 'App\Http\Controllers\PagesController@about')->name('about');
 Route::get( '/services', 'App\Http\Controllers\PagesController@services')->name('services');
 Route::get( '/signup', 'App\Http\Controllers\PagesController@signup')->name('signup');
+Route::get( '/contact', 'App\Http\Controllers\PagesController@contact')->name('contact');
 Route::get('/login', [LoginController::class,'index'])->name( 'login');
 Route::post('/login', [ LoginController::class, 'login']);
 Route::get('/signup', [SignUpController::class, 'index'])->name('signup');
