@@ -20283,12 +20283,14 @@ video {
 textarea.input {
   min-height: 100px;
   max-height: 300px;
+  resize: none;
 }
 
 .contact-form select {
-  width: 100px;
+  width: 120px;
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
+  border-right: none;
 }
 
 .contact-form .rowInput {

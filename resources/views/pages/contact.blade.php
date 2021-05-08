@@ -33,14 +33,17 @@
                     <p></p>
                 </div>
                 <div class="flex">
-                    <select name="" id="" class="input">
-                        <option value="">+20</option>
+                    <select name="countrycode" id="" class="input" oninput="changeFlag(this.value)">
+                        <option value="eg" selected>+20</option>
+                        @foreach ($countries as $country)
+                            <option value="{{$country->iso}}">+{{$country->phonecode}}</option>
+                        @endforeach
                     </select>
                     <label for="" class="contact-label">
-                        <input class="input rowInput" type="text" name="fullname" value="" placeholder="Your phone number...">
+                        <input class="input rowInput" type="text" name="phonenumber" value="" placeholder="Your phone number...">
                     </label>
                     <div class="input viewInput">
-                        <img src="{{ asset('assets/svg/flag/eg.svg') }}" width="40px" alt="">
+                        <img id="phoneFlag" title="EG" src="{{ asset('assets/svg/flag/eg.svg') }}" width="40px" alt="">
                     </div>
                 </div>
             </div>
@@ -84,5 +87,16 @@
         </div>
     </div>
 </div>
+<script>
+    function changeFlag(x)
+    {
+        var img = document.getElementById('phoneFlag');
+        img.title = x;
+        var path = x;
+        path = path.toLowerCase();
+        newPath = "{{asset('')}}assets/svg/flag/"+path+".svg";
+        img.src = newPath;
+    }
+</script>
 
 @endsection
