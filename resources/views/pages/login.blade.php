@@ -32,7 +32,7 @@
                 @csrf
 
                 <x-input type="email"  name="email" message="Email Address" placeholder="Your Email Address" value="{{ old('email') }}" />
-                <x-input type="password" name="password"  message="Password" placeholder="Password" />
+                <x-input type="password" name="password"  message="Password" placeholder="Password" value="" />
 
                 <div class="submit-button-container">
                     <input type="submit" class="submit-button" value="Sign In">
