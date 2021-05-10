@@ -82,29 +82,6 @@ a {
     align-items: center;
 }
 
-.mt-10 {
-    margin-top: 10px !important;
-}
-
-.mt-30 {
-    margin-top: 30px !important;
-}
-
-.mb-10 {
-    margin-bottom: 10px !important;
-}
-
-.mb-30 {
-    margin-bottom: 30px !important;
-}
-
-.mr-10 {
-    margin-right: 10px !important;
-}
-
-.mr-30 {
-    margin-right: 30px !important;
-}
 
 .sep {
     margin: 0 auto;
@@ -296,7 +273,9 @@ a {
     width:100%;
     padding:0 144px;
 }
-
+.paddingx-144{
+    padding:0 144px;
+}
 .center-text{
     text-align: center;
 }
@@ -513,4 +492,16 @@ textarea.input {
     font-size: 60px;
     color:#678bb4;
 }
- 
+
+.home-top-banner{
+    height:600px;
+    background-image:url('../png/Group 323.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.home-info-item .item{
+    width:200px;
+    height: 200px;
+}

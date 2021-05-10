@@ -67,6 +67,7 @@
             </div>
         </div>
     </div>
+    @yield('contents-outside-wrapper')
     <div class="wrapper">
         @yield('contents')
     </div>
