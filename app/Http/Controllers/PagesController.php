@@ -33,4 +33,14 @@ class PagesController extends Controller
         return view('pages.contact')->with('countries',$countries);
     }
 
+    public function sendMessage(Request $REQUEST) 
+    {
+        $contact = new Contact();
+        $product->product_name = $REQUEST->product_name;
+        $product->product_price = $REQUEST->product_price;
+        $product->product_description = $REQUEST->product_description;
+
+        $product->save();
+    }
+
 }
