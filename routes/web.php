@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\Auth\SignUpController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,12 +17,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'App\Http\Controllers\PagesController@home');
-Route::get('/about', 'App\Http\Controllers\PagesController@about');
-Route::get( '/services', 'App\Http\Controllers\PagesController@services');
+// Route::get('/', 'App\Http\Controllers\PagesController@home');
+// Route::get('/about', 'App\Http\Controllers\PagesController@about');
+// Route::get( '/services', 'App\Http\Controllers\PagesController@services');
+// Route::get('/signup', 'App\Http\Controllers\PagesController@signup');
 
-// Route::get('/', function () {
-//     return view('pages.index');
+Route::get('/', 'App\Http\Controllers\PagesController@home')->name('home');
+Route::get('/about', 'App\Http\Controllers\PagesController@about')->name('about');
+Route::get( '/services', 'App\Http\Controllers\PagesController@services')->name('services');
+Route::get( '/signup', 'App\Http\Controllers\PagesController@signup')->name('signup');
+Route::get( '/contact', 'App\Http\Controllers\PagesController@contact')->name('contact');
+Route::get('/login', [LoginController::class,'index'])->name( 'login');
+Route::post('/login', [ LoginController::class, 'login']);
+Route::get('/signup', [SignUpController::class, 'index'])->name('signup');
+Route::post('/signup', [SignUpController::class, 'store']);
+Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
+Route::get('/appointment-booking', [AppointmentController::class, 'index'])->name('appointment-booking');
+
+// Route::get('/test', function () {
+//     return view('pages.test');
 // });
 
 // Route::get('/about', function () {
