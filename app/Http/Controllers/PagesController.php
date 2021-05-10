@@ -22,6 +22,11 @@ class PagesController extends Controller
         return view('pages.about');
     }
 
+    public function terms()
+    {
+        return view('pages.terms');
+    }
+
     public function signup()
     {
         return view('pages.signup');

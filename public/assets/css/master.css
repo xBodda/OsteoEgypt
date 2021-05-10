@@ -19877,6 +19877,117 @@ textarea.input {
   color:#678bb4;
 }
 
+#about-us-main-container{
+  display:flex;
+  width:100%;
+}
+
+#about-us-content{
+  flex:2;
+  display: block;
+  padding:0 15px;
+  float:right;
+}
+
+.sidebars-about-us{
+  display:flex;
+  flex-direction:column;
+  width:20%;
+  font-weight:bold;
+  margin-right: 30px; /* ! Add space next to the navbars with margins not with paddings */
+}
+
+.current-item-about-us{
+  color: #ffffff !important; /* ! Add !important next to the value to override the old value */
+  background-color: var(--heading);
+}
+
+#sidenav-t {
+  margin-bottom:30px;
+  width:100%;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.12); /* ! Add Box-Shadow to the first nav-bar */
+}
+
+#sidenav-te{
+  width:100%;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.12); /* ! Add Box-Shadow to the second nav-bar */
+}
+
+#sidenav-te .menu-items-about {
+  padding: 25px 15px; /* ! Add suitable padding like the UI */
+  text-decoration: none;
+  font-size: 19px;
+  color: rgba(255,255,255,var(--bg-opacity));
+  display: block;
+  transition: .3s all; /* ! Makes the hover effect goes abit slowly */
+}
+
+.menu-items-about:not(:last-child) {
+  border-bottom: 1px solid rgba(153, 153, 153, 0.562); /* ! Puts a bottom border to all items except the last one like the UI */
+}
+
+#sidenav-te .menu-items-about:hover {
+  color: #ffffff;
+  background-color: var(--heading);
+}
+
+#sidenav-t .menu-items-about {
+  padding: 25px 15px; /* ! Add suitable padding like the UI */
+  text-decoration: none;
+  font-size: 19px;
+  color: rgba(255,255,255,var(--bg-opacity));
+  display: block;
+  transition: .3s all ease-in; /* ! Makes the hover effect goes abit slowly */
+}
+
+#sidenav-t .menu-items-about:hover {
+  color: #ffffff;
+  background-color: var(--heading);
+}
+
+.about-us-h1s{
+  font-size:35px;
+  font-weight:bold;
+  margin-bottom:10px;
+  color: var(--heading); /* ! Edit the header's color */
+}
+
+.about-us-h2s{
+  font-size:25px;
+  font-weight:bold;
+  margin-bottom:10px;
+  color: var(--heading); /* ! Edit the header's color */
+}
+
+.about-us-ps{
+  font-size:17px;
+  margin-bottom:25px;
+}
+
+.what-is-container{
+  display:flex;
+}
+
+.about-us-single-img{
+  width:100%; /* ! Edit the images's width to fit the page */
+}
+
+.about-us-ps .about-us-what-para{
+  width:100%;
+  height:auto;
+  text-align:left;
+}
+
+.gallery-about-us {
+  border: 1px solid rgba(0, 0, 0, 0.08), 0 2px 4px 0;
+  float: left;
+  width: 600px;
+}
+
+.gallery-about-us img {
+  width: 100%;
+}
+
 @media (min-width: 640px){
   .sm\:container{
     width: 100%;
@@ -114961,5 +115072,4 @@ textarea.input {
     --tw-backdrop-sepia: sepia(100%);
   }
 }
- 
 
