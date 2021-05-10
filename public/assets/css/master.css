@@ -276,6 +276,14 @@ a {
   margin-bottom: 30px !important;
 }
 
+.mr-10 {
+  margin-right: 10px !important;
+}
+
+.mr-30 {
+  margin-right: 30px !important;
+}
+
 .sep {
   margin: 0 auto;
   display: block;

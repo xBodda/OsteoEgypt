@@ -24,28 +24,32 @@
                 flex-direction:column;
                 width:20%;
                 font-weight:bold;
-
+                margin-right: 30px; /* ! Add space next to the navbars with margins not with paddings */
             }
             .current-item-about-us{
-                color: #ffffff;
+                color: #ffffff !important; /* ! Add !important next to the value to override the old value */
                 background-color: var(--heading);
             }
             #sidenav-t {
                 margin-bottom:30px;
                 width:100%;
-                padding-right:15px;
+                box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.12); /* ! Add Box-Shadow to the first nav-bar */
             }
             #sidenav-te{
                 width:100%;
-                padding-right:15px;
+                box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.12); /* ! Add Box-Shadow to the second nav-bar */
             }
             #sidenav-te .menu-items-about {
-                box-shadow:0.1px 0.1px 2px #0D3953;
-                padding: 15px;
+                padding: 25px 15px; /* ! Add suitable padding like the UI */
                 text-decoration: none;
                 font-size: 19px;
                 color: rgba(255,255,255,var(--bg-opacity));
                 display: block;
+                transition: .3s all; /* ! Makes the hover effect goes abit slowly */
+            }
+
+            .menu-items-about:not(:last-child) {
+                border-bottom: 1px solid rgba(153, 153, 153, 0.562); /* ! Puts a bottom border to all items except the last one like the UI */
             }
 
             #sidenav-te .menu-items-about:hover {
@@ -54,12 +58,12 @@
 
             }
             #sidenav-t .menu-items-about {
-                box-shadow:0.1px 0.1px 2px #0D3953;
-                padding: 15px;
+                padding: 25px 15px; /* ! Add suitable padding like the UI */
                 text-decoration: none;
                 font-size: 19px;
                 color: rgba(255,255,255,var(--bg-opacity));
                 display: block;
+                transition: .3s all ease-in; /* ! Makes the hover effect goes abit slowly */
             }
             
             #sidenav-t .menu-items-about:hover {
@@ -72,19 +76,19 @@
                 font-size:35px;
                 font-weight:bold;
                 margin-bottom:10px;
+                color: var(--heading); /* ! Edit the header's color */
             }
 
             .about-us-h2s{
                 font-size:25px;
                 font-weight:bold;
                 margin-bottom:10px;
-
+                color: var(--heading); /* ! Edit the header's color */
             }
 
             .about-us-ps{
                 font-size:17px;
                 margin-bottom:25px;
-
             }
            
             .what-is-container{
@@ -92,8 +96,7 @@
             }
 
             .about-us-single-img{
-                width:150%;
-                height:auto;
+                width:100%; /* ! Edit the images's width to fit the page */
             }
             .about-us-ps .about-us-what-para{
                 width:100%;
@@ -101,14 +104,13 @@
                 text-align:left;
             }
             .gallery-about-us {
-            border: 1px solid rgba(0, 0, 0, 0.08), 0 2px 4px 0;
-            float: left;
-            width: 600px;
+                border: 1px solid rgba(0, 0, 0, 0.08), 0 2px 4px 0;
+                float: left;
+                width: 600px;
             }
 
             .gallery-about-us img {
-            width: 100%;
-            height: auto;
+                width: 100%;
             }
 
     </style>
@@ -133,11 +135,9 @@
             <p class="about-us-ps">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
             <h2 class="about-us-h2s">What is OsteoPathy</h2>
             <div class="what-is-container">
-                
-
-                <p class="about-us-ps about-us-what-para">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                <a  href="{{ asset('assets/png/aboutus1.png') }}" class="about-us-single-img">
-                        <img src="{{ asset('assets/png/aboutus1.png') }}" alt="OsteoPathy" class="about-us-single-img">
+                <p class="about-us-ps about-us-what-para fl-1 mr-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad maiores accusantium deserunt incidunt qui cum, voluptas ducimus, odit quasi eaque quisquam id ex nostrum necessitatibus. Harum expedita quisquam eum fugit reprehenderit maiores similique? Natus molestias dolorem cum laboriosam aperiam assumenda odit non amet possimus nisi tempore provident voluptatum, iure rerum repellendus. Asperiores vel consequuntur recusandae voluptate rem quos sequi adipisci obcaecati facilis. Distinctio qui vel culpa iste doloremque? Modi magni temporibus corrupti fugit ad non id labore eos ipsa debitis. Et nisi vitae, atque expedita voluptatum autem cumque eos iusto saepe aperiam quia dicta corrupti non maxime, facilis esse reiciendis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos tempore vel quas ipsam a suscipit minima, similique ullam minus enim earum itaque in ipsa sapiente nobis vitae laboriosam voluptates, at doloribus voluptatum quia ex. Quaerat ullam, illum cum ut similique, nobis odio placeat illo aliquid, ducimus quisquam dignissimos corporis amet neque molestias alias reiciendis. Dicta quibusdam odit porro est et, molestias soluta. Perspiciatis sequi molestiae aperiam consequuntur assumenda voluptatum voluptates quis numquam eligendi qui fugit, veniam repudiandae porro voluptate quasi quaerat in, totam, possimus similique! Voluptatum temporibus soluta vitae, doloremque deserunt minus vel ipsam sunt laboriosam voluptas debitis accusantium incidunt officiis ut, a autem suscipit ab obcaecati numquam natus modi eaque? Voluptatem quaerat placeat a incidunt! Architecto, nulla. Voluptates officia voluptatem iure, explicabo rem iusto sit quo autem accusantium commodi perferendis molestiae sunt enim. Minima itaque distinctio ullam adipisci voluptatibus et est deserunt. Eaque error dignissimos minus nulla totam quis quod commodi temporibus minima adipisci, omnis eos atque aut dolore quidem praesentium ad accusamus quibusdam nam ducimus. Explicabo distinctio architecto tenetur. Rerum autem nulla quia veniam cum sit modi corrupti ullam quibusdam aperiam doloremque exercitationem voluptatem totam laborum repellendus, quisquam doloribus incidunt molestiae! Vel placeat, expedita minima quibusdam qui necessitatibus neque iure deleniti quod assumenda. Magni enim illum voluptates delectus distinctio, quas iste facere eveniet cupiditate officia nesciunt id omnis qui, blanditiis modi itaque recusandae accusantium mollitia minus amet corporis fugiat. Inventore suscipit numquam doloremque, ab voluptatem dolore cumque magni voluptates alias aperiam quas excepturi optio quae earum dolorem necessitatibus ducimus eum. </p>
+                <a  href="{{ asset('assets/png/aboutus1.png') }}" class="about-us-single-img fl-1">
+                    <img src="{{ asset('assets/png/aboutus1.png') }}" alt="OsteoPathy" class="about-us-single-img">
                 </a>
             </div>
             <h2 class="about-us-h2s">Our Vision</h2>
