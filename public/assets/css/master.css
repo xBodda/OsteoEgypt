@@ -19743,7 +19743,6 @@ textarea.input {
 }
 
 .contact-form .rowInput {
-  cursor: not-allowed;
   border-radius: 0;
   border-right: none;
 }

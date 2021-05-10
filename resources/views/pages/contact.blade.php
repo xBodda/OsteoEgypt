@@ -41,7 +41,7 @@
                         @endforeach
                     </select>
                     <label for="" class="contact-label">
-                        <input class="input rowInput" type="text" id="phonenumber" name="phonenumber" value="" placeholder="Your phone number..." disabled>
+                        <input class="input rowInput" type="text" id="phonenumber" name="phonenumber" value="+20" placeholder="Your phone number...">
                     </label>
                     <div class="input viewInput">
                         <img id="phoneFlag" title="EG" src="{{ asset('assets/svg/flag/eg.svg') }}" width="40px" alt="phoneFlag">
@@ -93,8 +93,6 @@
     {
         var img = document.getElementById('phoneFlag');
         var input = document.getElementById('phonenumber');
-        input.disabled = false;
-        input.style.cursor = 'auto'
         var text=x.options[x.selectedIndex].text;
         input.value = text;
         img.title = x.value;
