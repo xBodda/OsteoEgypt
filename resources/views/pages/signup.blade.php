@@ -33,8 +33,8 @@
 
                 <x-input type="text"  name="name" message="Full Name" placeholder="Your full name" value="{{ old('name') }}"/>
                 <x-input type="email"  name="email" message="Email Address" placeholder="Your Email Address" value="{{ old('email') }}"/>
-                <x-input type="password" name="password"  message="Password" placeholder="Password" />
-                <x-input type="password" name="password_confirmation"  message="Confirm Password" placeholder="Confirm Password" />
+                <x-input type="password" name="password"  message="Password" placeholder="Password" value="" />
+                <x-input type="password" name="password_confirmation"  message="Confirm Password" placeholder="Confirm Password" value="" />
 
                 <div class="submit-button-container">
                     <input type="submit" class="submit-button" value="Sign In">

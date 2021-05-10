@@ -315,7 +315,7 @@ a {
     background:rgba(255,0,0,0.1);
 }
 
-@tailwind base;
+/* @tailwind base; */
 @tailwind components;
 @tailwind utilities;
 
