@@ -12,20 +12,21 @@
             <h1>Contact us</h1>
         </div>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, doloremque.</p>
-        <form action="">
+        <form action="{{url('/sendMessage')}}" method="POST">
+            {{csrf_field()}}
             <div class="error">
                 <div class="flex">
                     <label for="name">Fullname <b class="req">*</b></label>
                     <p></p>
                 </div>
-                <input class="input" type="text" name="fullname" value="" placeholder="Your first name...">
+                <input class="input" type="text" name="fullname" value="" placeholder="Your first name..." required>
             </div>
             <div class="error">
                 <div class="flex">
                     <label for="name">Email Address <b class="req">*</b></label>
                     <p></p>
                 </div>
-                <input class="input" type="text" name="fullname" value="" placeholder="Your Email address...">
+                <input class="input" type="text" name="fullname" value="" placeholder="Your Email address..." required>
             </div>
             <div class="error">
                 <div class="flex">
@@ -33,7 +34,7 @@
                     <p></p>
                 </div>
                 <div class="flex">
-                    <select name="countrycode" id="" class="input" oninput="changeFlag(this.value)">
+                    <select name="countrycode" id="" class="input" oninput="changeFlag(this.value)" required>
                         <option value="eg" selected>+20</option>
                         @foreach ($countries as $country)
                             <option value="{{$country->iso}}">+{{$country->phonecode}}</option>
@@ -52,7 +53,7 @@
                     <label for="name">Your Message <b class="req">*</b></label>
                     <p></p>
                 </div>
-                <textarea name="" id="" cols="30" rows="6" class="input" placeholder="Tell us what you want..."></textarea>
+                <textarea name="" id="" cols="30" rows="6" class="input" placeholder="Tell us what you want..." required></textarea>
             </div>
             <div class="submit-button-container">
                 <input type="submit" class="submit-button" value="Send">
