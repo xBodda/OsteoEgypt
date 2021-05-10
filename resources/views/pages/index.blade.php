@@ -48,13 +48,13 @@
     </p>
     <div class="mt-8 grid grid-cols-3 grid-rows-1 gap-2 h-96">
         <div >
-            <img class="w-full h-full object-cover object-center" src="{{ asset('assets/image/pexels-photo-287237.jpeg') }}" alt="">
+            <img class="w-full h-full object-cover object-center" src="{{ asset('assets/image/Group 534.png') }}" alt="">
         </div>
         <div class="object-cover object-center">
-            <img class="w-full h-full object-cover object-center" src="{{ asset('assets/image/pexels-evg-culture-1170979.jpg') }}" alt="">
+            <img class="w-full h-full object-cover object-center" src="{{ asset('assets/image/Group 76.png') }}" alt="">
         </div>
         <div class="object-cover object-center">
-            <img class="w-full h-full object-cover object-center" src="{{ asset('assets/image/pexels-photo-4506075.jpeg') }}" alt="">
+            <img class="w-full h-full object-cover object-center" src="{{ asset('assets/image/Group 8.png') }}" alt="">
         </div>
     </div>
     <p class="max-w-3xl mx-auto mt-8">
@@ -74,7 +74,7 @@
     </div>
     <div class="w-2/5 pl-10 hidden lg:block">
         <div class="w-full h-full">
-            <img src="{{ asset('assets/image/pexels-karolina-grabowska-4506217.jpg') }}" class="w-full h-full object-cover object-center">
+            <img src="{{ asset('assets/image/Group 533.png') }}" class="w-full h-full object-cover object-center">
         </div>
     </div>
 </div>
