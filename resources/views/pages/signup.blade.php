@@ -37,7 +37,7 @@
                 <x-input type="password" name="password_confirmation"  message="Confirm Password" placeholder="Confirm Password" value="" />
 
                 <div class="submit-button-container">
-                    <input type="submit" class="submit-button" value="Sign In">
+                    <input type="submit" class="submit-button" value="Sign Up">
                 </div>
                 <div class="center-text">
                     Already have an account? <a class="link-decoration" href="{{ route('login') }}">Login</a>

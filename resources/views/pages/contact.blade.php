@@ -34,14 +34,14 @@
                     <p></p>
                 </div>
                 <div class="flex">
-                    <select name="countrycode" id="" class="input" oninput="changeFlag(this.value)" required>
+                    <select name="countrycode" id="countrycode" class="input" oninput="changeFlag(this)" required>
                         <option value="eg" selected>+20</option>
                         @foreach ($countries as $country)
                             <option value="{{$country->iso}}">+{{$country->phonecode}}</option>
                         @endforeach
                     </select>
                     <label for="" class="contact-label">
-                        <input class="input rowInput" type="text" name="phonenumber" value="" placeholder="Your phone number...">
+                        <input class="input rowInput" type="text" id="phonenumber" name="phonenumber" value="" placeholder="Your phone number..." disabled>
                     </label>
                     <div class="input viewInput">
                         <img id="phoneFlag" title="EG" src="{{ asset('assets/svg/flag/eg.svg') }}" width="40px" alt="phoneFlag">
@@ -53,7 +53,7 @@
                     <label for="name">Your Message <b class="req">*</b></label>
                     <p></p>
                 </div>
-                <textarea name="message" id="" cols="30" rows="6" class="input" placeholder="Tell us what you want..." required></textarea>
+                <textarea name="message" id="message" cols="30" rows="6" class="input" placeholder="Tell us what you want..." required></textarea>
             </div>
             <div class="submit-button-container">
                 <input type="submit" class="submit-button" value="Send">
@@ -92,8 +92,13 @@
     function changeFlag(x)
     {
         var img = document.getElementById('phoneFlag');
-        img.title = x;
-        var path = x;
+        var input = document.getElementById('phonenumber');
+        input.disabled = false;
+        input.style.cursor = 'auto'
+        var text=x.options[x.selectedIndex].text;
+        input.value = text;
+        img.title = x.value;
+        var path = x.value;
         path = path.toLowerCase();
         newPath = "{{asset('')}}assets/svg/flag/"+path+".svg";
         img.src = newPath;
