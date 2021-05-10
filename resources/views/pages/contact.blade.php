@@ -34,7 +34,7 @@
                     <p></p>
                 </div>
                 <div class="flex">
-                    <select name="countrycode" id="countrycode" class="input" oninput="changeFlag(this)" required>
+                    <select name="countrycode" id="countrycode" class="input contactSelect" oninput="changeFlag(this)" required>
                         <option value="eg" selected>+20</option>
                         @foreach ($countries as $country)
                             <option value="{{$country->iso}}">+{{$country->phonecode}}</option>

@@ -19724,7 +19724,6 @@ a {
   font-size:17px;
   border-radius:5px;
   outline: none;
-  display: block;
 }
 
 .input.viewInput {
@@ -19743,7 +19742,7 @@ textarea.input {
   resize: none;
 }
 
-.contact-form select {
+.contact-form select.contactSelect {
   width: 120px;
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
@@ -19848,6 +19847,34 @@ textarea.input {
 .contact-address .contact-addresses p {
   color: var(--para);
   font-size: 18px;
+}
+
+.custom-file-upload {
+  height: 16rem;
+  width:100%;
+  padding:20px 20px;
+  margin-bottom:10px;
+  background-color: #F7F9FC;
+  color:#678bb4;
+  border:1px solid #A8C4E5;
+  font-size:17px;
+  border-radius:5px;
+  outline: none;
+  cursor: pointer;
+}
+
+.custom-file-upload p {
+  color:#678bb4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-file-upload i {
+  text-align: center;
+  width: 100%;
+  font-size: 60px;
+  color:#678bb4;
 }
 
 @media (min-width: 640px){
