@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Models\Contact;
 
 class PagesController extends Controller
 {
@@ -36,11 +37,15 @@ class PagesController extends Controller
     public function sendMessage(Request $REQUEST) 
     {
         $contact = new Contact();
-        $product->product_name = $REQUEST->product_name;
-        $product->product_price = $REQUEST->product_price;
-        $product->product_description = $REQUEST->product_description;
 
-        $product->save();
+        $contact->fullname = $REQUEST->fullname;
+        $contact->email = $REQUEST->email;
+        $contact->phonenumber = $REQUEST->phonenumber;
+        $contact->message = $REQUEST->message;
+
+        $contact->save();
+
+        return redirect()->route('home');
     }
 
 }

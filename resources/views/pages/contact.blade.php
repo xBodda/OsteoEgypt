@@ -26,7 +26,7 @@
                     <label for="name">Email Address <b class="req">*</b></label>
                     <p></p>
                 </div>
-                <input class="input" type="text" name="fullname" value="" placeholder="Your Email address..." required>
+                <input class="input" type="text" name="email" value="" placeholder="Your Email address..." required>
             </div>
             <div class="error">
                 <div class="flex">
@@ -44,7 +44,7 @@
                         <input class="input rowInput" type="text" name="phonenumber" value="" placeholder="Your phone number...">
                     </label>
                     <div class="input viewInput">
-                        <img id="phoneFlag" title="EG" src="{{ asset('assets/svg/flag/eg.svg') }}" width="40px" alt="">
+                        <img id="phoneFlag" title="EG" src="{{ asset('assets/svg/flag/eg.svg') }}" width="40px" alt="phoneFlag">
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@
                     <label for="name">Your Message <b class="req">*</b></label>
                     <p></p>
                 </div>
-                <textarea name="" id="" cols="30" rows="6" class="input" placeholder="Tell us what you want..." required></textarea>
+                <textarea name="message" id="" cols="30" rows="6" class="input" placeholder="Tell us what you want..." required></textarea>
             </div>
             <div class="submit-button-container">
                 <input type="submit" class="submit-button" value="Send">
