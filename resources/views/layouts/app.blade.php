@@ -41,12 +41,20 @@
                 <a rel="canonical" href="{{ route('home') }}"><img src="{{ asset('assets/png/logo.png') }}" alt=""></a>
             </div>
             <div class="nav-section fl-1 flex">
-                <a href="{{ route('login') }}">
-                    <div class="item">Login</div>
-                </a>
-                <a href="{{ route('signup') }}">
-                    <div class="item">Sign Up</div>
-                </a>
+                @guest
+
+                    <a href="{{ route('login') }}">
+                        <div class="item">Login</div>
+                    </a>
+                    <a href="{{ route('signup') }}">
+                        <div class="item">Sign Up</div>
+                    </a>
+                @endguest
+                @auth
+                    <a href="{{ route('logout') }}">
+                        <div class="item">Logout</div>
+                    </a>
+                @endauth
                 <a href="">
                     <div class="item">EN</div>
                 </a>
