@@ -43,3 +43,16 @@ Route::get('appointments', function () {
 Route::get('appointment/{id}', function ($id) {
     return Appointment::with('appointment_available_time')->with('user')->find($id);
 });
+
+Route::get('appointment_times', function () {
+    return AppointmentAvailableTime::get();
+});
+
+Route::get('appointment_times_available', function () {
+    $ids = Appointment::select('appointment_available_time_id');
+    return AppointmentAvailableTime::whereNotIn('id', $ids)->get();
+});
+
+Route::get('appointment_time/{id}', function ($id) {
+    return AppointmentAvailableTime::with('appointment')->find($id);
+});

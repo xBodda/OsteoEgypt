@@ -4,5 +4,156 @@
     Home
 @endsection
 
+@section('contents-outside-wrapper')
+    <div class="text-white w-full relative home-top-banner flex justify-center items-center flex-col">
+        <h1>Lorem ipsum dolor sit amet</h1>
+        <div class="max-w-2xl text-center mt-5">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit at dolores, cumque, mollitia repudiandae expedita aperiam provident culpa non, commodi ea sapiente sed. Inventore quibusdam harum ratione ducimus, autem tempora?</p>
+        </div>
+        <x-button class="mt-12" text="Learn More"/>
+    </div>
+
+    <div class="flex justify-center items-center max-w-4-xl flex-wrap md:flex-nowrap transform -translate-y-20 md:-translate-y-1/3">
+        <div class="text-center home-info-item flex justify-center items-center flex-col mb-12 md:mx-12 w-full md:w-96">
+            <div class="item rounded-3xl bg-white flex justify-center items-center shadow-xl flex-col">
+                <img src="{{ asset('assets/svg/Mask Group 3.svg') }}">
+                <p class="text-chillBlue text-2xl mt-2 font-bold">Schedule An Appointment</p>
+            </div>
+            <p class="text-md mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio pariatur excepturi, non dolorem cupiditate vitae debitis ipsum sapiente, doloribus numquam autem tenetur a modi est dolores deserunt? Porro, odit sed?</p>
+        </div>
+        <div class="text-center home-info-item flex justify-center items-center flex-col mb-12 md:mx-12 w-full md:w-96">
+            <div class="item rounded-3xl bg-white flex justify-center items-center shadow-xl flex-col">
+                <img src="{{ asset('assets/svg/Mask Group 2.svg') }}">
+                <p class="text-chillBlue text-2xl mt-2 font-bold">Our Doctors</p>
+            </div>
+            <p class="text-md mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio pariatur excepturi, non dolorem cupiditate vitae debitis ipsum sapiente, doloribus numquam autem tenetur a modi est dolores deserunt? Porro, odit sed?</p>
+        </div>
+        <div class="text-center home-info-item flex justify-center items-center flex-col mb-12 md:mx-12 w-full md:w-96">
+            <div class="item rounded-3xl bg-white flex justify-center items-center shadow-xl flex-col">
+                <img src="{{ asset('assets/svg/Mask Group 1.svg') }}">
+                <p class="text-chillBlue text-2xl mt-2 font-bold">Medical Services</p>
+            </div>
+            <p class="text-md mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio pariatur excepturi, non dolorem cupiditate vitae debitis ipsum sapiente, doloribus numquam autem tenetur a modi est dolores deserunt? Porro, odit sed?</p>
+        </div>
+    </div>
+
+    <div id="section-1" class='text-center paddingx-144'>
+    <div class="text-2xl">
+        <h1 class="text-chillBlue ">
+            Welcome to OsteoEgypt
+        </h1>
+    </div>
+    <p class="max-w-3xl mx-auto mt-8">
+        Personalized patient care is what sets OsteoEgypt apart. When you visit our clinic you can expect to receive world class care. Expert physician specialists and caring clinical staff provide you with an exceptional health care experience. OsteoEgypt Clinic is a center set up and run by Dr. Hesham Khalil to promote osteopathy to the medical community and the general public and to ensure osteopathic excellence in Egypt and the Middle East. We want to give you the best treatment you can get.
+    </p>
+    <div class="mt-8 grid grid-cols-3 grid-rows-1 gap-2 h-96">
+        <div >
+            <img class="w-full h-full object-cover object-center" src="{{ asset('assets/image/Group 534.jpg') }}" alt="">
+        </div>
+        <div class="object-cover object-center">
+            <img class="w-full h-full object-cover object-center" src="{{ asset('assets/image/Group 76.jpg') }}" alt="">
+        </div>
+        <div class="object-cover object-center">
+            <img class="w-full h-full object-cover object-center" src="{{ asset('assets/image/Group 8.jpg') }}" alt="">
+        </div>
+    </div>
+    <p class="max-w-3xl mx-auto mt-8">
+        Osteopathy is an approach to health that is rapidly growing in popularity and recognition throughout the world.  It was developed in the 1870’s by Andrew Taylor Still, a doctor from Missouri, USA, and is now seen as one of the most comprehensive, effective and scientifically valid forms of treatment available. Your body is designed to heal itself. Osteopathy is drug-free non-invasive manual medicine that help your body to heal by treating and strengthening the musculoskeletal framework, which includes the joints, muscles and spine
+    </p>
+</div>
+<div id="section-2" class="flex mt-20 paddingx-144">
+    <div class="w-full lg:w-3/5">
+        <div class="text-chillBlue text-xl pr-20 mb-8">
+            <h1>How Osteopathy Works?</h1>
+        </div>
+        <p>
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.
+        </p>
+        <x-button class="mt-10" text="Read More >>"/>
+    </div>
+    <div class="w-2/5 pl-10 hidden lg:block">
+        <div class="w-full h-full">
+            <img src="{{ asset('assets/image/Group 533.jpg') }}" class="w-full h-full object-cover object-center">
+        </div>
+    </div>
+</div>
+<div id="section-3" class="w-full h-96 sm:h-80 bg-chillBlue mt-20 relative paddingx-144">
+    <div class="absolute w-full h-full top-0 left-0">
+        <img src="{{ asset('assets/image/pexels-karolina-grabowska-4506113.jpg') }}" class="w-full h-full object-center object-cover">
+    </div>
+    <div class="absolute w-full h-full top-0 left-0 bg-blueGray-darkest opacity-60">
+    </div>
+    <div class="absolute w-full h-full top-0 left-0 bg-chillBlue opacity-20">
+    </div>
+    <div class="absolute w-full h-full top-0 left-0 text-white flex justify-around items-center md:flex-nowrap flex-wrap">
+        <div class="flex flex-col text-center text-lg w-full sm:w-1/2 md:w-auto">
+            <div class="text-2xl font-black">
+                <h1>168</h1>
+            </div>
+            <p class="mt-4">Happy To Serve Patients</p>
+        </div>
+        <div class="flex flex-col text-center text-lg w-full sm:w-1/2 md:w-auto">
+            <div class="text-2xl font-black">
+                <h1>6</h1>
+            </div>
+            <p class="mt-4">Sub Specialties</p>
+        </div>
+        <div class="flex flex-col text-center text-lg w-full sm:w-1/2 md:w-auto">
+            <div class="text-2xl font-black">
+                <h1>4</h1>
+            </div>
+            <p class="mt-4">Outpatient Clinics</p>
+        </div>
+        <div class="flex flex-col text-center text-lg w-full sm:w-1/2 md:w-auto">
+            <div class="text-2xl font-black">
+                <h1>12</h1>
+            </div>
+            <p class="mt-4">Corporate Lines</p>
+        </div>
+    </div>
+
+</div>
+<div id="section-4" class="mt-20 paddingx-144">
+    <div class="text-chillBlue text-xl text-center">
+        <h1>Our High Qualified Doctors</h1>
+    </div>
+    <p class="text-center mx-auto max-w-3xl mt-8">
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata.
+    </p>
+    <div class="flex mt-8">
+        <div class="w-1/3 px-10">
+            <div class=" w-full">
+                <img class="h-full w-full object-center object-cover" src="{{ asset('assets/image/Group 83.jpg') }}" alt="">
+            </div>
+            <p class="text-2xl font-bold text-chillBlue">
+                <span>Dr. Leo William</span>
+            </p>
+            <p>Expert Osteopath</p>
+        </div>
+        <div class="w-1/3 px-10">
+            <div class=" w-full">
+                <img class="h-full w-full object-center object-cover" src="{{ asset('assets/image/Group 16.jpg') }}" alt="">
+            </div>
+            <p class="text-2xl font-bold text-chillBlue">
+                <span>Dr. Leo William</span>
+            </p>
+            <p>Expert Osteopath</p>
+        </div>
+        <div class="w-1/3 px-10">
+            <div class=" w-full">
+                <img class="h-full w-full object-center object-cover" src="{{ asset('assets/image/Group 82.jpg') }}" alt="">
+            </div>
+            <p class="text-2xl font-bold text-chillBlue">
+                <span>Dr. Leo William</span>
+            </p>
+            <p>Expert Osteopath</p>
+        </div>
+    </div>
+    <x-button class="mx-auto mt-8" text="See More >>"></x-button>
+</div>
+@endsection
+
 @section('contents')
-@endsection()
+
+@endsection

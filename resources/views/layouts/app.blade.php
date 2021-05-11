@@ -67,6 +67,7 @@
             </div>
         </div>
     </div>
+    @yield('contents-outside-wrapper')
     <div class="wrapper">
         @yield('contents')
     </div>
@@ -85,8 +86,8 @@
                     <p>Mohandseen Branch : 010 224 555 02</p>
                     <p>El Tagamo’ Branch : 010 224 555 05</p>
                 </div>
-                <div class="contact-icons mt-30">
-                    <div class="contact-icon mb-10 flex ai-c">
+                <div class="contact-icons mt-10">
+                    <div class="contact-icon mb-3 flex ai-c">
                         <div class="icon-data">
                             <i class="fas fa-phone-alt"></i>
                         </div>
@@ -94,7 +95,7 @@
                             Academy: 002 010 224 555 03
                         </div>
                     </div>
-                    <div class="contact-icon mb-10 flex ai-c">
+                    <div class="contact-icon mb-3 flex ai-c">
                         <div class="icon-data">
                             <i class="fas fa-at"></i>
                         </div>
