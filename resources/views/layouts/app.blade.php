@@ -38,22 +38,35 @@
         <div class="sep"></div>
         <div class="second-header flex">
             <div class="logo fl-1 flex">
-                <img src="{{ asset('assets/png/logo.png') }}" alt="">
+                <a rel="canonical" href="{{ route('home') }}"><img src="{{ asset('assets/png/logo.png') }}" alt=""></a>
             </div>
             <div class="nav-section fl-1 flex">
+                @guest
 
+                    <a href="{{ route('login') }}">
+                        <div class="item">Login</div>
+                    </a>
+                    <a href="{{ route('signup') }}">
+                        <div class="item">Sign Up</div>
+                    </a>
+                @endguest
+                @auth
+                    <a href="{{ route('logout') }}">
+                        <div class="item">Logout</div>
+                    </a>
+                @endauth
                 <a href="">
                     <div class="item">EN</div>
                 </a>
-                <a href="">
+                {{-- <a href="">
                     <div class="item">RESEARCH</div>
-                </a>
+                </a> --}}
                 <a href="">
                     <div class="item">OSTEOPATHY</div>
                 </a>
-                <a href="">
+                {{-- <a href="">
                     <div class="item">FIND OSTEOPATH</div>
-                </a>
+                </a> --}}
                 <a href="">
                     <div class="item">EDUCATION</div>
                 </a>
@@ -123,6 +136,7 @@
                             <li><a href=''>FIND OSTEOPATH</a></li>
                             <li><a href=''>OSTEOPATHY</a></li>
                             <li><a href=''>RESEARCH</a></li>
+                            <li><a href='{{ route('about') }}'>ABOUT US</a></li>
                         </ul>
                     </div>
                     <div class="col">
@@ -132,7 +146,8 @@
                             <li><a href="">MEDICAL SERVICES</a></li>
                             <li><a href="">FAQ</a></li>
                             <li><a href="">REQUEST AN APPOINTMENT</a></li>
-                            <li><a href="">CONTACT US</a></li>
+                            <li><a href="{{ route('contact') }}">CONTACT US</a></li>
+                            <li><a href="{{ route('terms') }}">TERMS</a></li>
                         </ul>
                     </div>
                 </div>
