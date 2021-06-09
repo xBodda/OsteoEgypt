@@ -7,7 +7,9 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    border-color:#e4e4e7;
 }
+
 body {
     /* font-family: 'Tajawal', sans-serif; */
     color: var(--para);
