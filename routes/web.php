@@ -39,9 +39,9 @@ Route::get('/appointment-booking', [AppointmentController::class, 'index'])->nam
 
 
 
-// Route::get('/test', function () {
-//     return view('pages.test');
-// });
+Route::get('/test', function () {
+    return view('pages.controltest');
+});
 
 // Route::get('/about', function () {
 //     return view('pages.about');
