@@ -38,10 +38,27 @@ Route::get('/appointment-booking', [AppointmentController::class, 'index'])->nam
 
 
 
+// Control Routes
+Route::get('control', function () {
+    return view('pages.control.controltest');
+})->name('control');
 
-Route::get('/test', function () {
-    return view('pages.controltest');
-});
+Route::get('control/users', function () {
+    return view('pages.control.view-users');
+})->name('control-users');
+
+Route::get('control/settings', function () {
+    return view('pages.control.settings');
+})->name('control-settings');
+
+Route::get('control/appointments', function () {
+    return view('pages.control.appointments');
+})->name('control-appointments');
+
+Route::get('control/add-time', function () {
+    return view('pages.control.add-appointment-time');
+})->name('control-add-time');
+
 
 // Route::get('/about', function () {
 //     return view('pages.about');

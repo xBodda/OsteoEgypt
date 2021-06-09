@@ -10,8 +10,6 @@ module.exports = {
     extend: {},
     colors:{
         ...colors,
-        red: colors.red,
-        white: colors.white,
         blueGray: {
             lightest:"#F7F9FC",
             light:'#A8C4E5',
@@ -31,7 +29,7 @@ module.exports = {
   },
   variants: {
     extend: {
-
+          borderStyle: ['hover', 'focus'],
     },
   },
   plugins: [],
