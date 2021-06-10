@@ -79,7 +79,8 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
+                        @foreach ($appointments as $appointment)
+                        <tr>
                         <th
                           class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center"
                         >
@@ -88,18 +89,22 @@
                             class="h-12 w-12 bg-white rounded-full border"
                           />
                           <span class="ml-3 font-bold text-gray-600">
-                            Mohamed Ashraf
+                            N/A
                           </span>
                         </th>
                         <td
                           class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
                         >
-                          9/6/2021 03:15 PM
+                          {{ date('l, Y/m/d h:i A',
+                              strtotime($appointment->appointment_available_time->appointment_time)
+                              ) }}
                         </td>
                         <td
                           class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
                         >
-                          8/6/2021 01:34 AM
+                          {{ date('l, Y/m/d h:i A',
+                              strtotime($appointment->created_at)
+                              ) }}
                         </td>
                         <td
                           class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
@@ -109,7 +114,7 @@
                         <td
                           class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
                         >
-                          Mohamed Ashraf
+                          {{ $appointment->user->name }}
                         </td>
                         <td
                           class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
@@ -119,7 +124,7 @@
                         <td
                           class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
                         >
-                          Mohamed1812470@miuegypt.edu.eg
+                          {{ $appointment->user->email }}
                         </td>
                         <td
                           class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
@@ -168,8 +173,10 @@
                           </div>
                         </td>
                       </tr>
+                        @endforeach
                     </tbody>
                   </table>
+                  {{ $appointments->links() }}
                 </div>
               </div>
               <a href="#"><div class="p-4 bg-blue-500 table text-white mb-2 rounded shadow-lg hover:bg-blue-600 transition-colors">

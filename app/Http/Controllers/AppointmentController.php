@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Appointment;
 use App\Models\AppointmentAvailableTime;
 use Illuminate\Http\Request;
 
@@ -28,5 +29,13 @@ class AppointmentController extends Controller
         ]);
 
         return redirect()->route('control-add-time')->with('success','Time slot added successfully!');
+    }
+
+    public function get_schedueled_appointments()
+    {
+        $appointments = Appointment::with('appointment_available_time')->with('user')->paginate(15);
+        return view('pages.control.appointments', [
+            'appointments' => $appointments
+        ]);
     }
 }

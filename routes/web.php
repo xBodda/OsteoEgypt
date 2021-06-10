@@ -52,9 +52,7 @@ Route::get('control/settings', function () {
     return view('pages.control.settings');
 })->name('control-settings');
 
-Route::get('control/appointments', function () {
-    return view('pages.control.appointments');
-})->name('control-appointments');
+Route::get('control/appointments', [AppointmentController::class, 'get_schedueled_appointments'])->name('control-appointments');
 
 Route::get( 'control/add-time', [AppointmentController::class, 'addTimeSlot'])->name('control-add-time');
 Route::post('control/add-time', [AppointmentController::class, 'addTimeSlotAction']);

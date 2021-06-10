@@ -38,7 +38,7 @@ Route::get('user/{id}/appointments', function ($id) {
 });
 
 Route::get('appointments', function () {
-    return Appointment::with('appointment_available_time')->get();
+    return Appointment::with('appointment_available_time')->with('user')->get();
 });
 
 Route::get('appointment/{id}', function ($id) {
