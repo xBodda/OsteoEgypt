@@ -45,4 +45,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Appointment::class);
     }
+
+    function type()
+    {
+        return $this->belongsTo(UserType::class);
+    }
 }

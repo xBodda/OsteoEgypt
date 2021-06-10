@@ -4,6 +4,7 @@ use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\SignUpController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +25,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'App\Http\Controllers\PagesController@home')->name('home');
 Route::get('/about', 'App\Http\Controllers\PagesController@about')->name('about');
+
 Route::get('/terms', 'App\Http\Controllers\PagesController@terms')->name('terms');
 Route::get( '/services', 'App\Http\Controllers\PagesController@services')->name('services');
 Route::get( '/signup', 'App\Http\Controllers\PagesController@signup')->name('signup');
@@ -43,9 +45,8 @@ Route::get('control', function () {
     return view('pages.control.controltest');
 })->name('control');
 
-Route::get('control/users', function () {
-    return view('pages.control.view-users');
-})->name('control-users');
+Route::get('control/users', [UserController::class, 'users_table'])->name('control-users');
+
 
 Route::get('control/settings', function () {
     return view('pages.control.settings');
@@ -55,9 +56,9 @@ Route::get('control/appointments', function () {
     return view('pages.control.appointments');
 })->name('control-appointments');
 
-Route::get('control/add-time', function () {
-    return view('pages.control.add-appointment-time');
-})->name('control-add-time');
+Route::get( 'control/add-time', [AppointmentController::class, 'addTimeSlot'])->name('control-add-time');
+Route::post('control/add-time', [AppointmentController::class, 'addTimeSlotAction']);
+
 
 
 // Route::get('/about', function () {

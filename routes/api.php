@@ -3,6 +3,7 @@
 use App\Models\Appointment;
 use App\Models\AppointmentAvailableTime;
 use App\Models\User;
+use App\Models\UserType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -55,4 +56,11 @@ Route::get('appointment_times_available', function () {
 
 Route::get('appointment_time/{id}', function ($id) {
     return AppointmentAvailableTime::with('appointment')->find($id);
+});
+
+Route::get('users/{type}s', function ($type) {
+    $user_all = UserType::where('name', '=', $type)->with('user')->first();
+    $users = $user_all->user;
+    $user_all = collect($users)->forget('user')->all(); // this is what you must do. Be careful, this is now an array.
+    return $user_all;
 });

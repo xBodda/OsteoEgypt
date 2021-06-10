@@ -59,7 +59,8 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
+                        @foreach ($users as $user)
+                            <tr>
                         <th
                           class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center"
                         >
@@ -68,13 +69,13 @@
                             class="h-12 w-12 bg-white rounded-full border"
                           />
                           <span class="ml-3 font-bold text-gray-600">
-                            Mohamed Ashraf
+                            {{ $user->name }}
                           </span>
                         </th>
                         <td
                           class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
                         >
-                          9/6/2021
+                          {{ $user->created_at }}
                         </td>
                         <td
                           class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
@@ -84,7 +85,7 @@
                         <td
                           class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
                         >
-                          Mohamed1812470@miuegypt.edu.eg
+                         {{ $user->email }}
                         </td>
                         <td
                           class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
@@ -117,7 +118,7 @@
                             ><a
                               href="#"
                               class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700"
-                              >Send Messahe</a
+                              >Send Message</a
                             >
                             <div
                               class="h-0 my-2 border border-solid border-gray-100"
@@ -130,8 +131,13 @@
                           </div>
                         </td>
                       </tr>
+                        @endforeach
+
                     </tbody>
                   </table>
+                  <div class="p-5">
+                  {{ $users->links() }}
+                  </div>
                 </div>
               </div>
             </div>
