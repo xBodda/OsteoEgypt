@@ -145,7 +145,7 @@
 
                     </tbody>
                   </table>
-                  <div class="p-5">
+                  <div class="px-5 py-4">
                   {{ $users->links() }}
                   </div>
                 </div>
