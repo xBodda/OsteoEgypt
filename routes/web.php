@@ -37,6 +37,8 @@ Route::get('/signup', [SignUpController::class, 'index'])->name('signup');
 Route::post('/signup', [SignUpController::class, 'store']);
 Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
 Route::get('/appointment-booking', [AppointmentController::class, 'index'])->name('appointment-booking');
+Route::get( '/control/add-page', 'App\Http\Controllers\PagesController@addNewPage')->name('addNewPage');
+Route::post( '/control/addPage', 'App\Http\Controllers\PagesController@addPage')->name('addPage');
 
 
 
@@ -57,6 +59,14 @@ Route::get('control/appointments', [AppointmentController::class, 'get_scheduele
 Route::get( 'control/add-time', [AppointmentController::class, 'addTimeSlot'])->name('control-add-time');
 Route::post('control/add-time', [AppointmentController::class, 'addTimeSlotAction']);
 
+
+Route::get('control/website-settings', function () {
+    return view('pages.control.website-settings');
+})->name('website-settings');
+
+// Route::get('control/add-page', function () {
+//     return view('pages.control.add-page');
+// })->name('control-add-page]');
 
 
 // Route::get('/about', function () {
