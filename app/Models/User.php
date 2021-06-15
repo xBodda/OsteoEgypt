@@ -51,4 +51,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo(UserType::class,'user_type');
     }
+
+    public function appointmentTimes()
+    {
+        return $this->hasMany(Appointment::class);
+    }
 }
