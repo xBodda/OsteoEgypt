@@ -41,7 +41,9 @@ module.exports = {
           borderStyle: ['hover', 'focus','group-hover'],
           padding: ['hover', 'focus','group-hover'],
           minHeight: ['hover', 'focus','group-hover'],
-          display:['hover','group-hover','focus','group-focus','focus-within']
+          display:['hover','group-hover','focus','group-focus','focus-within'],
+          backgroundColor: ['active'],
+
     },
   },
   plugins: [],

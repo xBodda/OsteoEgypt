@@ -38,20 +38,40 @@ class AppointmentController extends Controller
 
     public function addTimeSlot()
     {
-        return view('pages.control.add-appointment-time');
+        $branches = Branch::get();
+        $types = AppointmentType::get();
+        $doctors = User::where('user_type','=',2)->get();
+        
+        $data = [
+                "branches"=>$branches,
+                "types"=>$types,
+                "doctors"=>$doctors];
+
+        return view('pages.control.add-appointment-time', $data);
     }
 
     public function addTimeSlotAction(Request $request){
         $request->validate([
-            'appointment_date' => 'required|date',
-            'appointment_time' => 'required|date_format:H:i'
+            'doctor' => 'required|exists:users,id',
+            'branch' => 'required|exists:branches,id',
+            'type' => 'required|exists:appointment_types,id',
+            'appointment_date' => 'required|array',
+            'appointment_time' => 'required|array',
+            'appointment_date.*' => 'required|date',
+            'appointment_time.*' => 'required|date_format:H:i',
+            
         ]);
-        
-        $combinedDT = date('Y-m-d H:i:s', strtotime($request['appointment_date'] . ' ' . $request['appointment_time']));
-
-        $user = AppointmentAvailableTime::create([
-            'appointment_time' => $combinedDT
-        ]);
+        for($i=0; $i<count($request['appointment_date']); $i++){
+            $date = $request['appointment_date'][$i];
+            $time = $request['appointment_time'][$i];
+            $combinedDT = date('Y-m-d H:i:s', strtotime($date . ' ' . $time));
+            $appointment = AppointmentAvailableTime::create([
+                'appointment_time' => $combinedDT,
+                'doctor_id' => $request['doctor'],
+                'branch_id' => $request['branch'],
+                'appointment_type_id' => $request['type'],
+            ]);
+        }
 
         return redirect()->route('control-add-time')->with('success','Time slot added successfully!');
     }

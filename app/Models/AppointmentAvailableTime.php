@@ -11,6 +11,9 @@ class AppointmentAvailableTime extends Model
 
     protected $fillable = [
         'appointment_time',
+        'doctor_id',
+        'branch_id',
+        'appointment_type_id',
     ];
 
     function appointment()
