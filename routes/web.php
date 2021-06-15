@@ -35,6 +35,7 @@ Route::get('/signup', [SignUpController::class, 'index'])->name('signup');
 Route::post('/signup', [SignUpController::class, 'store']);
 Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
 Route::get('/appointment-booking', [AppointmentController::class, 'index'])->name('appointment-booking');
+Route::get('/faq', 'App\Http\Controllers\PagesController@faq')->name('faq');
 
 
 

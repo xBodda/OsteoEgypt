@@ -7,7 +7,7 @@
 @section('contents')
     <div id="about-us-main-container">
         <div class="sidebars-about-us">
-                <div id="sidenav-t">
+                <div id="sidenav-t" class="mb-4">
                     <a href="#aboutUs" class="menu-items-about current-item-about-us">About Us</a>
                     <a href="#ourTeam" class="menu-items-about">Our Team</a>
                     <a href="#education" class="menu-items-about">Education</a>
