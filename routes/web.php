@@ -41,6 +41,9 @@ Route::post('/signup', [SignUpController::class, 'store']);
 Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
 
 Route::get( '/profile', [UserController::class, 'profile'])->name('profile');
+Route::get( 'profile/about', [UserController::class, 'profileAbout'])->name('profile-about');
+Route::get( 'profile/appointments', [UserController::class, 'profileAppointments'])->name('profile-appointments');
+Route::get( 'profile/payment', [UserController::class, 'profilePayment'])->name('profile-payment');
 
 Route::get('/appointment-booking', [AppointmentController::class, 'index'])->name('appointment-booking');
 Route::post('/appointment-booking', [AppointmentController::class, 'submit']);
@@ -94,6 +97,6 @@ Route::post('control/add-user', [UserController::class, 'add_user']);
 
 // Excel routes
 
-Route::get('export-users', [UserController::class, 'export'])->name('export-users');
+Route::get('control/export-users', [UserController::class, 'export'])->name('export-users');
 Route::get('control/import-users', [UserController::class, 'importView'])->name('import-users');
 Route::post('control/import-users', [UserController::class, 'import']);
