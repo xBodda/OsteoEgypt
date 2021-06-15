@@ -88,6 +88,6 @@ Route::get('control/website-settings', function () {
 
 // Excel routes
 
-Route::get('export-users', [UserController::class, 'export'])->name('export-users');
+Route::get('control/export-users', [UserController::class, 'export'])->name('export-users');
 Route::get('control/import-users', [UserController::class, 'importView'])->name('import-users');
 Route::post('control/import-users', [UserController::class, 'import']);
