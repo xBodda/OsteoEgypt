@@ -71,7 +71,7 @@
                             {{ explode(' ', Auth::user()->name)[0] }}
                         </button>
                     
-                @endauth
+                @endauth 
                 <a href="">
                     <div class="item">EN</div>
                 </a>
