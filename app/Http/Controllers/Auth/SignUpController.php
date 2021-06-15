@@ -28,6 +28,7 @@ class SignUpController extends Controller
             'name' => $request['name'],
             'email' => $request['email'],
             'password' => bcrypt($request['password']),
+            'user_type'=>1
         ]);
         
         Auth::login($user);

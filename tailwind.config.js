@@ -26,10 +26,22 @@ module.exports = {
             dark: '#875800',
         }
     },
+    divideWidth: {
+      DEFAULT: '1px',
+      '0': '0',
+      '2': '2px',
+     '3': '3px',
+      '4': '4px',
+     '6': '6px',
+     '8': '8px',
+    },
   },
   variants: {
     extend: {
-          borderStyle: ['hover', 'focus'],
+          borderStyle: ['hover', 'focus','group-hover'],
+          padding: ['hover', 'focus','group-hover'],
+          minHeight: ['hover', 'focus','group-hover'],
+          display:['hover','group-hover','focus','group-focus','focus-within']
     },
   },
   plugins: [],

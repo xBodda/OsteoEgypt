@@ -176,7 +176,9 @@
                         @endforeach
                     </tbody>
                   </table>
-                  {{ $appointments->links() }}
+                  <div class="px-5 py-4">
+                    {{ $appointments->links() }}
+                  </div>
                 </div>
               </div>
               <a href="#"><div class="p-4 bg-blue-500 table text-white mb-2 rounded shadow-lg hover:bg-blue-600 transition-colors">

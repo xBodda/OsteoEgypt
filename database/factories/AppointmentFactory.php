@@ -24,7 +24,7 @@ class AppointmentFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => User::all()->random()->id,
+            'user_id' => User::select('id')->where('user_type','=',1)->inRandomOrder()->first()->id,
             'appointment_available_time_id' => AppointmentAvailableTime::all()->random()->id,
         ];
     }
