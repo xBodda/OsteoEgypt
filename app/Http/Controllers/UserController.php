@@ -24,6 +24,18 @@ class UserController extends Controller
         return view('pages.profile');
     }
 
+    public function profileAbout(){
+        return view('pages.profile-about');
+    }
+
+    public function profileAppointments(){
+        return view('pages.profile-appointments');
+    }
+
+    public function profilePayment(){
+        return view('pages.profile-payment');
+    }
+
     public function export() 
     {
         return Excel::download(new UsersExport, 'users.xlsx');

@@ -22,11 +22,19 @@
                 <div class="mt-4">
                     <p class="text-xl font-black text-blueGray-dark">{{ Auth::user()->name }}</p>
                     <p class="text-sm text-gray-500">Cairo, Egypt</p>
+                    @guest
                     <div class="mt-5 flex">
                         <div class="flex-1 text-center rounded-3xl bg-chillBlue text-white px-8 py-2 text-lg font-bold">Contact</div>
                         <div class="p-1"></div>
                         <div class=" text-center  bg-lightBlue-300 rounded-3xl text-chillBlue px-5 py-2 text-lg font-bold"> <i class="fas fa-star"></i> </div>
                     </div>
+                    @endguest
+                    @auth
+                    <div class="mt-5 flex">
+                        <div class="flex-1 text-center rounded-3xl bg-chillBlue text-white px-8 py-2 text-lg font-bold cursor-pointer">Edit Profile</div>
+                        <div class="p-1"></div>
+                    </div>
+                    @endauth
                 </div>
             </div>
             <div class="w-full p-4 bg-white border-0 border-b border-solid">
@@ -65,20 +73,7 @@
             <h1 class="text-3xl text-blueGray-dark font-bold">
                 Profile Details
             </h1>
-            <div class="font-semibold flex w-full my-4 border-0 border-b pb-2 uppercase border-solid border-blueGray-light">
-                <div class="text-xl pr-4 text-gray-400 ">
-                    <a href="#">About</a>
-                </div>
-                <div class="text-xl px-4 border-0 border-b-4 border-chillBlue border-solid -mb-2.5 text-blueGray-dark font-extrabold">
-                    <a href="#">Appointments</a>
-                </div>
-                <div class="text-xl px-4 text-gray-400 ">
-                    <a href="#">Doctors</a>
-                </div>
-                <div class="text-xl px-4 text-gray-400 ">
-                    <a href="#">Payment</a>
-                </div>
-            </div>
+            @yield('profile-nav')
             @yield('profile-data')
         </div>
     </div>
