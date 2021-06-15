@@ -31,12 +31,20 @@ Route::get( '/services', 'App\Http\Controllers\PagesController@services')->name(
 Route::get( '/signup', 'App\Http\Controllers\PagesController@signup')->name('signup');
 Route::get( '/contact', 'App\Http\Controllers\PagesController@contact')->name('contact');
 Route::post( '/sendMessage', 'App\Http\Controllers\PagesController@sendMessage')->name('sendMessage');
+
 Route::get('/login', [LoginController::class,'index'])->name( 'login');
 Route::post('/login', [ LoginController::class, 'login']);
+
 Route::get('/signup', [SignUpController::class, 'index'])->name('signup');
 Route::post('/signup', [SignUpController::class, 'store']);
+
 Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
+
+Route::get( '/profile', [UserController::class, 'profile'])->name('profile');
+
 Route::get('/appointment-booking', [AppointmentController::class, 'index'])->name('appointment-booking');
+Route::post('/appointment-booking', [AppointmentController::class, 'submit']);
+
 Route::get( '/control/add-page', 'App\Http\Controllers\PagesController@addNewPage')->name('addNewPage');
 Route::post( '/control/addPage', 'App\Http\Controllers\PagesController@addPage')->name('addPage');
 
@@ -78,3 +86,8 @@ Route::get('control/website-settings', function () {
 // });
 
 
+// Excel routes
+
+Route::get('export-users', [UserController::class, 'export'])->name('export-users');
+Route::get('control/import-users', [UserController::class, 'importView'])->name('import-users');
+Route::post('control/import-users', [UserController::class, 'import']);

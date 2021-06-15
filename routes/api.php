@@ -2,6 +2,7 @@
 
 use App\Models\Appointment;
 use App\Models\AppointmentAvailableTime;
+use App\Models\Branch;
 use App\Models\User;
 use App\Models\UserType;
 use Illuminate\Http\Request;
@@ -27,7 +28,7 @@ Route::get('user/{id}', function ($id) {
 });
 
 Route::get('users', function () {
-    return User::get();
+    return User::with('type:id,name')->get();
 });
 
 Route::get('users/last_date', function () {
@@ -63,4 +64,20 @@ Route::get('users/{type}s', function ($type) {
     $users = $user_all->user;
     $user_all = collect($users)->forget('user')->all(); // this is what you must do. Be careful, this is now an array.
     return $user_all;
+});
+
+
+Route::get('available_appointments/{branch}', function ($branch) {
+    $appointments = AppointmentAvailableTime::where('branch_id',$branch)->get();
+    return $appointments;
+});
+
+Route::get('available_appointments/{branch}/{type}', function ($branch,$type) {
+    $appointments = AppointmentAvailableTime::where('branch_id',$branch)->where('appointment_type_id',$type)->get();
+    return $appointments;
+});
+
+Route::get('available_appointments/{branch}/{type}/{doctor}', function ($branch,$type,$doctor) {
+    $appointments = AppointmentAvailableTime::where('branch_id',$branch)->where('appointment_type_id',$type)->where('doctor_id',$doctor)->get();
+    return $appointments;
 });
