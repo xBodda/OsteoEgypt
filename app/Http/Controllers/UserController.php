@@ -38,4 +38,9 @@ class UserController extends Controller
     {
         return view('pages.control.import-users');
     }
+
+    public function add_user(Request $request){
+        
+        return back()->with('success','User added succesfully!');
+    }
 }

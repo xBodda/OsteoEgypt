@@ -72,6 +72,12 @@ Route::get('control/website-settings', function () {
     return view('pages.control.website-settings');
 })->name('website-settings');
 
+
+Route::get('control/add-user', function () {
+    return view('pages.control.add-user');
+})->name('add-user');
+Route::post('control/add-user', [UserController::class, 'add_user']);
+
 // Route::get('control/add-page', function () {
 //     return view('pages.control.add-page');
 // })->name('control-add-page]');

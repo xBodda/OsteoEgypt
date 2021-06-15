@@ -46,7 +46,9 @@ class AppointmentController extends Controller
             'appointment_date' => 'required|date',
             'appointment_time' => 'required|date_format:H:i'
         ]);
+        
         $combinedDT = date('Y-m-d H:i:s', strtotime($request['appointment_date'] . ' ' . $request['appointment_time']));
+
         $user = AppointmentAvailableTime::create([
             'appointment_time' => $combinedDT
         ]);
