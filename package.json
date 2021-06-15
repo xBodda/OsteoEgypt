@@ -19,6 +19,7 @@
     },
     "dependencies": {
         "intl-tel-input": "^17.0.12",
-        "libphonenumber-js": "^1.9.16"
+        "libphonenumber-js": "^1.9.16",
+        "moment": "^2.29.1"
     }
 }

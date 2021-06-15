@@ -9,14 +9,15 @@
     <script src="https://kit.fontawesome.com/b1361fb5d5.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link href="{{ asset('assets/css/master.css') }}" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    <link href="{{ asset('assets/css/master.css') }}" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script defer src="{{ asset('assets/js/app.js') }}"></script>
     <title>@yield('title') – OsteoEgypt</title>
 </head>
 
 <body>
-    <div class="header">
+    <div class="header z-10 relative" >
         <div class="first-header flex">
             <div class="about-section fl-1 flex">
                 <a href="">
@@ -38,22 +39,51 @@
         <div class="sep"></div>
         <div class="second-header flex">
             <div class="logo fl-1 flex">
-                <img src="{{ asset('assets/png/logo.png') }}" alt="">
+                <a rel="canonical" href="{{ route('home') }}"><img src="{{ asset('assets/png/logo.png') }}" alt=""></a>
             </div>
-            <div class="nav-section fl-1 flex">
+            <div class="nav-section fl-1 flex items-center">
+                @guest
 
+                    <a href="{{ route('login') }}">
+                        <div class="text-sm  font-bold bg-chillBlue hover:bg-blueGray-dark transition-colors px-5 py-1 rounded-2xl text-white">
+                            Login
+                        </div>
+                    </a>
+                    <a href="{{ route('signup') }}">
+                        <div class="item">Sign Up</div>
+                    </a>
+                @endguest
+                @auth
+                        <button class="group relative text-sm border-0 cursor-pointer font-bold bg-chillBlue hover:bg-blueGray-dark transition-colors px-6 pl-12 py-1 rounded-2xl text-white">
+                            <div class="overflow-hidden absolute left-0 top-1/2 transform -translate-y-1/2 p-1 bg-chillBlue h-11 w-11 rounded-full group-hover:bg-blueGray-dark transition-colors">
+                                <img class="object-cover w-full h-full rounded-full" src="{{ asset('assets/image/pexels-karolina-grabowska-4506113.jpg') }}" alt="">
+                            </div>
+                            <div class="fas fa-caret-down absolute right-3 top-1/2 transform -translate-y-1/2"></div>
+
+                            <div class="group text-gray-600 hidden overflow-hidden hover:block group-focus:block
+                                        text-left font-normal text-base absolute top-full w-56 border-b-8 mt-4
+                                        border-solid border-0 border-chillBlue z-10 bg-white px-6 py-6
+                                        left-1/2 transform -translate-x-1/2 ">
+                                <div class="hover:text-black mb-1"><a href="{{ route('profile') }}"> View Profile </a></div>
+                                <div class="hover:text-black mb-1"><a href="">Settings</a></div>
+                                <div class="hover:text-black mb-1"><a href="{{ route('logout') }}"> Logout </a></div>
+                            </div>
+                            {{ explode(' ', Auth::user()->name)[0] }}
+                        </button>
+                    
+                @endauth
                 <a href="">
                     <div class="item">EN</div>
                 </a>
-                <a href="">
+                {{-- <a href="">
                     <div class="item">RESEARCH</div>
-                </a>
+                </a> --}}
                 <a href="">
                     <div class="item">OSTEOPATHY</div>
                 </a>
-                <a href="">
+                {{-- <a href="">
                     <div class="item">FIND OSTEOPATH</div>
-                </a>
+                </a> --}}
                 <a href="">
                     <div class="item">EDUCATION</div>
                 </a>
@@ -67,8 +97,11 @@
             </div>
         </div>
     </div>
+    @yield('contents-outside-wrapper')
     <div class="wrapper">
+        
         @yield('contents')
+
     </div>
     <div id="footer">
         <div class="f flex">
@@ -85,8 +118,8 @@
                     <p>Mohandseen Branch : 010 224 555 02</p>
                     <p>El Tagamo’ Branch : 010 224 555 05</p>
                 </div>
-                <div class="contact-icons mt-30">
-                    <div class="contact-icon mb-10 flex ai-c">
+                <div class="contact-icons mt-10">
+                    <div class="contact-icon mb-3 flex ai-c">
                         <div class="icon-data">
                             <i class="fas fa-phone-alt"></i>
                         </div>
@@ -94,7 +127,7 @@
                             Academy: 002 010 224 555 03
                         </div>
                     </div>
-                    <div class="contact-icon mb-10 flex ai-c">
+                    <div class="contact-icon mb-3 flex ai-c">
                         <div class="icon-data">
                             <i class="fas fa-at"></i>
                         </div>
@@ -122,6 +155,7 @@
                             <li><a href=''>FIND OSTEOPATH</a></li>
                             <li><a href=''>OSTEOPATHY</a></li>
                             <li><a href=''>RESEARCH</a></li>
+                            <li><a href='{{ route('about') }}'>ABOUT US</a></li>
                         </ul>
                     </div>
                     <div class="col">
@@ -131,7 +165,8 @@
                             <li><a href="">MEDICAL SERVICES</a></li>
                             <li><a href="">FAQ</a></li>
                             <li><a href="">REQUEST AN APPOINTMENT</a></li>
-                            <li><a href="">CONTACT US</a></li>
+                            <li><a href="{{ route('contact') }}">CONTACT US</a></li>
+                            <li><a href="{{ route('terms') }}">TERMS</a></li>
                         </ul>
                     </div>
                 </div>

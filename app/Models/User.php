@@ -20,6 +20,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'user_type',
     ];
 
     /**
@@ -42,6 +43,16 @@ class User extends Authenticatable
     ];
 
     public function appointment()
+    {
+        return $this->hasMany(Appointment::class);
+    }
+
+    function type()
+    {
+        return $this->belongsTo(UserType::class,'user_type');
+    }
+
+    public function appointmentTimes()
     {
         return $this->hasMany(Appointment::class);
     }

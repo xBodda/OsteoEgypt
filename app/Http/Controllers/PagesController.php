@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Contact;
+use App\Models\Page;
 
 class PagesController extends Controller
 {
@@ -57,5 +58,29 @@ class PagesController extends Controller
 
         return redirect()->route('home');
     }
+
+    public function addNewPage()
+    {
+        $sections = DB::table('sections')->get();
+
+        return view('pages.control.add-page')->with('sections',$sections);
+    }
+
+    public function addPage(Request $REQUEST)
+    {
+        $page = new Page();
+
+        $page->section = $REQUEST->section;
+        $page->page_name = $REQUEST->pageName;
+
+        $page->save();
+
+        $contents = 'New Page Added';
+        file_put_contents(dirname(__FILE__).'../../../../resources/views/pages/'.$page->page_name.'.blade.php', $contents);
+
+        return redirect()->route('control');
+    }
+
+    
 
 }

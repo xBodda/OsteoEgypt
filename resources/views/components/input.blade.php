@@ -1,6 +1,3 @@
-
-
-
 <div @error($name) class="error" @enderror>
     <div class="flex justify-between @error($name) text-red-500 @enderror">
         <label for="{{ $name }}">{{ $message }}</label>
