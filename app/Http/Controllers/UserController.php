@@ -36,6 +36,10 @@ class UserController extends Controller
         return view('pages.profile-payment');
     }
 
+    public function profileDoctors(){
+        return view('pages.profile-doctors');
+    }
+
     public function export() 
     {
         return Excel::download(new UsersExport, 'users.xlsx');
