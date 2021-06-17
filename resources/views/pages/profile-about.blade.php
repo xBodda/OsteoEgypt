@@ -55,3 +55,7 @@
     </div>
     
 @endsection
+
+@section('profile-title')
+    Profile Details    
+@endsection

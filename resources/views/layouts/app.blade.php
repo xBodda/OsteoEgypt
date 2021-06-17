@@ -64,7 +64,7 @@
                                         text-left font-normal text-base absolute top-full w-56 border-b-8 mt-4
                                         border-solid border-0 border-chillBlue z-10 bg-white px-6 py-6
                                         left-1/2 transform -translate-x-1/2 ">
-                                <div class="hover:text-black mb-1"><a href="{{ route('profile') }}"> View Profile </a></div>
+                                <div class="hover:text-black mb-1"><a href="{{ route('profile-about') }}"> View Profile </a></div>
                                 <div class="hover:text-black mb-1"><a href="">Settings</a></div>
                                 <div class="hover:text-black mb-1"><a href="{{ route('logout') }}"> Logout </a></div>
                             </div>

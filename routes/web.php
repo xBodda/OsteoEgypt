@@ -45,6 +45,7 @@ Route::get( 'profile/about', [UserController::class, 'profileAbout'])->name('pro
 Route::get( 'profile/appointments', [UserController::class, 'profileAppointments'])->name('profile-appointments');
 Route::get( 'profile/payment', [UserController::class, 'profilePayment'])->name('profile-payment');
 Route::get( 'profile/doctors', [UserController::class, 'profileDoctors'])->name('profile-doctors');
+Route::get( 'edit-profile', [UserController::class, 'editProfile'])->name('edit-profile');
 
 Route::get('/appointment-booking', [AppointmentController::class, 'index'])->name('appointment-booking');
 Route::post('/appointment-booking', [AppointmentController::class, 'submit']);
