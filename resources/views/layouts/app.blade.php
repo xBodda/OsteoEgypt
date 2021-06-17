@@ -57,7 +57,7 @@
                 @auth
                         <button class="group relative text-sm border-0 cursor-pointer font-bold bg-chillBlue hover:bg-blueGray-dark transition-colors px-6 pl-12 py-1 rounded-2xl text-white">
                             <div class="overflow-hidden absolute left-0 top-1/2 transform -translate-y-1/2 p-1 bg-chillBlue h-11 w-11 rounded-full group-hover:bg-blueGray-dark transition-colors">
-                                <img class="object-cover w-full h-full rounded-full" src="{{ asset('assets/image/pexels-karolina-grabowska-4506113.jpg') }}" alt="">
+                                <img class="object-cover w-full h-full rounded-full" src="{{ asset('storage/images/'.Auth::user()->image) }}" alt="">
                             </div>
                             <div class="fas fa-caret-down absolute right-3 top-1/2 transform -translate-y-1/2"></div>
 

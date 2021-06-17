@@ -17,7 +17,7 @@
         <div class="w-80 shadow-lg">
             <div class="w-full p-4 bg-white border-0 border-b border-solid">
                 <div class="w-full h-64 bg-black">
-                    <img src="{{ asset('assets/image/profile-img.jpg') }}" class="w-full h-full object-center" alt="">
+                    <img src="{{ asset('storage/images/'.Auth::user()->image) }}" class="w-full h-full object-center" alt="">
                 </div>
                 <div class="mt-4">
                     <p class="text-xl font-black text-blueGray-dark">{{ Auth::user()->name }}</p>
@@ -44,11 +44,11 @@
                 </div>
                 <div class="mb-3">
                     <p class="text-base text-gray-400 uppercase">phone number</p>
-                    <p class="text-lg text-blueGray-dark font-black">01123456789</p>
+                    <p class="text-lg text-blueGray-dark font-black">{{ Auth::user()->phone }}</p>
                 </div>
                 <div class="mb-3">
                     <p class="text-base text-gray-400 uppercase">Birth date</p>
-                    <p class="text-lg text-blueGray-dark font-black">08/09/1995</p>
+                    <p class="text-lg text-blueGray-dark font-black">{{ Auth::user()->birth_date }}</p>
                 </div>
             </div>
             <div class="w-full p-4 bg-white border-0 border-b border-solid">

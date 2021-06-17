@@ -177,6 +177,7 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
 
         Maatwebsite\Excel\ExcelServiceProvider::class,
+
         
 
     ],
