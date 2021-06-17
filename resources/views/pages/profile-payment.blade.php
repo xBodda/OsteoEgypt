@@ -26,45 +26,25 @@
     </div>
 </div>
 @endsection
-
 @section('profile-data')
-    <div class="flex mt-7">
-        <div class="p-3 py-6 rounded shadow-lg w-2/6 mr-7">
-            <div class="flex items-center">
-                <div class="w-14 h-14 bg-blue-600 flex justify-center items-center text-xl rounded-full text-white md:w-12 md:h-12 shadow-sm">
-                    <i class="fab fa-cc-visa"></i>
-                </div>
-                <p class="text-lg ml-4">
-                   xxxx-9653
-                </p>
-                
-            </div>
-            <p class="w-full text-right text-red-800 cursor-pointer">
-                Remove
-            </p>
-        </div>
+    <div class="w-full border-l-8 border-solid border-0 border-chillBlue">
+    <div class="w-full p-4 pl-10  bg-white border border-solid border-blueGray-light flex items-center relative">
         
-        <div class="p-3 py-6 rounded shadow-lg w-2/6">
-            <div class="flex items-center">
-                <div class="w-14 h-14 bg-red-600 flex justify-center items-center text-xl rounded-full text-white md:w-12 md:h-12 shadow-sm">
-                    <i class="fab fa-cc-mastercard"></i>
-                </div>
-                <p class="text-lg ml-4">
-                   xxxx-5898
-                </p>
-                
+        <div>
+                <b class="text-blueGray-dark text-lg">Unpaid bill</b>
+                <p class="text-gray-500 w-8/12">You have an unpaid bill, please pay it before 02/08/2021 to avoid any penalties that may be placed on your account</p>
             </div>
-            <p class="w-full text-right text-red-800 cursor-pointer">
-                Remove
-            </p>
-        </div>
-    </div>
 
-    <hr class="sep mt-7 mb-7">
+            <button class="w-52 absolute right-0 bottom-0 px-10 font-bold py-3 border-none bg-chillBlue text-white cursor-pointer hover:bg-chillBlue-dark">
+                Pay Now
+            </button>
+        
+    </div>
+</div>
 
     
+    
 @endsection
-
 @section('profile-title')
     Profile Details    
 @endsection
