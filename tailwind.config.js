@@ -10,6 +10,13 @@ module.exports = {
     extend: {},
     colors:{
         ...colors,
+        xred: {
+            lightest:"#FFE4E4",
+            light:"#FFBBBB",
+            DEFAULT:"#E36E6E",
+            dark:"#710000",
+            
+        },
         blueGray: {
             lightest:"#F7F9FC",
             light:'#A8C4E5',
@@ -18,7 +25,11 @@ module.exports = {
             darkest:"#0F1617",
         },
         chillBlue: {
+            lightest:'#D9F3F8',
+            lighter:'#B2E5EE',
+            light:'#99D6E1',
             DEFAULT: "#118CA0",
+            dark:'#00717D',
         },
         brandy:{
             light:'#D8B26A',

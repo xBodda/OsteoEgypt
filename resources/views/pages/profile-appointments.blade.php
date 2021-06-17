@@ -66,10 +66,10 @@
         
     </div>
     <div class="absolute flex h-10 bottom-0 right-0">
-        <button class="px-10 py-3 border-none bg-blueGray-light text-blueGray-dark cursor-pointer font-bold">
-            <i class="fas fa-paperclip"></i> View Attachment
+        <button class="w-52 flex items-center justify-center px-8 py-3 border-none bg-chillBlue-lighter text-chillBlue cursor-pointer font-bold hover:bg-chillBlue-light">
+            <i class="fas fa-paperclip text-blueGray-dark text-lg mr-3 "></i> View Attachment
         </button>
-        <button class="px-10 py-3 border-none bg-red-300 text-black cursor-pointer font-bold">
+        <button class="w-52 px-10 py-3 border-none bg-xred-lightest text-xred-dark cursor-pointer font-bold hover:bg-xred-light">
             Cancel
         </button>
     </div>
