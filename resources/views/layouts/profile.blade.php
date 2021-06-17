@@ -31,7 +31,7 @@
                     @endguest
                     @auth
                     <div class="mt-5 flex">
-                        <div class="flex-1 text-center rounded-3xl bg-chillBlue text-white px-8 py-2 text-lg font-bold cursor-pointer">Edit Profile</div>
+                        <div onclick="window.location='{{ route('edit-profile') }}'" class="flex-1 text-center rounded-3xl bg-chillBlue text-white px-8 py-2 text-lg font-bold cursor-pointer">Edit Profile</div>
                         <div class="p-1"></div>
                     </div>
                     @endauth
@@ -71,7 +71,7 @@
     <div class="flex-auto ml-6">
         <div class="w-full">
             <h1 class="text-3xl text-blueGray-dark font-bold">
-                Profile Details
+                @yield('profile-title')
             </h1>
             @yield('profile-nav')
             @yield('profile-data')

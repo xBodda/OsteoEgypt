@@ -11,15 +11,15 @@
 @endsection
 
 @section('profile-nav')
-    <div class="font-semibold flex w-full my-4 border-0 border-b pb-2 uppercase border-solid border-blueGray-light">
+<div class="font-semibold flex w-full my-4 border-0 border-b pb-2 uppercase border-solid border-blueGray-light">
     <div class="text-xl pr-4 text-gray-400">
         <a href="{{ route('profile-about') }}">About</a>
     </div>
     <div class="text-xl px-4 text-gray-400">
         <a href="{{ route('profile-appointments') }}">Appointments</a>
     </div>
-    <div class="text-xl px-4 text-gray-400 ">
-        <a href="{{ route('profile') }}">Doctors</a>
+    <div class="text-xl px-4 text-gray-400">
+        <a href="{{ route('profile-doctors') }}">Doctors</a>
     </div>
     <div class="text-xl px-4 border-0 border-b-4 border-chillBlue border-solid -mb-2.5 text-blueGray-dark font-extrabold">
         <a href="{{ route('profile-payment') }}">Payment</a>
@@ -63,4 +63,8 @@
     <hr class="sep mt-7 mb-7">
 
     
+@endsection
+
+@section('profile-title')
+    Profile Details    
 @endsection
