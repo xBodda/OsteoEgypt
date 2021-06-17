@@ -28,7 +28,7 @@
 @endsection
 
 @section('profile-data')
-    <div class="w-full p-4 bg-white shadow flex items-center relative">
+    <div class="w-full p-4 bg-white border border-solid border-blueGray-light flex items-center relative">
         <div class="w-24 h-24 mr-10">
             <img class="w-full h-full object-cover" src="{{ asset('assets/image/profile-img.jpg') }}"/>
         </div>

@@ -28,15 +28,15 @@
 @endsection
 
 @section('profile-data')
-    <div class="bg-white px-12 py-8 shadow border-solid border-1 border-blueGray-light mb-5">
-        <b>Where It All Began</b>
-        <br>
+    <div class="bg-white px-12 py-8 shadow border-solid border border-blueGray-light mb-5">
+        <div class="text-xl"><b>Where It All Began</b></div>
+       
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id accusamus, perferendis nisi quam dignissimos earum aperiam recusandae praesentium iure blanditiis sapiente, libero provident facilis nobis! Aliquid sit eveniet hic. Ratione! Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni facilis culpa ipsam a asperiores iusto quos iste repudiandae fugit? Iure illo optio vero? Ab non vero, perferendis, quisquam velit eius culpa totam iure repellat et tenetur unde. Deleniti, tempore pariatur.</p>
     </div>
 
-    <div class="bg-white px-12 py-8 shadow border-solid border-1 border-blueGray-light mb-5">
-        <b>Training And Education</b>
-        <br>
+    <div class="bg-white px-12 py-8 shadow border-solid border border-blueGray-light mb-5">
+        <div class="text-xl"><b>Training And Education</b></div>
+        
         <p>Postgraduate researcher & Thesis writer -Osteopathic Medicine 2010
             Graduate OF Canadian College of Osteopathy/ Toronto –Canada 2007
             Bsc. Degree of Physical Therapy Cairo University, Faculty of Physical Therapy 1985

@@ -31,7 +31,7 @@
 <h1 class="text-2xl font-extrabold text-blueGray-dark">
     Upcoming
 </h1>
-<div class="flex w-full h-44 border border-solid border-gray-300 mt-3 relative">
+<div class="flex w-full h-44 border border-solid border-blueGray-light mt-3 relative">
     <div class="flex-initial w-2/12 h-full bg-chillBlue text-white flex flex-col justify-center items-center">
         <h1 class="text-4xl uppercase">Jan 06</h1>
         <p class="text-lg">08:00 PM</p>
