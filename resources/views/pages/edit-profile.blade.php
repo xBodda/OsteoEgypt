@@ -33,13 +33,7 @@
             <form action="{{ route('edit-profile') }}" method="GET">
                 @csrf
 
-                <div class="error">
-                    <div class="flex justify-between text-red-500 ">
-                        <label for=""></label>
-                        <p></p>
-                    </div>
-                    <input class="border border-solid text-gray-900  border-blueGray bg-blueGray-lightest "  type="" id="" name="" value="" placeholder="">
-                </div>
+                
                 
                 <x-input type="email"  name="email" message="Email Address" placeholder="Your Email Address"/>
                 <x-input type="password" name="password"  message="Password" placeholder="Password" value="" />
