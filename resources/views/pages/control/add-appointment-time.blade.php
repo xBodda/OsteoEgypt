@@ -165,8 +165,15 @@
                     </script>
                     <input type="submit" value="Submit" class="py-3 px-6 mx-4 text-white bg-emerald-500 border-none outline-none rounded shadow-lg hover:bg-emerald-600 transition-colors cursor-pointer focus:bg-emerald-700">
                   </form>
+                  
                 </div>
+                
               </div>
+              <a href="{{ route('import-times') }}"><div class="mt-4">
+                <div class="bg-blue-500 rounded px-8 py-3 shadow text-sm text-white table hover:bg-blue-600 active:bg-blue-700">
+                  <i class="fas fa-file-upload"></i> 
+                  Import/Export</div>
+              </div></a>
             </div>
           </div>
         </div>

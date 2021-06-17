@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\SignUpController;
 use App\Http\Controllers\UserController;
+use App\Models\AppointmentAvailableTime;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -99,4 +100,9 @@ Route::post('control/add-user', [UserController::class, 'add_user']);
 
 Route::get('control/export-users', [UserController::class, 'export'])->name('export-users');
 Route::get('control/import-users', [UserController::class, 'importView'])->name('import-users');
+
 Route::post('control/import-users', [UserController::class, 'import']);
+
+Route::get('control/add-times/files', [AppointmentController::class, 'importExportView'])->name('import-times');
+Route::post('control/add-times/files', [AppointmentController::class, 'import']);
+Route::get('control/add-times/export', [AppointmentController::class, 'export'])->name('export-times');

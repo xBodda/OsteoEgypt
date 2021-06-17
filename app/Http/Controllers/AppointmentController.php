@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\AppointmentAvailableTimesExport;
 use App\Http\Controllers\Controller;
 use App\Models\Appointment;
 use App\Models\AppointmentAvailableTime;
@@ -9,6 +10,7 @@ use App\Models\AppointmentType;
 use App\Models\Branch;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class AppointmentController extends Controller
 {
@@ -51,6 +53,7 @@ class AppointmentController extends Controller
     }
 
     public function addTimeSlotAction(Request $request){
+
         $request->validate([
             'doctor' => 'required|exists:users,id',
             'branch' => 'required|exists:branches,id',
@@ -59,8 +62,8 @@ class AppointmentController extends Controller
             'appointment_time' => 'required|array',
             'appointment_date.*' => 'required|date',
             'appointment_time.*' => 'required|date_format:H:i',
-            
         ]);
+
         for($i=0; $i<count($request['appointment_date']); $i++){
             $date = $request['appointment_date'][$i];
             $time = $request['appointment_time'][$i];
@@ -82,5 +85,14 @@ class AppointmentController extends Controller
         return view('pages.control.appointments', [
             'appointments' => $appointments
         ]);
+    }
+
+    public function export() 
+    {
+        return Excel::download(new AppointmentAvailableTimesExport, 'Available_time_slots' . date('Y-m-d H-i-s') . '.xlsx');
+    }
+    public function importExportView(){
+        
+        return view('pages.control.import-export-times');
     }
 }
