@@ -28,17 +28,17 @@
 @endsection
 
 @section('profile-data')
-    <div class="w-full p-4 bg-white shadow flex items-center relative">
+    <div class="w-full p-4 bg-white border border-solid border-blueGray-light flex items-center relative">
         <div class="w-24 h-24 mr-10">
-            <img class="w-full h-full object-cover" src="{{ asset('assets/image/profile-img.jpg') }}"/>
+            <img class="w-full h-full object-cover" src="{{ asset('assets/image/profile-img0.png') }}"/>
         </div>
 
         <div>
-            <b>Hagar Mohamed Refaat</b>
-            <p class="mt-3">Silver User</p>
+            <b class="text-xl">Dr. Manyara Nkruma Arendse</b>
+            <p class="mt-2 text-gray-500">Physical therapist - IAO Fifth year</p>
         </div>
 
-        <button class="absolute right-0 bottom-0 px-10 py-3 border-none bg-chillBlue text-white cursor-pointer">
+        <button class="w-52 absolute right-0 bottom-0 px-10 font-bold py-3 border-none bg-chillBlue text-white cursor-pointer hover:bg-chillBlue-dark">
             View Profile
         </button>
     </div>
