@@ -11,9 +11,9 @@
     <div class="flex">
         <div class="w-4/12 bg-white shadow mr-7 h-full">
             <div class="p-6 text-white bg-chillBlue cursor-pointer  font-bold">User Info</div>
-            <div class="p-6 text-chillBlue bg-white cursor-pointer  font-bold border border-solid hover:bg-chillBlue-lightest">Privacy</div>
-            <div class="p-6 text-chillBlue bg-white cursor-pointer  font-bold border border-solid hover:bg-chillBlue-lightest">Payment</div>
-            <div class="p-6 text-chillBlue bg-white cursor-pointer font-bold border border-solid hover:bg-chillBlue-lightest ">Settings</div>
+            <div class="p-6 text-chillBlue bg-white cursor-pointer  font-bold border border-solid hover:bg-chillBlue-lightest transition-all">Security</div>
+            <div class="p-6 text-chillBlue bg-white cursor-pointer  font-bold border border-solid hover:bg-chillBlue-lightest transition-all">Payments & Billings</div>
+            <div class="p-6 text-chillBlue bg-white cursor-pointer font-bold border border-solid hover:bg-chillBlue-lightest ">Personalize</div>
         </div>
         <div class="w-full bg-white p-6 shadow">
             <div class="flex mb-8">
