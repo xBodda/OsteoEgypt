@@ -57,7 +57,7 @@
                 @auth
                         <button class="group relative text-sm border-0 cursor-pointer font-bold bg-chillBlue hover:bg-blueGray-dark transition-colors px-6 pl-12 py-1 rounded-2xl text-white">
                             <div class="overflow-hidden absolute left-0 top-1/2 transform -translate-y-1/2 p-1 bg-chillBlue h-11 w-11 rounded-full group-hover:bg-blueGray-dark transition-colors">
-                                <img class="object-cover w-full h-full rounded-full" src="{{ asset('assets/image/pexels-karolina-grabowska-4506113.jpg') }}" alt="">
+                                <img class="object-cover w-full h-full rounded-full" src="{{ asset('storage/images/'.Auth::user()->image) }}" alt="">
                             </div>
                             <div class="fas fa-caret-down absolute right-3 top-1/2 transform -translate-y-1/2"></div>
 
@@ -97,6 +97,20 @@
 
             </div>
         </div>
+        @auth
+            @if(!Auth::user()->hasVerifiedEmail())
+                @if(Session::has('verification_message'))
+                <div class="absolute top-full -mt-4 w-full bg-green-100 border-b border-geen-500 border-solid border-0 px-36 py-4">
+                    A verification link has been sent to your email account.
+                </div>
+                @else
+                <div class="absolute top-full -mt-4 w-full bg-yellow-100 border-b border-yellow-500 border-solid border-0 px-36 py-4">
+                    Please verify your email address to use the full account features. 
+                    <form class="inline" action="{{ route('verification.send') }}" method="POST"> @csrf <button class="underline bg-opacity-0 bg-yellow-100 cursor-pointer bg-transparent border-0 outline-none">Send Verification Link</button></form> 
+                </div>
+                @endif
+            @endif
+        @endauth
     </div>
     @yield('contents-outside-wrapper')
     <div class="wrapper">
