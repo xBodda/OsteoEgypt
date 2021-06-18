@@ -10,7 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    <link href="{{ asset('assets/css/master.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    <link href="{{ asset('assets/css/master.css') }}" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script defer src="{{ asset('assets/js/app.js') }}"></script>
     <title>@yield('title') – OsteoEgypt</title>
@@ -56,7 +57,7 @@
                 @auth
                         <button class="group relative text-sm border-0 cursor-pointer font-bold bg-chillBlue hover:bg-blueGray-dark transition-colors px-6 pl-12 py-1 rounded-2xl text-white">
                             <div class="overflow-hidden absolute left-0 top-1/2 transform -translate-y-1/2 p-1 bg-chillBlue h-11 w-11 rounded-full group-hover:bg-blueGray-dark transition-colors">
-                                <img class="object-cover w-full h-full rounded-full" src="{{ asset('assets/image/pexels-karolina-grabowska-4506113.jpg') }}" alt="">
+                                <img class="object-cover w-full h-full rounded-full" src="{{ asset('storage/images/'.Auth::user()->image) }}" alt="">
                             </div>
                             <div class="fas fa-caret-down absolute right-3 top-1/2 transform -translate-y-1/2"></div>
 
@@ -64,7 +65,7 @@
                                         text-left font-normal text-base absolute top-full w-56 border-b-8 mt-4
                                         border-solid border-0 border-chillBlue z-10 bg-white px-6 py-6
                                         left-1/2 transform -translate-x-1/2 ">
-                                <div class="hover:text-black mb-1"><a href="{{ route('profile') }}"> View Profile </a></div>
+                                <div class="hover:text-black mb-1"><a href="{{ route('profile-about') }}"> View Profile </a></div>
                                 <div class="hover:text-black mb-1"><a href="">Settings</a></div>
                                 <div class="hover:text-black mb-1"><a href="{{ route('logout') }}"> Logout </a></div>
                             </div>
@@ -96,6 +97,20 @@
 
             </div>
         </div>
+        @auth
+            @if(!Auth::user()->hasVerifiedEmail())
+                @if(Session::has('verification_message'))
+                <div class="absolute top-full -mt-4 w-full bg-green-100 border-b border-geen-500 border-solid border-0 px-36 py-4">
+                    A verification link has been sent to your email account.
+                </div>
+                @else
+                <div class="absolute top-full -mt-4 w-full bg-yellow-100 border-b border-yellow-500 border-solid border-0 px-36 py-4">
+                    Please verify your email address to use the full account features. 
+                    <form class="inline" action="{{ route('verification.send') }}" method="POST"> @csrf <button class="underline bg-opacity-0 bg-yellow-100 cursor-pointer bg-transparent border-0 outline-none">Send Verification Link</button></form> 
+                </div>
+                @endif
+            @endif
+        @endauth
     </div>
     @yield('contents-outside-wrapper')
     <div class="wrapper">

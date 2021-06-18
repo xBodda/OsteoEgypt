@@ -5,6 +5,9 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\SignUpController;
 use App\Http\Controllers\UserController;
+use App\Models\AppointmentAvailableTime;
+use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +27,7 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/signup', 'App\Http\Controllers\PagesController@signup');
 
 Route::get('/', 'App\Http\Controllers\PagesController@home')->name('home');
+
 Route::get('/about', 'App\Http\Controllers\PagesController@about')->name('about');
 
 Route::get('/terms', 'App\Http\Controllers\PagesController@terms')->name('terms');
@@ -36,7 +40,9 @@ Route::get('/login', [LoginController::class,'index'])->name( 'login');
 Route::post('/login', [ LoginController::class, 'login']);
 
 Route::get('/signup', [SignUpController::class, 'index'])->name('signup');
-Route::post('/signup', [SignUpController::class, 'store']);
+Route::get('/signup/second_step', [ SignUpController::class, 'second_step'])->name('signup_second_step');
+Route::post('/signup/second_step', [SignUpController::class, 'first_step']);
+Route::post('/signup/second_step/finish', [SignUpController::class, 'store'])->name('signup_finish');
 
 Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
 
@@ -45,9 +51,10 @@ Route::get( 'profile/about', [UserController::class, 'profileAbout'])->name('pro
 Route::get( 'profile/appointments', [UserController::class, 'profileAppointments'])->name('profile-appointments');
 Route::get( 'profile/payment', [UserController::class, 'profilePayment'])->name('profile-payment');
 Route::get( 'profile/doctors', [UserController::class, 'profileDoctors'])->name('profile-doctors');
+Route::get( 'edit-profile', [UserController::class, 'editProfile'])->name('edit-profile');
 
-Route::get('/appointment-booking', [AppointmentController::class, 'index'])->name('appointment-booking');
-Route::post('/appointment-booking', [AppointmentController::class, 'submit']);
+Route::get('/appointment-booking', [AppointmentController::class, 'index'])->middleware('verified')->name('appointment-booking');
+Route::post('/appointment-booking', [AppointmentController::class, 'submit'])->middleware('verified');
 
 Route::get( '/control/add-page', 'App\Http\Controllers\PagesController@addNewPage')->name('addNewPage');
 Route::post( '/control/addPage', 'App\Http\Controllers\PagesController@addPage')->name('addPage');
@@ -100,4 +107,28 @@ Route::post('control/add-user', [UserController::class, 'add_user']);
 
 Route::get('control/export-users', [UserController::class, 'export'])->name('export-users');
 Route::get('control/import-users', [UserController::class, 'importView'])->name('import-users');
+
 Route::post('control/import-users', [UserController::class, 'import']);
+
+Route::get('control/add-times/files', [AppointmentController::class, 'importExportView'])->name('import-times');
+Route::post('control/add-times/files', [AppointmentController::class, 'import']);
+Route::get('control/add-times/export', [AppointmentController::class, 'export'])->name('export-times');
+
+
+Route::get('/email/verify', function () {
+    return view('pages.auth.verify-email');
+})->middleware('auth')->name('verification.notice');
+
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+
+    return redirect()->route('home');
+})->middleware(['auth', 'signed'])->name('verification.verify');
+
+
+Route::post('/email/verification-notification', function (Request $request) {
+
+    $request->user()->sendEmailVerificationNotification();
+
+    return back()->with('verification_message', 'Verification link sent!');
+})->middleware(['auth', 'throttle:6,1'])->name('verification.send');

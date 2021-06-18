@@ -177,7 +177,7 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
 
         Maatwebsite\Excel\ExcelServiceProvider::class,
-        
+
 
     ],
 
@@ -233,7 +233,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
-
+        'Nexmo' => Nexmo\Laravel\Facade\Nexmo::class,
     ],
 
 ];

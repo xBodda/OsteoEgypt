@@ -23,7 +23,7 @@
                 </div>
             </div>
             <div class="sep-or"></div>
-            <form action="{{ route('signup') }}" method="POST">
+            <form action="{{ route('signup_second_step') }}" method="POST">
                 @if(session('status'))
                     <div class="alert alert-fail">
                         {{ session('status') }}
@@ -33,11 +33,9 @@
 
                 <x-input type="text"  name="name" message="Full Name" placeholder="Your full name" value="{{ old('name') }}"/>
                 <x-input type="email"  name="email" message="Email Address" placeholder="Your Email Address" value="{{ old('email') }}"/>
-                <x-input type="password" name="password"  message="Password" placeholder="Password" value="" />
-                <x-input type="password" name="password_confirmation"  message="Confirm Password" placeholder="Confirm Password" value="" />
 
                 <div class="submit-button-container">
-                    <input type="submit" class="submit-button" value="Sign Up">
+                    <input type="submit" class="submit-button" value="Next">
                 </div>
                 <div class="center-text">
                     Already have an account? <a class="link-decoration" href="{{ route('login') }}">Login</a>

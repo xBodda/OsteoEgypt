@@ -17,7 +17,7 @@
         <div class="w-80 shadow-lg">
             <div class="w-full p-4 bg-white border-0 border-b border-solid">
                 <div class="w-full h-64 bg-black">
-                    <img src="{{ asset('assets/image/profile-img.jpg') }}" class="w-full h-full object-center" alt="">
+                    <img src="{{ asset('storage/images/'.Auth::user()->image) }}" class="w-full h-full object-center object-cover" alt="">
                 </div>
                 <div class="mt-4">
                     <p class="text-xl font-black text-blueGray-dark">{{ Auth::user()->name }}</p>
@@ -31,7 +31,7 @@
                     @endguest
                     @auth
                     <div class="mt-5 flex">
-                        <div class="flex-1 text-center rounded-3xl bg-chillBlue text-white px-8 py-2 text-lg font-bold cursor-pointer">Edit Profile</div>
+                        <div onclick="window.location='{{ route('edit-profile') }}'" class="flex-1 text-center rounded-3xl bg-chillBlue hover:bg-chillBlue-dark text-white px-8 py-2 text-lg font-bold cursor-pointer">Edit Profile</div>
                         <div class="p-1"></div>
                     </div>
                     @endauth
@@ -44,11 +44,11 @@
                 </div>
                 <div class="mb-3">
                     <p class="text-base text-gray-400 uppercase">phone number</p>
-                    <p class="text-lg text-blueGray-dark font-black">01123456789</p>
+                    <p class="text-lg text-blueGray-dark font-black">{{ Auth::user()->phone }}</p>
                 </div>
                 <div class="mb-3">
                     <p class="text-base text-gray-400 uppercase">Birth date</p>
-                    <p class="text-lg text-blueGray-dark font-black">08/09/1995</p>
+                    <p class="text-lg text-blueGray-dark font-black">{{ Auth::user()->birth_date }}</p>
                 </div>
             </div>
             <div class="w-full p-4 bg-white border-0 border-b border-solid">
@@ -71,7 +71,7 @@
     <div class="flex-auto ml-6">
         <div class="w-full">
             <h1 class="text-3xl text-blueGray-dark font-bold">
-                Profile Details
+                @yield('profile-title')
             </h1>
             @yield('profile-nav')
             @yield('profile-data')

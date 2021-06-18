@@ -40,6 +40,10 @@ class UserController extends Controller
         return view('pages.profile-doctors');
     }
 
+    public function editProfile(){
+        return view('pages.edit-profile');
+    }
+
     public function export() 
     {
         return Excel::download(new UsersExport, 'users.xlsx');

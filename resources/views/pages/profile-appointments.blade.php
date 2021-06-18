@@ -31,7 +31,7 @@
 <h1 class="text-2xl font-extrabold text-blueGray-dark">
     Upcoming
 </h1>
-<div class="flex w-full h-44 border border-solid border-gray-300 mt-3 relative">
+<div class="flex w-full h-44 border border-solid border-blueGray-light mt-3 relative">
     <div class="flex-initial w-2/12 h-full bg-chillBlue text-white flex flex-col justify-center items-center">
         <h1 class="text-4xl uppercase">Jan 06</h1>
         <p class="text-lg">08:00 PM</p>
@@ -66,14 +66,18 @@
         
     </div>
     <div class="absolute flex h-10 bottom-0 right-0">
-        <button class="px-10 py-3 border-none bg-blueGray-light text-blueGray-dark cursor-pointer font-bold">
-            <i class="fas fa-paperclip"></i> View Attachment
+        <button class="w-52 flex items-center justify-center px-8 py-3 border-none bg-chillBlue-lighter text-chillBlue cursor-pointer font-bold hover:bg-chillBlue-light">
+            <i class="fas fa-paperclip text-blueGray-dark text-lg mr-3 "></i> View Attachment
         </button>
-        <button class="px-10 py-3 border-none bg-red-300 text-black cursor-pointer font-bold">
+        <button class="w-52 px-10 py-3 border-none bg-xred-lightest text-xred-dark cursor-pointer font-bold hover:bg-xred-light">
             Cancel
         </button>
     </div>
     
 </div>
     
+@endsection
+
+@section('profile-title')
+    Profile Details    
 @endsection

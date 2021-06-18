@@ -81,3 +81,13 @@ Route::get('available_appointments/{branch}/{type}/{doctor}', function ($branch,
     $appointments = AppointmentAvailableTime::where('branch_id',$branch)->where('appointment_type_id',$type)->where('doctor_id',$doctor)->get();
     return $appointments;
 });
+
+
+Route::get('test', function () {
+    $appointments =  AppointmentAvailableTime::with('doctor:id,name')->
+    with('branch:id,name')->
+    with('type:id,name')->
+    with('appointment.user')->
+    get();
+    return $appointments;
+});
