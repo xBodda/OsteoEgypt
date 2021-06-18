@@ -87,7 +87,6 @@ Route::get('test', function () {
     $appointments =  AppointmentAvailableTime::with('doctor:id,name')->
     with('branch:id,name')->
     with('type:id,name')->
-    with('type:id,name')->
     with('appointment.user')->
     get();
     return $appointments;
