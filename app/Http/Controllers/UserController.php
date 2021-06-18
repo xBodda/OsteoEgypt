@@ -50,6 +50,10 @@ class UserController extends Controller
         return view('pages.edit-profile-security');
     }
 
+    public function editProfilepersonalize(){
+        return view('pages.edit-profile-personalize');
+    }
+
     public function export() 
     {
         return Excel::download(new UsersExport, 'users.xlsx');
