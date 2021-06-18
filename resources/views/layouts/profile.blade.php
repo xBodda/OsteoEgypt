@@ -17,7 +17,7 @@
         <div class="w-80 shadow-lg">
             <div class="w-full p-4 bg-white border-0 border-b border-solid">
                 <div class="w-full h-64 bg-black">
-                    <img src="{{ asset('storage/images/'.Auth::user()->image) }}" class="w-full h-full object-center" alt="">
+                    <img src="{{ asset('storage/images/'.Auth::user()->image) }}" class="w-full h-full object-center object-cover" alt="">
                 </div>
                 <div class="mt-4">
                     <p class="text-xl font-black text-blueGray-dark">{{ Auth::user()->name }}</p>

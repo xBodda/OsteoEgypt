@@ -97,6 +97,20 @@
 
             </div>
         </div>
+        @auth
+            @if(!Auth::user()->hasVerifiedEmail())
+                @if(Session::has('verification_message'))
+                <div class="absolute top-full -mt-4 w-full bg-green-100 border-b border-geen-500 border-solid border-0 px-36 py-4">
+                    A verification link has been sent to your email account.
+                </div>
+                @else
+                <div class="absolute top-full -mt-4 w-full bg-yellow-100 border-b border-yellow-500 border-solid border-0 px-36 py-4">
+                    Please verify your email address to use the full account features. 
+                    <form class="inline" action="{{ route('verification.send') }}" method="POST"> @csrf <button class="underline bg-opacity-0 bg-yellow-100 cursor-pointer bg-transparent border-0 outline-none">Send Verification Link</button></form> 
+                </div>
+                @endif
+            @endif
+        @endauth
     </div>
     @yield('contents-outside-wrapper')
     <div class="wrapper">

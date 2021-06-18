@@ -68,12 +68,14 @@ class AppointmentController extends Controller
             $date = $request['appointment_date'][$i];
             $time = $request['appointment_time'][$i];
             $combinedDT = date('Y-m-d H:i:s', strtotime($date . ' ' . $time));
+
             $appointment = AppointmentAvailableTime::create([
                 'appointment_time' => $combinedDT,
                 'doctor_id' => $request['doctor'],
                 'branch_id' => $request['branch'],
                 'appointment_type_id' => $request['type'],
             ]);
+            
         }
 
         return redirect()->route('control-add-time')->with('success','Time slot added successfully!');
