@@ -53,6 +53,7 @@ Route::get( 'profile/appointments', [UserController::class, 'profileAppointments
 Route::get( 'profile/payment', [UserController::class, 'profilePayment'])->name('profile-payment');
 Route::get( 'profile/doctors', [UserController::class, 'profileDoctors'])->name('profile-doctors');
 Route::get( 'edit-profile', [UserController::class, 'editProfile'])->name('edit-profile');
+Route::get( 'edit-profile-security', [UserController::class, 'editprofilesecurity'])->name('edit-profile-security');
 Route::post( '/save-edit-profile', 'App\Http\Controllers\UserController@saveEditProfile')->name('save-edit-profile');
 
 Route::get('/appointment-booking', [AppointmentController::class, 'index'])->middleware('verified')->name('appointment-booking');
