@@ -42,10 +42,14 @@ class UserController extends Controller
         return view('pages.profile-doctors');
     }
 
+    public function profileBadges(){
+        return view('pages.profile-badges');
+    }
+
     public function editProfile(){
         return view('pages.edit-profile');
     }
-
+    
     public function editProfileSecurity(){
         return view('pages.edit-profile-security');
     }
