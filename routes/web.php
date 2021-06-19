@@ -56,6 +56,7 @@ Route::get( 'profile/badges', [UserController::class, 'profileBadges'])->name('p
 Route::get( 'edit-profile', [UserController::class, 'editProfile'])->name('edit-profile');
 Route::get( 'edit-profile-security', [UserController::class, 'editprofilesecurity'])->name('edit-profile-security');
 Route::get( 'edit-profile-personalize', [UserController::class, 'editprofilepersonalize'])->name('edit-profile-personalize');
+Route::get( 'gallery', [UserController::class, 'gallery'])->name('gallery');
 
 Route::post( '/save-edit-profile', 'App\Http\Controllers\UserController@saveEditProfile')->name('save-edit-profile');
 

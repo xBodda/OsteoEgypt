@@ -50,6 +50,11 @@ class UserController extends Controller
         return view('pages.edit-profile');
     }
     
+    public function gallery(){
+        return view('pages.gallery');
+    }
+
+
     public function editProfileSecurity(){
         return view('pages.edit-profile-security');
     }
