@@ -54,6 +54,10 @@ class UserController extends Controller
         return view('pages.gallery');
     }
 
+    public function videosGallery(){
+        return view('pages.videos-gallery');
+    }
+
 
     public function editProfileSecurity(){
         return view('pages.edit-profile-security');
