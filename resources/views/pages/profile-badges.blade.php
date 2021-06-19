@@ -99,7 +99,7 @@
             </div>
         <div class=" ml-8 w-full">
             
-                <b class="text-blueGray-dark text-lg">Booking appointments using website 10 times</b>
+                <b class="text-blueGray-dark text-lg">Booking appointments using website 30 times</b>
                 <p class="text-gray-500 w-8/12 mb-3">1000 POINTS</p>
                 <div class="flex items-center">
                     <div class="h-3 relative w-full rounded-full overflow-hidden">

@@ -37,7 +37,7 @@
                     @endauth
                 </div>
             </div>
-            <div class="w-full p-4 bg-white border-0 border-b border-solid">
+            <div class="w-full break-words p-4 bg-white border-0 border-b border-solid">
                 <div class="mb-3">
                     <p class="text-base text-gray-400 uppercase">contact email</p>
                     <p class="text-lg text-blueGray-dark font-black">{{ Auth::user()->email }}</p>
