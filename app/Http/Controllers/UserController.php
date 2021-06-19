@@ -42,10 +42,14 @@ class UserController extends Controller
         return view('pages.profile-doctors');
     }
 
+    public function profileBadges(){
+        return view('pages.profile-badges');
+    }
+
     public function editProfile(){
         return view('pages.edit-profile');
     }
-
+    
     public function editProfileSecurity(){
         return view('pages.edit-profile-security');
     }
@@ -80,19 +84,19 @@ class UserController extends Controller
         'fname' => 'required|max:255'      
             ]);
 
-        if($input->hasFile('image')){
-            $imageName = time().'.'.$input->file('image')->extension();
-            $image = $input->file('image');
-            Image::make($image)->resize(300, 300)->save( public_path('/storage/images/' . $imageName ) );
-            $user->image = $imageName;
-        }
-
         $user = User::find(Auth::user()->id);
         $user->name = $input["fname"].' '.$input["lname"];
         $user->email = $input["email"];
         $user->gender = $input["gender"];
         $user->birth_date = $input["dob"];
         $user->phone = $input["mobile"];
+
+        if($input->hasFile('image')){
+            $imageName = time().'.'.$input->file('image')->extension();
+            $image = $input->file('image');
+            Image::make($image)->resize(300, 300)->save( public_path('/storage/images/' . $imageName ) );
+            $user->image = $imageName;
+        }
         
 
         $user->save();    	  	

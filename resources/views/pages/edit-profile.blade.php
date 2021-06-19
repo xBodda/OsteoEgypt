@@ -8,19 +8,21 @@
 
 @section('contents')
     <h1 class="text-3xl text-blueGray-dark font-bold mb-4">Edit Profile</h1>
-<form action="{{ route('save-edit-profile') }}" method="POST" enctype="multipart/form-data">
-    <div class="flex">
-        <div class="w-4/12 bg-white shadow mr-7 h-full">
-            <div class="p-6 text-white bg-chillBlue cursor-pointer  font-bold">User Info</div>
-            <div class="p-6 text-chillBlue bg-white cursor-pointer  font-bold border border-solid hover:bg-chillBlue-lightest transition-all">Security</div>
-            <div class="p-6 text-chillBlue bg-white cursor-pointer  font-bold border border-solid hover:bg-chillBlue-lightest transition-all">Payments & Billings</div>
-            <div class="p-6 text-chillBlue bg-white cursor-pointer font-bold border border-solid hover:bg-chillBlue-lightest ">Personalize</div>
-        </div>
-        <div class="w-full bg-white p-6 border border-solid border-gray-200">
-            <div class="flex mb-8">
-             
 
-            <div class="w-full bg-white p-6 ">
+   
+                 
+    
+            
+
+    <form action="{{ route('save-edit-profile') }}" method="POST" enctype="multipart/form-data">
+        <div class="flex">
+            <div class="w-4/12 bg-white shadow mr-7 h-full">
+                <div class="p-6 text-white bg-chillBlue cursor-pointer  font-bold">User Info</div>
+                <div class="p-6 text-chillBlue bg-white cursor-pointer  font-bold border border-solid hover:bg-chillBlue-lightest transition-all">Security</div>
+                <div class="p-6 text-chillBlue bg-white cursor-pointer  font-bold border border-solid hover:bg-chillBlue-lightest transition-all">Payments & Billings</div>
+                <div class="p-6 text-chillBlue bg-white cursor-pointer font-bold border border-solid hover:bg-chillBlue-lightest ">Personalize</div>
+            </div>
+            <div class="w-full bg-white p-6 border border-solid border-gray-200">
                 <div class="flex mb-8">
                     <div class="h-36 w-36 mr-10 ">
                         <img class="w-full h-full object-cover border border-solid border-gray-200 " src="{{ asset('storage/images/'.Auth::user()->image) }}"/>
