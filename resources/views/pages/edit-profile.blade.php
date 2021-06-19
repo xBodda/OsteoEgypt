@@ -17,7 +17,7 @@
                 <div class="p-6 text-chillBlue bg-white cursor-pointer  font-bold border border-solid hover:bg-chillBlue-lightest">Payment</div>
                 <div class="p-6 text-chillBlue bg-white cursor-pointer font-bold border border-solid hover:bg-chillBlue-lightest ">Settings</div>
             </div>
-            <div class="w-full bg-white p-6 shadow">
+            <div class="w-full bg-white p-6 shadow text-g">
                 <div class="flex mb-8">
                     <div class="h-36 w-36 mr-10 ">
                         <img class="w-full h-full object-cover border border-solid border-gray-500 shadow" src="{{ asset('storage/images/'.Auth::user()->image) }}"/>
