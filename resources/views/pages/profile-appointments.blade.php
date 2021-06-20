@@ -13,16 +13,16 @@
 @section('profile-nav')
 <div class="font-semibold flex w-full my-4 border-0 border-b pb-2 uppercase border-solid border-blueGray-light">
     <div class="text-xl pr-4 text-gray-400">
-        <a href="{{ route('profile-about') }}">About</a>
+        <a href="{{ route('profile-about',$user->id) }}">About</a>
     </div>
     <div class="text-xl px-4 border-0 border-b-4 border-chillBlue border-solid -mb-2.5 text-blueGray-dark font-extrabold">
-        <a href="{{ route('profile-appointments') }}">Appointments</a>
+        <a href="{{ route('profile-appointments',$user->id) }}">Appointments</a>
     </div>
     <div class="text-xl px-4  text-gray-400">
-        <a href="{{ route('profile-doctors') }}">Doctors</a>
+        <a href="{{ route('profile-doctors',$user->id) }}">Doctors</a>
     </div>
     <div class="text-xl px-4 text-gray-400 ">
-        <a href="{{ route('profile-payment') }}">Payment</a>
+        <a href="{{ route('profile-payment',$user->id) }}">Payment</a>
     </div>
 </div>
 @endsection

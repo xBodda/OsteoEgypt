@@ -47,19 +47,15 @@ Route::post('/signup/second_step/finish', [SignUpController::class, 'store'])->n
 Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
 
 Route::get( '/profile', [UserController::class, 'profile'])->name('profile');
-Route::get( 'profile/about', [UserController::class, 'profileAbout'])->name('profile-about');
-Route::get( 'profile/appointments', [UserController::class, 'profileAppointments'])->name('profile-appointments');
-Route::get( 'profile/payment', [UserController::class, 'profilePayment'])->name('profile-payment');
-Route::get( 'profile/doctors', [UserController::class, 'profileDoctors'])->name('profile-doctors');
+Route::get('/profile/{id}', [UserController::class, 'profile'])->name('profile-id');
+Route::get('profile/{id}/about', [UserController::class, 'profileAbout'])->name('profile-about');
+Route::get('profile/{id}/appointments', [UserController::class, 'profileAppointments'])->name('profile-appointments');
+Route::get('profile/{id}/payment', [UserController::class, 'profilePayment'])->name('profile-payment');
+Route::get('profile/{id}/doctors', [UserController::class, 'profileDoctors'])->name('profile-doctors');
 Route::get( 'edit-profile', [UserController::class, 'editProfile'])->name('edit-profile');
 
 Route::get('/appointment-booking', [AppointmentController::class, 'index'])->middleware('verified')->name('appointment-booking');
 Route::post('/appointment-booking', [AppointmentController::class, 'submit'])->middleware('verified');
-
-Route::get( '/control/add-page', 'App\Http\Controllers\PagesController@addNewPage')->name('addNewPage');
-Route::post( '/control/addPage', 'App\Http\Controllers\PagesController@addPage')->name('addPage');
-
-
 
 // Control Routes
 Route::get('control', function () {
@@ -77,6 +73,11 @@ Route::get('control/appointments', [AppointmentController::class, 'get_scheduele
 
 Route::get( 'control/add-time', [AppointmentController::class, 'addTimeSlot'])->name('control-add-time');
 Route::post('control/add-time', [AppointmentController::class, 'addTimeSlotAction']);
+
+Route::get('control/time-slots', [AppointmentController::class, 'ViewAvailableTimeSlots'])->name('control-time-slots');
+
+Route::get('/control/add-page', 'App\Http\Controllers\PagesController@addNewPage')->name('addNewPage');
+Route::post('/control/addPage', 'App\Http\Controllers\PagesController@addPage')->name('addPage');
 
 
 Route::get('control/website-settings', function () {

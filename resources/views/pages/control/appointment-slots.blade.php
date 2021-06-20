@@ -41,32 +41,12 @@
                         <th
                           class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-gray-50 text-gray-500 border-gray-100"
                         >
-                          Register Time
-                        </th>
-                        <th
-                          class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-gray-50 text-gray-500 border-gray-100"
-                        >
                           Type
                         </th>
                         <th
                           class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-gray-50 text-gray-500 border-gray-100"
                         >
-                          Patient Name
-                        </th>
-                        <th
-                          class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-gray-50 text-gray-500 border-gray-100"
-                        >
-                          Patient Phone
-                        </th>
-                        <th
-                          class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-gray-50 text-gray-500 border-gray-100"
-                        >
-                          Patient Email
-                        </th>
-                        <th
-                          class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-gray-50 text-gray-500 border-gray-100"
-                        >
-                          Priority
+                          Branch
                         </th>
                         <th
                           class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-gray-50 text-gray-500 border-gray-100"
@@ -79,7 +59,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                        @foreach ($appointments as $appointment)
+                        @foreach ($slots as $slot)
                         <tr>
                         <th
                           class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center"
@@ -89,61 +69,42 @@
                             class="h-12 w-12 bg-white rounded-full border"
                           />
                           <span class="ml-3 font-bold text-gray-600">
-                            N/A
+                            {{ $slot->doctor->name }}
                           </span>
                         </th>
                         <td
                           class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
                         >
                           {{ date('l, Y/m/d h:i A',
-                              strtotime($appointment->appointment_available_time->appointment_time)
+                              strtotime($slot->appointment_time)
                               ) }}
                         </td>
                         <td
                           class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
                         >
-                          {{ date('l, Y/m/d h:i A',
-                              strtotime($appointment->created_at)
-                              ) }}
+                          {{ $slot->type->name }}
                         </td>
                         <td
                           class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
                         >
-                          Child Follow Up
+                          {{ $slot->branch->name }}
                         </td>
                         <td
                           class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
                         >
-                          {{ $appointment->user->name }}
-                        </td>
-                        <td
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                        >
-                          01123456789
-                        </td>
-                        <td
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                        >
-                          {{ $appointment->user->email }}
-                        </td>
-                        <td
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                        >
+                          @if($slot->appointment)
                           <i class="fas fa-circle text-green-600 mr-1"></i>
-                          Low
-                        </td>
-                        <td
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                        >
-                          <i class="fas fa-circle text-orange-600 mr-1"></i>
-                          Waiting
+                          Taken
+                          @else
+                          <i class="fas fa-circle text-yellow-500 mr-1"></i>
+                          Free
+                          @endif
                         </td>
                         <td
                           class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right"
                         >
                           <a
-                            href="#"
-                            class="text-gray-500 block py-1 px-3"
+                            class="text-gray-500 block py-1 px-3 cursor-pointer"
                             onclick="openDropdown(event,'table-light-1-dropdown')"
                           >
                             <i class="fas fa-ellipsis-v"></i>
@@ -155,9 +116,9 @@
                             <a
                               href="#"
                               class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700"
-                              >View Patient's Profile</a
+                              >View Full Details</a
                             ><a
-                              href="#"
+                              href="{{ route('profile-about',$slot->doctor->id) }}"
                               class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700"
                               >View Doctor's Profile</a
                             >
@@ -168,7 +129,7 @@
                             <a
                               href="#"
                               class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-red-600 hover:text-white hover:bg-red-600"
-                              >Cancel Appointment</a
+                              >Delete Slot</a
                             >
                           </div>
                         </td>
@@ -177,7 +138,7 @@
                     </tbody>
                   </table>
                   <div class="px-5 py-4">
-                    {{ $appointments->links() }}
+                    {{ $slots->links() }}
                   </div>
                 </div>
               </div>
