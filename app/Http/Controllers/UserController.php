@@ -42,8 +42,29 @@ class UserController extends Controller
         return view('pages.profile-doctors');
     }
 
+    public function profileBadges(){
+        return view('pages.profile-badges');
+    }
+
     public function editProfile(){
         return view('pages.edit-profile');
+    }
+    
+    public function gallery(){
+        return view('pages.gallery');
+    }
+
+    public function videosGallery(){
+        return view('pages.videos-gallery');
+    }
+
+
+    public function editProfileSecurity(){
+        return view('pages.edit-profile-security');
+    }
+
+    public function editProfilepersonalize(){
+        return view('pages.edit-profile-personalize');
     }
 
     public function export() 

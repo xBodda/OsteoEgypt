@@ -523,21 +523,16 @@ textarea.input {
     flex-direction:column;
     width:20%;
     font-weight:bold;
-    margin-right: 30px; /* ! Add space next to the navbars with margins not with paddings */
+    margin-right: 30px; /* * Add space next to the navbars with margins not with paddings */
 }
 .current-item-about-us{
     color: #ffffff !important; /* ! Add !important next to the value to override the old value */
     background-color: var(--heading);
 }
-#sidenav-t {
-    margin-bottom:30px;
+#sidenav-t , #sidenav-te{
     width:100%;
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.12); /* ! Add Box-Shadow to the first nav-bar */
-}
-#sidenav-te{
-    width:100%;
-    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.12); /* ! Add Box-Shadow to the second nav-bar */
-}
+
 #sidenav-te .menu-items-about {
     padding: 25px 15px; /* ! Add suitable padding like the UI */
     text-decoration: none;
@@ -570,6 +565,10 @@ textarea.input {
     background-color: var(--heading);
 
 }
+
+
+
+
 
 .about-us-h1s{
     font-size:35px;
@@ -611,3 +610,9 @@ textarea.input {
 .gallery-about-us img {
     width: 100%;
 }
+
+
+
+
+/*----------------------------------------------*/
+
