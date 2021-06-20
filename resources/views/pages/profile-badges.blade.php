@@ -42,7 +42,7 @@
                 <p class="text-gray-500 w-8/12 mb-3">100 POINTS</p>
                 <div class="flex items-center">
                     <div class="h-3 relative w-full rounded-full overflow-hidden">
-                        <div class="w-full h-full bg-gray-200 absolute"></div>
+                        <div class="w-full h-full bg-chillBlue-lightest absolute"></div>
                         <div class="h-full bg-chillBlue absolute" style="width:100%"></div>
                     </div>
                     <div class=" ml-4 mr-6 text-base text-gray-500">1/1</div>
@@ -63,7 +63,7 @@
                 <p class="text-gray-500 w-8/12 mb-3">300 POINTS</p>
                 <div class="flex items-center">
                     <div class="h-3 relative w-full rounded-full overflow-hidden">
-                        <div class="w-full h-full bg-gray-200 absolute"></div>
+                        <div class="w-full h-full bg-chillBlue-lightest absolute"></div>
                         <div class="h-full bg-chillBlue absolute" style="width:40%"></div>
                     </div>
                     <div class=" ml-4 mr-6 text-base text-gray-500">2/5</div>
@@ -83,7 +83,7 @@
                 <p class="text-gray-500 w-8/12 mb-3">600 POINTS</p>
                 <div class="flex items-center">
                     <div class="h-3 relative w-full rounded-full overflow-hidden">
-                        <div class="w-full h-full bg-gray-200 absolute"></div>
+                        <div class="w-full h-full bg-chillBlue-lightest absolute"></div>
                         <div class="h-full bg-chillBlue absolute" style="width:20%"></div>
                     </div>
                     <div class=" ml-4 mr-6 text-base text-gray-500">2/10</div>
