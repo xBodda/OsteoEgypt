@@ -67,20 +67,38 @@
                                         border-solid border-0 border-chillBlue z-10 bg-white px-6 py-6
                                         left-1/2 transform -translate-x-1/2 ">
                                 <div class="hover:text-black mb-1"><a href="{{ route('profile-about',Auth::user()->id) }}"> View Profile </a></div>
-                                <div class="hover:text-black mb-1"><a href="">Settings</a></div>
+                                <div class="hover:text-black mb-1"><a href="{{ route('edit-profile') }}">Settings</a></div>
                                 <div class="hover:text-black mb-1"><a href="{{ route('logout') }}"> Logout </a></div>
                             </div>
                             {{ explode(' ', Auth::user()->name)[0] }}
                         </button>
                     
                 @endauth 
-                <a href="">
-                    <div class="item font-bold">EN</div>
-                </a>
+                <style>
+                    .dropdown-menu:hover .menu-content {
+                       display: block;
+                    }
+                    
+                    .dropdown-menu:hover .menu-content {
+                       display: block;
+                    }
+                    .dropdown-menu:hover .menu-btn {
+                       background-color: none;
+                    }
+                    </style>
+
+
                 @foreach ($navSections as $navSection)
+                    <div class="dropdown-menu relative">
                         <a href="">
-                            <div class="item font-bold">{{ strtoupper($navSection->name) }}</div>
+                            <div class="item font-bold menu-btn">{{ strtoupper($navSection->name) }}</div>
                         </a>
+                        <div class="menu-content shadow hidden absolute w-40 bg-white">
+                            @foreach ($navSection->page as $item)
+                            <a class="links-hidden hover:bg-chillBlue hover:text-white px-2 py-2 m-0 text-gray-600 font-bold block transition-all text-center" style="margin: 0" href="page/{{ strtoupper($navSection->name) }}/{{$item->id}}">{{$item->page_name}}</a>
+                            @endforeach
+                        </div>
+                    </div>
                 @endforeach
                 
 
