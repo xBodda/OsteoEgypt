@@ -137,7 +137,14 @@ class UserController extends Controller
         if($input->hasFile('image')){
             $imageName = time().'.'.$input->file('image')->extension();
             $image = $input->file('image');
-            Image::make($image)->resize(300, 300)->save( public_path('/storage/images/' . $imageName ) );
+            $max_width = 300;
+            $width = Image::make($image)->width();
+            $height = Image::make($image)->height(); 
+            $new_height = $max_width * $height / $width;
+            if($new_height > 600){
+                $new_height = 600;
+            }
+            Image::make($image)->resize($max_width, $new_height)->save( public_path('/storage/images/' . $imageName ) );
             $user->image = $imageName;
         }
         

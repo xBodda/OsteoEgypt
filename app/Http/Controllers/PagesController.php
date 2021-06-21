@@ -84,20 +84,6 @@ class PagesController extends Controller
         return redirect()->route('control');
     }
 
-    public function bookOnSpot() {
-        $branches = Branch::get();
-        $types = AppointmentType::get();
-        $doctors = User::where('user_type','=',2)->get();
-        
-        $data = [
-                "branches"=>$branches,
-                "types"=>$types,
-                "doctors"=>$doctors];
-
-
-        return view('pages.control.book-on-spot', $data);
-    }
-
     
 
 }

@@ -18,6 +18,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    <link href="{{ asset('assets/css/master.css') }}" rel="stylesheet">
     <script src="https://kit.fontawesome.com/b1361fb5d5.js" crossorigin="anonymous"></script>
     <link href="{{ asset('assets/css/master.css') }}" rel="stylesheet">
+
     <title>@yield('title') | OsteoEgypt</title>
   </head>
   <body class="text-gray-800 antialiased">
@@ -351,5 +352,7 @@
         document.getElementById(collapseID).classList.toggle("px-6");
       }
     </script>
+    <script src="{{ asset('assets/js/app.js') }}"></script>
+    
   </body>
 </html>
