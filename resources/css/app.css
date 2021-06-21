@@ -532,7 +532,7 @@ textarea.input {
 #sidenav-t , #sidenav-te{
     width:100%;
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.12); /* ! Add Box-Shadow to the first nav-bar */
-
+}
 #sidenav-te .menu-items-about {
     padding: 25px 15px; /* ! Add suitable padding like the UI */
     text-decoration: none;
