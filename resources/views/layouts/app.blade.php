@@ -194,13 +194,15 @@
         </div>
 
         <div class="footer-end">
-            <div class="social">
-                <a href="{{ $linkss->facebook }}"><i class="fab fa-facebook-f"></i></a>
-                <a href="{{ $linkss->instagram }}"><i class="fab fa-instagram"></i></a>
-                <a href="{{ $linkss->linkedin }}"><i class="fab fa-linkedin-in"></i></a>
-                <a href="{{ $linkss->twitter }}"><i class="fab fa-twitter"></i></a>
-                <a href="{{ $linkss->youtube }}"><i class="fab fa-youtube"></i></a>
-            </div>
+            @if(isset($linkss->facebook))
+                <div class="social">
+                    <a href="{{ $linkss->facebook }}"><i class="fab fa-facebook-f"></i></a>
+                    <a href="{{ $linkss->instagram }}"><i class="fab fa-instagram"></i></a>
+                    <a href="{{ $linkss->linkedin }}"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="{{ $linkss->twitter }}"><i class="fab fa-twitter"></i></a>
+                    <a href="{{ $linkss->youtube }}"><i class="fab fa-youtube"></i></a>
+                </div>
+            @endif
         </div>
     </div>
 </body>

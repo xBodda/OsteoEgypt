@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 use Image;
 
 class UserController extends Controller
@@ -142,7 +143,14 @@ class UserController extends Controller
         if($input->hasFile('image')){
             $imageName = time().'.'.$input->file('image')->extension();
             $image = $input->file('image');
-            Image::make($image)->resize(300, 300)->save( public_path('/storage/images/' . $imageName ) );
+            $max_width = 300;
+            $width = Image::make($image)->width();
+            $height = Image::make($image)->height(); 
+            $new_height = $max_width * $height / $width;
+            if($new_height > 600){
+                $new_height = 600;
+            }
+            Image::make($image)->resize($max_width, $new_height)->save( public_path('/storage/images/' . $imageName ) );
             $user->image = $imageName;
         }
         
@@ -154,25 +162,22 @@ class UserController extends Controller
     }
 
     public function changePassword(Request $request) {
-
-        if (!(Hash::check($request['current-password'], Auth::user()->password))) {
-            // return back()->with("error","Your current password does not matches with the password you provided. Please try again.");
-            return back()->withError("current-password","Your current password does not matches with the password you provided. Please try again.");
-        }
-
-        if(strcmp($request['current-password'], $request['new-password']) == 0) {
-            return back()->with("error","New Password cannot be same as your current password. Please choose a different password.");
-        }
-
-        $validatedData = $request->validate([
-            'current-password' => 'required',
-            'new-password' => 'required|min:6|confirmed',
+        $validator = Validator::make($request->all(), [
+            'current_password' => 'required|current_password',
+            'new-password' => 'required|min:6|max:64|confirmed|different:current_password|regex:/((?=.*[0-9])(?=.*[a-zA-Z]).{8,64})/u',
             'new-password_confirmation' => 'required',
+        ],
+        [
+            'current_password.current_password' => 'Password doesn\'t match your current password',
+            'new-password.different' => 'New Password cannot be same as your current password',
+            'new-password.regex' => 'Make sure it\'s at least 8 characters including a letter & a number.',
         ]);
-
-        if($request['new-password'] != $request['new-password_confirmation']) {
-            return back()->with("error","New Password And Confirmation Password Don't Match");
+        if ($validator->fails()) {
+            return back()
+            ->withErrors($validator)
+            ->withInput();
         }
+
 
         $user = Auth::user();
         $user->password = bcrypt($request['new-password']);

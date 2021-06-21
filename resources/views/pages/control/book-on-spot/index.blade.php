@@ -16,42 +16,42 @@
                     <h6 class="text-gray-700 text-xl font-bold">
                       Booking Details
                     </h6>
-
                   </div>
                 </div>
                 <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
-                  <form method="POST">
+                  <form method="POST" action="{{ route('book-on-spot-submit') }}">
                     @csrf
-                    
+                    <input type="hidden" name="user_id" value="{{ $user->id ?? '0' }}"/>                    
                     @if(Session::has('success'))
                         <div class="w-full bg-green-200 text-green-700 rounded px-6 py-4 text-md">
                             {{Session::get('success')}}
                         </div>
                     @endif
-
                     <h6
                       class="text-gray-400 text-sm mt-3 mb-6 font-bold uppercase">
                     </h6>
                     <div class="flex flex-wrap">
                       <div class="w-full lg:w-6/12 px-4">
                         <div class="relative w-full mb-3">
-                          <label
-                            class="block uppercase text-gray-600 text-xs font-bold mb-2"
-                            htmlFor="grid-password"
-                          >
-                            Doctor
-                          </label>
-                          <select
-                            name="doctor"
-                            id="doctor"
-                            type="text"
-                            class="border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                          >
-                            @foreach ($doctors as $doctor)
-                              <option value="{{ $doctor->id }}">{{ $doctor->name }}</option>
-                            @endforeach
-                        </select>
-                        </div>
+                        <label
+                          class="block uppercase text-gray-600 text-xs font-bold mb-2"
+                          htmlFor="grid-password"
+                        >
+                          Branch
+                        </label>
+                        
+                        <select
+                          name="branch"
+                          type="text"
+                          id="location"
+                          class="border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+
+                        >
+                        @foreach ($branches as $branch)
+                            <option value="{{ $branch->id }}">{{ $branch->name }}</option>
+                          @endforeach
+                      </select>
+                      </div>
                       </div>
                       <div class="w-full lg:w-6/12 px-4">
                         <div class="relative w-full mb-3">
@@ -74,33 +74,30 @@
                         </div>
                       </div>
                     </div>
-
                     <div class="w-full lg:w-12/12 px-4">
                       <div class="relative w-full mb-3">
-                        <label
-                          class="block uppercase text-gray-600 text-xs font-bold mb-2"
-                          htmlFor="grid-password"
-                        >
-                          Branch
-                        </label>
-                        <select
-                          name="branch"
-                          type="text"
-                          id="location"
-                          class="border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-
-                        >
-                        @foreach ($branches as $branch)
-                            <option value="{{ $branch->id }}">{{ $branch->name }}</option>
-                          @endforeach
-                      </select>
-                      </div>
+                          <label
+                            class="block uppercase text-gray-600 text-xs font-bold mb-2"
+                            htmlFor="grid-password"
+                          >
+                            Doctor
+                          </label>
+                          <select
+                            name="doctor"
+                            id="doctor"
+                            type="text"
+                            class="border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                          >
+                            @foreach ($doctors as $doctor)
+                              <option value="{{ $doctor->id }}">{{ $doctor->name }}</option>
+                            @endforeach
+                        </select>
+                        </div>
                     </div>
                     <h6
                     class="text-gray-400 text-sm mt-9 mb-3 font-bold uppercase w-full px-4">
-                        Personal Details
+                        Patient Info
                     </h6>
-                    <div id="time-slots">
                       <div class="parent flex flex-wrap">
                         <div class="w-full lg:w-6/12 px-4">
                           <div class="relative w-full mb-3">
@@ -114,6 +111,7 @@
                               type="text"
                               name="fullname"
                               placeholder="Fullname here .."
+                              value="@if(isset($user->name)){{ $user->name }}@endif"
                               class="border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                             />
                           </div>
@@ -128,14 +126,33 @@
                             </label>
                             <input required
                               type="text"
-                              name="phonenumber"
-                              placeholder="Phonenumber here .."
+                              name="phone"
+                              value="@if(isset($user->phone)){{ $user->phone }}@endif"
+                              placeholder="Phone here .."
                               class="border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                             />
                           </div>
                         </div>
                       </div>
-                    </div>
+                      <div class="parent flex flex-wrap">
+                        <div class="w-full lg:w-12/12 px-4">
+                          <div class="relative w-full mb-3">
+                            <label
+                              class="block uppercase text-gray-600 text-xs font-bold mb-2"
+                              htmlFor="grid-password"
+                            >
+                              Email
+                            </label>
+                            <input readonly
+                              type="text"
+                              name="email"
+                              placeholder="email here .."
+                              value="{{ $user->email ?? "No Email" }}"
+                              class="border-0 px-3 py-3 placeholder-gray-300 text-gray-900 outline-none bg-gray-100 rounded text-sm shadow w-full "
+                            />
+                          </div>
+                        </div>
+                     </div>
                     <h6
                     class="text-gray-400 text-sm mt-9 mb-3 font-bold uppercase w-full px-4">
                         Appointment Time
@@ -161,13 +178,10 @@
 
                       </div>
                     </div>
-                    <input type="submit" value="Book Now" class="py-3 px-6 mx-4 mt-9 text-white bg-emerald-500 border-none outline-none rounded shadow-lg hover:bg-emerald-600 transition-colors cursor-pointer focus:bg-emerald-700">
+                    <input type="submit" value="Submit" class="py-3 px-6 mx-4 mt-9 text-white bg-emerald-500 border-none outline-none rounded shadow-lg hover:bg-emerald-600 transition-colors cursor-pointer focus:bg-emerald-700">
                   </form>
-                  
                 </div>
-                
               </div>
-
             </div>
           </div>
         </div>
