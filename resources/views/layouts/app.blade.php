@@ -75,26 +75,14 @@
                     
                 @endauth 
                 <a href="">
-                    <div class="item">EN</div>
+                    <div class="item font-bold">EN</div>
                 </a>
-                {{-- <a href="">
-                    <div class="item">RESEARCH</div>
-                </a> --}}
-                <a href="">
-                    <div class="item">OSTEOPATHY</div>
-                </a>
-                {{-- <a href="">
-                    <div class="item">FIND OSTEOPATH</div>
-                </a> --}}
-                <a href="">
-                    <div class="item">EDUCATION</div>
-                </a>
-                <a href="">
-                    <div class="item">OSTEOEGYPT</div>
-                </a>
-                <a href="">
-                    <div class="item">CLINIC</div>
-                </a>
+                @foreach ($navSections as $navSection)
+                        <a href="">
+                            <div class="item font-bold">{{ strtoupper($navSection->name) }}</div>
+                        </a>
+                @endforeach
+                
 
             </div>
         </div>
