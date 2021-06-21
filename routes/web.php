@@ -4,6 +4,7 @@ use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\SignUpController;
+use App\Http\Controllers\Dashboard\BookOnSpotController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PagesController;
 use App\Models\AppointmentAvailableTime;
@@ -95,7 +96,10 @@ Route::get('control/time-slots', [AppointmentController::class, 'ViewAvailableTi
 
 Route::get('/control/add-page', 'App\Http\Controllers\PagesController@addNewPage')->name('addNewPage');
 Route::post('/control/addPage', 'App\Http\Controllers\PagesController@addPage')->name('addPage');
-Route::get('/control/book-on-spot', 'App\Http\Controllers\PagesController@bookOnSpot')->name('book-on-spot');
+
+Route::get('/control/book-on-spot', [BookOnSpotController::class, 'bookOnSpot_first_step'])->name('book-on-spot');
+Route::post('/control/book-on-spot', [BookOnSpotController::class, 'bookOnSpot_search_phone_number'])->name('book-on-spot-next');
+Route::post('/control/book-on-spot/submit', [BookOnSpotController::class, 'bookOnSpot'])->name('book-on-spot-submit');
 
 Route::get('/control/social-links', 'App\Http\Controllers\PagesController@socialLinks')->name('social-links');
 Route::post('/control/saveLinks', 'App\Http\Controllers\PagesController@saveLinks')->name('save-links');

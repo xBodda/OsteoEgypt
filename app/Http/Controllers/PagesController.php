@@ -84,46 +84,4 @@ class PagesController extends Controller
 
         return redirect()->route('control');
     }
-
-    public function bookOnSpot() {
-        $branches = Branch::get();
-        $types = AppointmentType::get();
-        $doctors = User::where('user_type','=',2)->get();
-        
-        $data = [
-                "branches"=>$branches,
-                "types"=>$types,
-                "doctors"=>$doctors];
-
-
-        return view('pages.control.book-on-spot', $data);
-    }
-
-    public function socialLinks() {
-        $links = Link::first();
-
-        return view('pages.control.social-links')->with('links',$links);
-    }
-
-    public function saveLinks(Request $REQUEST)
-    {
-        $link = new Link();
-
-        $link->facebook = $REQUEST->facebook;
-        $link->instagram = $REQUEST->instagram;
-        $link->linkedin = $REQUEST->linkedin;
-        $link->twitter = $REQUEST->twitter;
-        $link->youtube = $REQUEST->youtube;
-
-        $link->save();
-
-        return redirect()->route('control');
-    }
-
-    public function viewPages($section, $page) {
-        $pageData = Page::where('id',$page)->first();
-
-        return view('pages.blank')->with('pageData',$pageData);
-    }
-
 }

@@ -15,7 +15,7 @@ class CreatePagesTable extends Migration
     {
         Schema::create('pages', function (Blueprint $table) {
             $table->id();
-            $table->integer('section');
+            $table->foreignId('section')->constrained('sections')->onDelete('cascade');
             $table->string('page_name','80');
             $table->timestamps();
         });
