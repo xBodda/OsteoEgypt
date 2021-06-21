@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLinksTable extends Migration
+class AddContentColumnToPagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class CreateLinksTable extends Migration
      */
     public function up()
     {
-        Schema::create('links', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::table('pages', function (Blueprint $table) {
+            $table->text('content');
         });
     }
 
@@ -26,6 +25,8 @@ class CreateLinksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('links');
+        Schema::table('pages', function (Blueprint $table) {
+            $table->dropColumn('content');
+        });
     }
 }

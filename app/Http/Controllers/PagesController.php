@@ -79,8 +79,8 @@ class PagesController extends Controller
 
         $page->save();
 
-        $contents = 'New Page Added';
-        file_put_contents(dirname(__FILE__).'../../../../resources/views/pages/'.$page->page_name.'.blade.php', $contents);
+        // $contents = 'New Page Added';
+        // file_put_contents(dirname(__FILE__).'../../../../resources/views/pages/'.$page->page_name.'.blade.php', $contents);
 
         return redirect()->route('control');
     }
@@ -118,6 +118,12 @@ class PagesController extends Controller
         $link->save();
 
         return redirect()->route('control');
+    }
+
+    public function viewPages($section, $page) {
+        $pageData = Pages::where('id',$page)->first();
+
+        return view('pages.blank')->with('pageData',$pageData);
     }
 
 }

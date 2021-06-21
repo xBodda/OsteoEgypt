@@ -65,6 +65,8 @@ Route::get( 'edit-profile-personalize', [UserController::class, 'editprofilepers
 Route::get( 'gallery', [UserController::class, 'gallery'])->name('gallery');
 Route::get( 'videos-gallery', [UserController::class, 'videosGallery'])->name('videos-gallery');
 
+Route::get( 'page/{section}/{page}', [PagesController::class, 'viewPages'])->name('view-page');
+
 
 Route::post( '/save-edit-profile', 'App\Http\Controllers\UserController@saveEditProfile')->name('save-edit-profile');
 
