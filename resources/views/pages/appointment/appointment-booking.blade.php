@@ -43,7 +43,7 @@
                         <p></p>
                     </div>
                     <select name="visit_type" id="visit_type" class="input" required>
-                        <option value="" selected disabled>Choose visit type...</option>
+                        <option value="" selected disabled>Choose visit type...</option> 
                         @foreach ($types as $type)
                             <option value="{{ $type->id }}">{{ $type->name }}</option>
                         @endforeach

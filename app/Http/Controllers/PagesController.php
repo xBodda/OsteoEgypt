@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Contact;
 use App\Models\Page;
+use App\Models\Branch;
+use App\Models\AppointmentType;
+use App\Models\User;
 
 class PagesController extends Controller
 {
@@ -79,6 +82,20 @@ class PagesController extends Controller
         file_put_contents(dirname(__FILE__).'../../../../resources/views/pages/'.$page->page_name.'.blade.php', $contents);
 
         return redirect()->route('control');
+    }
+
+    public function bookOnSpot() {
+        $branches = Branch::get();
+        $types = AppointmentType::get();
+        $doctors = User::where('user_type','=',2)->get();
+        
+        $data = [
+                "branches"=>$branches,
+                "types"=>$types,
+                "doctors"=>$doctors];
+
+
+        return view('pages.control.book-on-spot', $data);
     }
 
     
