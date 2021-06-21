@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
-// use Auth;
+use Illuminate\Support\Facades\Hash;
 use Image;
 
 class UserController extends Controller
@@ -77,8 +77,12 @@ class UserController extends Controller
         return view('pages.profile-doctors', ['user' => $user]);
     }
 
-    public function profileBadges(){
-        return view('pages.profile-badges');
+    public function profileBadges($id = null){
+        $user = $this->get_user($id);
+        if (!$user) {
+            return redirect()->route('home');
+        }
+        return view('pages.profile-badges', ['user' => $user]);
     }
 
     public function editProfile(){
@@ -145,7 +149,35 @@ class UserController extends Controller
 
         $user->save();    	  	
 
-        return redirect('profile/about');
+        return back()->with('success','Your info has been updated successfully!');
 
+    }
+
+    public function changePassword(Request $request) {
+
+        if (!(Hash::check($request['current-password'], Auth::user()->password))) {
+            // return back()->with("error","Your current password does not matches with the password you provided. Please try again.");
+            return back()->withError("current-password","Your current password does not matches with the password you provided. Please try again.");
+        }
+
+        if(strcmp($request['current-password'], $request['new-password']) == 0) {
+            return back()->with("error","New Password cannot be same as your current password. Please choose a different password.");
+        }
+
+        $validatedData = $request->validate([
+            'current-password' => 'required',
+            'new-password' => 'required|min:6|confirmed',
+            'new-password_confirmation' => 'required',
+        ]);
+
+        if($request['new-password'] != $request['new-password_confirmation']) {
+            return back()->with("error","New Password And Confirmation Password Don't Match");
+        }
+
+        $user = Auth::user();
+        $user->password = bcrypt($request['new-password']);
+        $user->save();
+
+        return back()->with("success","Password changed successfully !");
     }
 }

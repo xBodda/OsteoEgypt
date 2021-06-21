@@ -22,6 +22,14 @@ class DatabaseSeeder extends Seeder
         $this->call([
             BranchSeeder::class,
         ]);
+
+        $this->call([
+            SectionsSeeder::class,
+        ]);
+
+        $this->call([
+            LinksSeeder::class,
+        ]);
         
         \App\Models\User::factory(10)->create();
         \App\Models\AppointmentAvailableTime::factory(20)->create();

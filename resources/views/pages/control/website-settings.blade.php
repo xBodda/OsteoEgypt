@@ -22,6 +22,19 @@
                 </div>
             </div>
         </a>
+
+        <a href="social-links">
+            <div class="p-3 py-6 rounded  cursor-pointer hover:bg-gray-100 shadow-lg">
+                <div class="flex items-center">
+                    <div class="w-14 h-14 bg-blue-600 flex justify-center items-center text-xl rounded-full text-white md:w-12 md:h-12 shadow-sm">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                    <p class="text-lg ml-4">
+                       Social Links
+                    </p>
+                </div>
+            </div>
+        </a>
     </div>
 </div>
 @endsection

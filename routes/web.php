@@ -54,9 +54,13 @@ Route::get('profile/{id}/about', [UserController::class, 'profileAbout'])->name(
 Route::get('profile/{id}/appointments', [UserController::class, 'profileAppointments'])->name('profile-appointments');
 Route::get('profile/{id}/payment', [UserController::class, 'profilePayment'])->name('profile-payment');
 Route::get('profile/{id}/doctors', [UserController::class, 'profileDoctors'])->name('profile-doctors');
-Route::get('profile/{id}/badges', [UserController::class, 'profileDoctors'])->name('profile-badges');
+Route::get('profile/{id}/badges', [UserController::class, 'profileBadges'])->name('profile-badges');
 Route::get( 'edit-profile', [UserController::class, 'editProfile'])->name('edit-profile');
+
+
 Route::get( 'edit-profile-security', [UserController::class, 'editprofilesecurity'])->name('edit-profile-security');
+Route::post( 'changePassword', [UserController::class, 'changePassword'])->name('changePassword');
+
 Route::get( 'edit-profile-personalize', [UserController::class, 'editprofilepersonalize'])->name('edit-profile-personalize');
 Route::get( 'gallery', [UserController::class, 'gallery'])->name('gallery');
 Route::get( 'videos-gallery', [UserController::class, 'videosGallery'])->name('videos-gallery');
@@ -90,6 +94,8 @@ Route::get('/control/add-page', 'App\Http\Controllers\PagesController@addNewPage
 Route::post('/control/addPage', 'App\Http\Controllers\PagesController@addPage')->name('addPage');
 Route::get('/control/book-on-spot', 'App\Http\Controllers\PagesController@bookOnSpot')->name('book-on-spot');
 
+Route::get('/control/social-links', 'App\Http\Controllers\PagesController@socialLinks')->name('social-links');
+Route::post('/control/saveLinks', 'App\Http\Controllers\PagesController@saveLinks')->name('save-links');
 
 Route::get('control/website-settings', function () {
     return view('pages.control.website-settings');
