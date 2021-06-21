@@ -1,5 +1,18 @@
 var moment = require('moment');
+import EmblaCarousel from 'embla-carousel'
+import "../css/embla.css";
+
 $(document).ready(function() {
+    const wrap = document.querySelector('.embla');
+    if (wrap){
+        const viewPort = wrap.querySelector(".embla__viewport");
+        const prevBtn = wrap.querySelector(".embla__button--prev");
+        const nextBtn = wrap.querySelector(".embla__button--next");
+        const embla = EmblaCarousel(viewPort, {
+            dragFree: true,
+            containScroll: "trimSnaps"
+        });
+    }
     
     if(document.getElementById('appointment_booking_page')){
         var branch = $("#location");
