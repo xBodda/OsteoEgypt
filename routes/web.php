@@ -89,6 +89,8 @@ Route::get('/control/add-page', 'App\Http\Controllers\PagesController@addNewPage
 Route::post('/control/addPage', 'App\Http\Controllers\PagesController@addPage')->name('addPage');
 Route::get('/control/book-on-spot', 'App\Http\Controllers\PagesController@bookOnSpot')->name('book-on-spot');
 
+Route::get('/control/social-links', 'App\Http\Controllers\PagesController@socialLinks')->name('social-links');
+Route::post('/control/saveLinks', 'App\Http\Controllers\PagesController@saveLinks')->name('save-links');
 
 Route::get('control/website-settings', function () {
     return view('pages.control.website-settings');
