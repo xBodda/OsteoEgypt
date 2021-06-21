@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('title')
-    Page
+    {{$pageData->page_name}}
 @endsection
 
 @section('contents')
     
-    {{ $pageData->content }}
+    {!! $pageData->content !!}
 
     {{--
     <form action="{{ route('login') }}" method="POST">

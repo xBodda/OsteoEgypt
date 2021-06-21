@@ -121,7 +121,7 @@ class PagesController extends Controller
     }
 
     public function viewPages($section, $page) {
-        $pageData = Pages::where('id',$page)->first();
+        $pageData = Page::where('id',$page)->first();
 
         return view('pages.blank')->with('pageData',$pageData);
     }
