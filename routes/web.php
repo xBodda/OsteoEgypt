@@ -53,7 +53,7 @@ Route::get('profile/{id}/about', [UserController::class, 'profileAbout'])->name(
 Route::get('profile/{id}/appointments', [UserController::class, 'profileAppointments'])->name('profile-appointments');
 Route::get('profile/{id}/payment', [UserController::class, 'profilePayment'])->name('profile-payment');
 Route::get('profile/{id}/doctors', [UserController::class, 'profileDoctors'])->name('profile-doctors');
-Route::get('profile/{id}/badges', [UserController::class, 'profileDoctors'])->name('profile-badges');
+Route::get('profile/{id}/badges', [UserController::class, 'profileBadges'])->name('profile-badges');
 Route::get( 'edit-profile', [UserController::class, 'editProfile'])->name('edit-profile');
 Route::get( 'edit-profile-security', [UserController::class, 'editprofilesecurity'])->name('edit-profile-security');
 Route::get( 'edit-profile-personalize', [UserController::class, 'editprofilepersonalize'])->name('edit-profile-personalize');

@@ -76,8 +76,12 @@ class UserController extends Controller
         return view('pages.profile-doctors', ['user' => $user]);
     }
 
-    public function profileBadges(){
-        return view('pages.profile-badges');
+    public function profileBadges($id = null){
+        $user = $this->get_user($id);
+        if (!$user) {
+            return redirect()->route('home');
+        }
+        return view('pages.profile-badges', ['user' => $user]);
     }
 
     public function editProfile(){
