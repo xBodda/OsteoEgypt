@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 use Image;
 
 class UserController extends Controller
@@ -76,8 +78,12 @@ class UserController extends Controller
         return view('pages.profile-doctors', ['user' => $user]);
     }
 
-    public function profileBadges(){
-        return view('pages.profile-badges');
+    public function profileBadges($id = null){
+        $user = $this->get_user($id);
+        if (!$user) {
+            return redirect()->route('home');
+        }
+        return view('pages.profile-badges', ['user' => $user]);
     }
 
     public function editProfile(){
@@ -153,5 +159,30 @@ class UserController extends Controller
 
         return back()->with('success','Your info has been updated successfully!');
 
+    }
+
+    public function changePassword(Request $request) {
+        $validator = Validator::make($request->all(), [
+            'current_password' => 'required|current_password',
+            'new-password' => 'required|min:6|max:64|confirmed|different:current_password|regex:/((?=.*[0-9])(?=.*[a-zA-Z]).{8,64})/u',
+            'new-password_confirmation' => 'required',
+        ],
+        [
+            'current_password.current_password' => 'Password doesn\'t match your current password',
+            'new-password.different' => 'New Password cannot be same as your current password',
+            'new-password.regex' => 'Make sure it\'s at least 8 characters including a letter & a number.',
+        ]);
+        if ($validator->fails()) {
+            return back()
+            ->withErrors($validator)
+            ->withInput();
+        }
+
+
+        $user = Auth::user();
+        $user->password = bcrypt($request['new-password']);
+        $user->save();
+
+        return back()->with("success","Password changed successfully !");
     }
 }

@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <link rel="shortcut icon" href="{{ asset('assets/image/favicon.ico') }}" />
+    <link href="{{ asset('assets/image/favicon.jpg') }}" rel="shortcut icon" type="image/png">
     <link
       rel="apple-touch-icon"
       sizes="76x76"

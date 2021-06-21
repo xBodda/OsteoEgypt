@@ -8,6 +8,7 @@ use App\Models\Page;
 use App\Models\Branch;
 use App\Models\AppointmentType;
 use App\Models\User;
+use App\Models\Link;
 
 class PagesController extends Controller
 {
@@ -83,7 +84,4 @@ class PagesController extends Controller
 
         return redirect()->route('control');
     }
-
-    
-
 }

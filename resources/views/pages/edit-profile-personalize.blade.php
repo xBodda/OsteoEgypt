@@ -46,11 +46,10 @@
 <form action="{{ route('save-edit-profile') }}" method="POST" enctype="multipart/form-data">
     <div class="flex">
         <div class="w-4/12 bg-white shadow mr-7 h-full">
-            <div class="p-6 text-chillBlue bg-white cursor-pointer  font-bold border border-solid hover:bg-chillBlue-lightest transition-all">User Info</div>
-            <div class="p-6 text-chillBlue bg-white cursor-pointer font-bold border border-solid hover:bg-chillBlue-lightest ">Security</div>
-            <div class="p-6 text-chillBlue bg-white cursor-pointer font-bold border border-solid hover:bg-chillBlue-lightest ">Payments & Billings</div>
-            <div class="p-6 text-white bg-chillBlue cursor-pointer  font-bold">Personalize</div>
-
+            <a href="{{ route('edit-profile') }}"><div class="p-6 text-chillBlue bg-white cursor-pointer font-bold border border-solid hover:bg-chillBlue-lightest transition-all">User Info</div>
+            <a href="{{ route('edit-profile-security') }}"><div class="p-6 text-chillBlue bg-white cursor-pointer  font-bold border border-solid hover:bg-chillBlue-lightest transition-all">Security</div></a>
+            <div class="p-6 text-chillBlue bg-white cursor-pointer  font-bold border border-solid hover:bg-chillBlue-lightest transition-all">Payments & Billings</div>
+            <a href="{{ route('edit-profile-personalize') }}"><div class="p-6 text-white bg-chillBlue cursor-pointer font-bold">Personalize</div></a>
         </div>
         <div class="w-full bg-white p-6 border border-solid border-gray-200">
             <div class="flex mb-0">
