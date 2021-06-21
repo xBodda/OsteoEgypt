@@ -25,7 +25,7 @@
         <a href="{{ route('profile-payment') }}">Payment</a>
     </div>
     <div class="text-xl px-4 border-0 border-b-4 border-chillBlue border-solid -mb-2.5 text-blueGray-dark font-extrabold">
-        <a href="{{ route('profile-badges') }}">Badges</a>
+        <a href="{{ route('profile-badges',$user->id) }}">Badges</a>
     </div>
 </div>
 @endsection

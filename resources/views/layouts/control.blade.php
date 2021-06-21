@@ -183,6 +183,7 @@
               <x-control-side-button name="Appointments" icon="table" url=" {{ route('control-appointments') }}" />
               <x-control-side-button name="Add Appointment Time" icon="plus" url=" {{ route('control-add-time') }}" />
               <x-control-side-button name="Appointment Time Slots" icon="clock" url=" {{ route('control-time-slots') }}" />
+              <x-control-side-button name="Book On Spot" icon="plus" url=" {{ route('book-on-spot') }}" />
               <x-control-side-button name="page" icon="clipboard-list" />
             </ul>
             <!-- Divider -->
