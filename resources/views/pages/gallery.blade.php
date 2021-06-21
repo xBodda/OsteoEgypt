@@ -13,15 +13,15 @@
 <div class="inline-flex items-center px-6 py-3 ">
     <section class="py-8 px-4">
         <div class="grid grid-cols-3 gap-4">
-            <div class="w-full h-full"><img class="w-full h-full object-center object-cover" src="{{ asset('assets/image/pexels-karolina-grabowska-4506217.jpg') }}" ></div>
-            <div class="w-full h-full"><img class="w-full h-full object-center object-cover" src="{{ asset('assets/image/pexels-photo-287237.jpeg') }}" ></div>
-            <div class="w-full h-full"><img class="w-full h-full object-center object-cover" src="{{ asset('assets/image/pexels-karolina-grabowska-4506217.jpg') }}" ></div>
-            <div class="w-full h-full"><img class="w-full h-full object-center object-cover" src="{{ asset('assets/image/pexels-photo-287237.jpeg') }}" ></div>
-            <div class="w-full h-full"><img class="w-full h-full object-center object-cover" src="{{ asset('assets/image/pexels-karolina-grabowska-4506217.jpg') }}" ></div>
-            <div class="w-full h-full"><img class="w-full h-full object-center object-cover" src="{{ asset('assets/image/pexels-photo-287237.jpeg') }}" ></div>
-            <div class="w-full h-full"><img class="w-full h-full object-center object-cover" src="{{ asset('assets/image/pexels-karolina-grabowska-4506217.jpg') }}" ></div>
-            <div class="w-full h-full"><img class="w-full h-full object-center object-cover" src="{{ asset('assets/image/pexels-photo-287237.jpeg') }}" ></div>
-            <div class="w-full h-full"><img class="w-full h-full object-center object-cover" src="{{ asset('assets/image/pexels-karolina-grabowska-4506217.jpg') }}" ></div>
+            <div class="w-full h-full relative bg-black hover:opacity-70 cursor-pointer "><img class="w-full h-full object-center object-cover cursor-pointer " src="{{ asset('assets/image/pexels-karolina-grabowska-4506217.jpg') }}" ></div>
+            <div class="w-full h-full relative bg-black hover:opacity-70 cursor-pointer "><img class="w-full h-full object-center object-cover" src="{{ asset('assets/image/pexels-photo-287237.jpeg') }}" ></div>
+            <div class="w-full h-full relative bg-black hover:opacity-70 cursor-pointer "><img class="w-full h-full object-center object-cover" src="{{ asset('assets/image/pexels-karolina-grabowska-4506217.jpg') }}" ></div>
+            <div class="w-full h-full relative bg-black hover:opacity-70 cursor-pointer "><img class="w-full h-full object-center object-cover" src="{{ asset('assets/image/pexels-photo-287237.jpeg') }}" ></div>
+            <div class="w-full h-full relative bg-black hover:opacity-70 cursor-pointer "><img class="w-full h-full object-center object-cover" src="{{ asset('assets/image/pexels-karolina-grabowska-4506217.jpg') }}" ></div>
+            <div class="w-full h-full relative bg-black hover:opacity-70 cursor-pointer "><img class="w-full h-full object-center object-cover" src="{{ asset('assets/image/pexels-photo-287237.jpeg') }}" ></div>
+            <div class="w-full h-full relative bg-black hover:opacity-70 cursor-pointer "><img class="w-full h-full object-center object-cover" src="{{ asset('assets/image/pexels-karolina-grabowska-4506217.jpg') }}" ></div>
+            <div class="w-full h-full relative bg-black hover:opacity-70 cursor-pointer "><img class="w-full h-full object-center object-cover" src="{{ asset('assets/image/pexels-photo-287237.jpeg') }}" ></div>
+            <div class="w-full h-full relative bg-black hover:opacity-70 cursor-pointer "><img class="w-full h-full object-center object-cover" src="{{ asset('assets/image/pexels-karolina-grabowska-4506217.jpg') }}" ></div>
 
         </div>
     </section>
