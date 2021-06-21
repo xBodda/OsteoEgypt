@@ -19,7 +19,10 @@ class controlSideButton extends Component
     {
         $this->name = $name;
         $this->icon = $icon;
-        $this->url = $url;
+        if(empty($url))
+            $this->url = "#";
+        else
+            $this->url = $url;
 
     }
 
