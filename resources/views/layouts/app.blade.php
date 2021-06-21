@@ -24,10 +24,10 @@
                 <a href="">
                     <div class="item">FAQ</div>
                 </a>
-                <a href="">
+                <a href="{{ route('appointment-booking') }}">
                     <div class="item">REQUEST AN APPOINTMENT</div>
                 </a>
-                <a href="">
+                <a href="{{ route('contact') }}">
                     <div class="item">CONTACT US</div>
                 </a>
             </div>

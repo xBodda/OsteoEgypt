@@ -166,9 +166,9 @@
             <!-- Navigation -->
 
             <ul class="md:flex-col md:min-w-full flex flex-col list-none">
-              <x-control-side-button name="dashboard" icon="tv" href=" {{ route('control') }} " />
-              <x-control-side-button name="settings" icon="tools" href="{{ route('control-settings') }}" />
-              <x-control-side-button name="users" icon="users" href=" {{ route('control-users') }}" />
+              <x-control-side-button name="dashboard" icon="tv" url=" {{ route('control') }} " />
+              <x-control-side-button name="settings" icon="tools" url="{{ route('control-settings') }}" />
+              <x-control-side-button name="users" icon="users" url=" {{ route('control-users') }}" />
             </ul>
 
             <!-- Divider -->
@@ -180,9 +180,9 @@
             <ul
               class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4"
             >
-              <x-control-side-button name="Appointments" icon="table" href=" {{ route('control-appointments') }}" />
-              <x-control-side-button name="Add Appointment Time" icon="plus" href=" {{ route('control-add-time') }}" />
-              <x-control-side-button name="Appointment Time Slots" icon="clock" href=" {{ route('control-time-slots') }}" />
+              <x-control-side-button name="Appointments" icon="table" url=" {{ route('control-appointments') }}" />
+              <x-control-side-button name="Add Appointment Time" icon="plus" url=" {{ route('control-add-time') }}" />
+              <x-control-side-button name="Appointment Time Slots" icon="clock" url=" {{ route('control-time-slots') }}" />
               <x-control-side-button name="page" icon="clipboard-list" />
             </ul>
             <!-- Divider -->

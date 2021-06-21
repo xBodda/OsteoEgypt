@@ -91,7 +91,7 @@ class AppointmentController extends Controller
 
     public function ViewAvailableTimeSlots()
     {
-        $time_slots = AppointmentAvailableTime::with('appointment')->with('doctor:id,name')->with('branch')->with('type')->paginate(15);
+        $time_slots = AppointmentAvailableTime::with('appointment')->with('doctor:id,name,image')->with('branch')->with('type')->paginate(15);
         return view('pages.control.appointment-slots', [
             'slots' => $time_slots
         ]);

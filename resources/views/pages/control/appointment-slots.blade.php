@@ -65,7 +65,7 @@
                           class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center"
                         >
                           <img
-                            src="{{ asset('assets/image/profile-img.jpg') }}"
+                            src="{{ asset('storage/images/'.$slot->doctor->image) }}"
                             class="h-12 w-12 bg-white rounded-full border"
                           />
                           <span class="ml-3 font-bold text-gray-600">
@@ -142,10 +142,10 @@
                   </div>
                 </div>
               </div>
-              <a href="#"><div class="p-4 bg-blue-500 table text-white mb-2 rounded shadow-lg hover:bg-blue-600 transition-colors">
-                <i class="fas fa-table mr-1"></i> Available Appointment Times
+              <a href="{{ route('control-appointments') }}"><div class="p-4 bg-blue-500 table text-white mb-2 rounded shadow-lg hover:bg-blue-600 transition-colors">
+                <i class="fas fa-table mr-1"></i> Booked Appointments
               </div></a>
-              <a href="#"><div class="p-4 bg-emerald-500 table text-white rounded shadow-lg hover:bg-emerald-600 transition-colors">
+              <a href="{{ route('control-add-time') }}"><div class="p-4 bg-emerald-500 table text-white rounded shadow-lg hover:bg-emerald-600 transition-colors">
                 <i class="fas fa-plus mr-1"></i> Add Appointment Time
               </div></a>
             </div>
