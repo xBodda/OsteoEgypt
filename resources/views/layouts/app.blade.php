@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <div class="header z-10 relative" >
+    <div class="header z-10 relative overflow-hidden w-full" >
         <div class="first-header flex">
             <div class="about-section fl-1 flex">
                 <a href="">
