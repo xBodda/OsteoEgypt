@@ -13,13 +13,16 @@ class controlSideButton extends Component
      */
     public $name;
     public $icon;
-    public $href;
+    public $url;
 
-    public function __construct($href = '', $name = '', $icon = '', $currentPage = '')
+    public function __construct($url = '', $name = '', $icon = '', $currentPage = '')
     {
         $this->name = $name;
         $this->icon = $icon;
-        $this->href = $href;
+        if(empty($url))
+            $this->url = "#";
+        else
+            $this->url = $url;
 
     }
 

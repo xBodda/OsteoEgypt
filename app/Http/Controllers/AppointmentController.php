@@ -89,6 +89,14 @@ class AppointmentController extends Controller
         ]);
     }
 
+    public function ViewAvailableTimeSlots()
+    {
+        $time_slots = AppointmentAvailableTime::with('appointment')->with('doctor:id,name,image')->with('branch')->with('type')->paginate(15);
+        return view('pages.control.appointment-slots', [
+            'slots' => $time_slots
+        ]);
+    }
+
     public function export() 
     {
         return Excel::download(new AppointmentAvailableTimesExport, 'Available_time_slots' . date('Y-m-d H-i-s') . '.xlsx');
