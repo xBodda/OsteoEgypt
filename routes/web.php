@@ -55,7 +55,11 @@ Route::get('profile/{id}/payment', [UserController::class, 'profilePayment'])->n
 Route::get('profile/{id}/doctors', [UserController::class, 'profileDoctors'])->name('profile-doctors');
 Route::get('profile/{id}/badges', [UserController::class, 'profileBadges'])->name('profile-badges');
 Route::get( 'edit-profile', [UserController::class, 'editProfile'])->name('edit-profile');
+
+
 Route::get( 'edit-profile-security', [UserController::class, 'editprofilesecurity'])->name('edit-profile-security');
+Route::post( 'changePassword', [UserController::class, 'changePassword'])->name('changePassword');
+
 Route::get( 'edit-profile-personalize', [UserController::class, 'editprofilepersonalize'])->name('edit-profile-personalize');
 Route::get( 'gallery', [UserController::class, 'gallery'])->name('gallery');
 Route::get( 'videos-gallery', [UserController::class, 'videosGallery'])->name('videos-gallery');
