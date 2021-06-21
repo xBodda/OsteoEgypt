@@ -38,7 +38,7 @@
                     <x-input type="password" name="password"  message="Password" placeholder="Password" value="" />
                     <x-input type="password" name="password_confirmation"  message="Confirm Password" placeholder="Confirm Password" value="" />
                 </div>
-
+                <p id="passwordHint"></p>
                 <div class="submit-button-container">
                     <input type="submit" class="submit-button" value="Sign Up">
                 </div>
@@ -46,6 +46,16 @@
             </form>
         </div>
     </div>
+    <script>
+            var input = document.getElementById('password');
+            var timeoutx;
+            input.addEventListener("input",function() {
+                document.getElementById('passwordHint').innerHTML = "Make sure it's at least 8 characters including a number or a lowercase letter.";
+                clearTimeout(timeoutx);
+                timeoutx = setTimeout(function(){ document.getElementById('passwordHint').innerHTML = ""; },5000);
+                console.log("test");
+            });
+    </script>
 
     {{--
     <form action="{{ route('login') }}" method="POST">

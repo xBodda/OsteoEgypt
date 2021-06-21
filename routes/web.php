@@ -29,6 +29,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'App\Http\Controllers\PagesController@home')->name('home');
 
 Route::get('/about', 'App\Http\Controllers\PagesController@about')->name('about');
+Route::get('/faq', 'App\Http\Controllers\PagesController@faq')->name('faq');
 
 Route::get('/terms', 'App\Http\Controllers\PagesController@terms')->name('terms');
 Route::get( '/services', 'App\Http\Controllers\PagesController@services')->name('services');
@@ -53,6 +54,7 @@ Route::get('profile/{id}/about', [UserController::class, 'profileAbout'])->name(
 Route::get('profile/{id}/appointments', [UserController::class, 'profileAppointments'])->name('profile-appointments');
 Route::get('profile/{id}/payment', [UserController::class, 'profilePayment'])->name('profile-payment');
 Route::get('profile/{id}/doctors', [UserController::class, 'profileDoctors'])->name('profile-doctors');
+Route::get('profile/{id}/badges', [UserController::class, 'profileDoctors'])->name('profile-badges');
 Route::get( 'edit-profile', [UserController::class, 'editProfile'])->name('edit-profile');
 Route::get( 'edit-profile-security', [UserController::class, 'editprofilesecurity'])->name('edit-profile-security');
 Route::get( 'edit-profile-personalize', [UserController::class, 'editprofilepersonalize'])->name('edit-profile-personalize');
@@ -86,6 +88,7 @@ Route::get('control/time-slots', [AppointmentController::class, 'ViewAvailableTi
 
 Route::get('/control/add-page', 'App\Http\Controllers\PagesController@addNewPage')->name('addNewPage');
 Route::post('/control/addPage', 'App\Http\Controllers\PagesController@addPage')->name('addPage');
+Route::get('/control/book-on-spot', 'App\Http\Controllers\PagesController@bookOnSpot')->name('book-on-spot');
 
 
 Route::get('control/website-settings', function () {
