@@ -8,6 +8,7 @@ use App\Models\Page;
 use App\Models\Branch;
 use App\Models\AppointmentType;
 use App\Models\User;
+use App\Models\Link;
 
 class PagesController extends Controller
 {
@@ -98,6 +99,25 @@ class PagesController extends Controller
         return view('pages.control.book-on-spot', $data);
     }
 
-    
+    public function socialLinks() {
+        $links = Link::first();
+
+        return view('pages.control.social-links')->with('links',$links);
+    }
+
+    public function saveLinks(Request $REQUEST)
+    {
+        $link = new Link();
+
+        $link->facebook = $REQUEST->facebook;
+        $link->instagram = $REQUEST->instagram;
+        $link->linkedin = $REQUEST->linkedin;
+        $link->twitter = $REQUEST->twitter;
+        $link->youtube = $REQUEST->youtube;
+
+        $link->save();
+
+        return redirect()->route('control');
+    }
 
 }
