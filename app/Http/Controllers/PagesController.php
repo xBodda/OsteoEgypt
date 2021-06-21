@@ -33,6 +33,11 @@ class PagesController extends Controller
         return view('pages.signup');
     }
 
+    public function faq()
+    {
+        return view('pages.faq');
+    }
+
     public function contact()
     {
         $countries = DB::table('locations')->get();

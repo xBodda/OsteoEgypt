@@ -44,6 +44,7 @@ Route::get('/signup/second_step', [ SignUpController::class, 'second_step'])->na
 Route::post('/signup/second_step', [SignUpController::class, 'first_step']);
 Route::post('/signup/second_step/finish', [SignUpController::class, 'store'])->name('signup_finish');
 
+
 Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
 
 Route::get( '/profile', [UserController::class, 'profile'])->name('profile');
@@ -53,6 +54,13 @@ Route::get('profile/{id}/appointments', [UserController::class, 'profileAppointm
 Route::get('profile/{id}/payment', [UserController::class, 'profilePayment'])->name('profile-payment');
 Route::get('profile/{id}/doctors', [UserController::class, 'profileDoctors'])->name('profile-doctors');
 Route::get( 'edit-profile', [UserController::class, 'editProfile'])->name('edit-profile');
+Route::get( 'edit-profile-security', [UserController::class, 'editprofilesecurity'])->name('edit-profile-security');
+Route::get( 'edit-profile-personalize', [UserController::class, 'editprofilepersonalize'])->name('edit-profile-personalize');
+Route::get( 'gallery', [UserController::class, 'gallery'])->name('gallery');
+Route::get( 'videos-gallery', [UserController::class, 'videosGallery'])->name('videos-gallery');
+
+
+Route::post( '/save-edit-profile', 'App\Http\Controllers\UserController@saveEditProfile')->name('save-edit-profile');
 
 Route::get('/appointment-booking', [AppointmentController::class, 'index'])->middleware('verified')->name('appointment-booking');
 Route::post('/appointment-booking', [AppointmentController::class, 'submit'])->middleware('verified');

@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
+use Image;
 
 class UserController extends Controller
 {
@@ -75,8 +76,29 @@ class UserController extends Controller
         return view('pages.profile-doctors', ['user' => $user]);
     }
 
+    public function profileBadges(){
+        return view('pages.profile-badges');
+    }
+
     public function editProfile(){
         return view('pages.edit-profile');
+    }
+    
+    public function gallery(){
+        return view('pages.gallery');
+    }
+
+    public function videosGallery(){
+        return view('pages.videos-gallery');
+    }
+
+
+    public function editProfileSecurity(){
+        return view('pages.edit-profile-security');
+    }
+
+    public function editProfilepersonalize(){
+        return view('pages.edit-profile-personalize');
     }
 
     public function export() 
@@ -97,5 +119,32 @@ class UserController extends Controller
     public function add_user(Request $request){
         
         return back()->with('success','User added succesfully!');
+    }
+
+    public function saveEditProfile(Request $input) {
+
+        $this->validate($input, [
+        'fname' => 'required|max:255'      
+            ]);
+
+        $user = User::find(Auth::user()->id);
+        $user->name = $input["fname"].' '.$input["lname"];
+        $user->email = $input["email"];
+        $user->gender = $input["gender"];
+        $user->birth_date = $input["dob"];
+        $user->phone = $input["mobile"];
+
+        if($input->hasFile('image')){
+            $imageName = time().'.'.$input->file('image')->extension();
+            $image = $input->file('image');
+            Image::make($image)->resize(300, 300)->save( public_path('/storage/images/' . $imageName ) );
+            $user->image = $imageName;
+        }
+        
+
+        $user->save();    	  	
+
+        return redirect('profile/about');
+
     }
 }

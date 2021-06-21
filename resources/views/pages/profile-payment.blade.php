@@ -24,6 +24,9 @@
     <div class="text-xl px-4 border-0 border-b-4 border-chillBlue border-solid -mb-2.5 text-blueGray-dark font-extrabold">
         <a href="{{ route('profile-payment',$user->id) }}">Payment</a>
     </div>
+    <div class="text-xl px-4 text-gray-400">
+        <a href="{{ route('profile-badges') }}">Badges</a>
+    </div>
 </div>
 @endsection
 @section('profile-data')
