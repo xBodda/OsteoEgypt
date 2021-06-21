@@ -16,6 +16,7 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
 
 
 $(document).ready(function () {
+  console.log('Test');
   var wrap = document.querySelector('.embla');
 
   if (wrap) {
@@ -40,6 +41,7 @@ $(document).ready(function () {
     appointment_checker(branch_value, type_value, doctor_value);
     branch.change(function () {
       branch_value = branch.val();
+      console.log(branch_value);
       $.get("/api/available_appointments/" + branch_value, function (data) {
         empty_date_time_options();
         appointment_checker(branch_value, type_value, doctor_value);
@@ -57,6 +59,12 @@ $(document).ready(function () {
       $.get("/api/available_appointments/" + branch_value + '/' + type_value + '/' + doctor_value, function (data) {
         if (appointment_checker(branch_value, type_value, doctor_value)) {
           empty_date_time_options();
+
+          if (data.length == 0) {
+            date.html('<option value="" selected disabled >No Available Appointment Time</option>');
+            console;
+          }
+
           data.forEach(set_date_time_options);
         }
       });

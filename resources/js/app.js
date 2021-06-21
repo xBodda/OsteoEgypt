@@ -3,6 +3,7 @@ import EmblaCarousel from 'embla-carousel'
 import "../css/embla.css";
 
 $(document).ready(function() {
+    console.log('Test');
     const wrap = document.querySelector('.embla');
     if (wrap){
         const viewPort = wrap.querySelector(".embla__viewport");
@@ -19,7 +20,7 @@ $(document).ready(function() {
         var type = $("#visit_type");
         var doctor = $("#doctor");
         var date = $("#date");
-
+        
         var branch_value = null;
         var type_value = null;
         var doctor_value = null;
@@ -28,6 +29,7 @@ $(document).ready(function() {
 
         branch.change(function(){
             branch_value = branch.val();
+            console.log(branch_value);
             $.get( "/api/available_appointments/"+branch_value, function( data ) {
                     empty_date_time_options();
                     appointment_checker(branch_value,type_value,doctor_value)
@@ -47,6 +49,10 @@ $(document).ready(function() {
             $.get( "/api/available_appointments/"+branch_value+'/'+type_value+'/'+doctor_value, function( data ) {
                 if(appointment_checker(branch_value,type_value,doctor_value)){
                     empty_date_time_options();
+                    if (data.length == 0) {
+                        date.html('<option value="" selected disabled >No Available Appointment Time</option>');
+                        console
+                    }
                     data.forEach(set_date_time_options);
                 }
               });
