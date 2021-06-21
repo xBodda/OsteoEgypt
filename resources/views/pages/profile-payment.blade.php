@@ -38,7 +38,7 @@
                 <p class="text-gray-500 w-8/12">You have an unpaid bill, please pay it before 02/08/2021 to avoid any penalties that may be placed on your account</p>
             </div>
 
-            <button class="w-52 absolute right-0 bottom-0 px-10 font-bold py-3 border-none bg-chillBlue text-white cursor-pointer hover:bg-chillBlue-dark">
+            <button class="w-28 md:w-52 absolute right-0 bottom-0 px-1 md:px-10 font-bold py-3 md:py-3 md:text-sm border-none bg-chillBlue text-white cursor-pointer hover:bg-chillBlue-dark">
                 Pay Now
             </button>
         

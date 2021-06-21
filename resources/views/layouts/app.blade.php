@@ -19,7 +19,11 @@
 </head>
 
 <body>
+<<<<<<< HEAD
     <div class="header z-10 relative overflow-hidden w-full" >
+=======
+    <div class="header z-10 relative overflow-hidden w-full " >
+>>>>>>> 924ebc598e58d3053a6625dad463a11343f5a3a5
         <div class="first-header flex">
             <div class="about-section fl-1 flex">
                 <a href="">
@@ -75,26 +79,14 @@
                     
                 @endauth 
                 <a href="">
-                    <div class="item">EN</div>
+                    <div class="item font-bold">EN</div>
                 </a>
-                {{-- <a href="">
-                    <div class="item">RESEARCH</div>
-                </a> --}}
-                <a href="">
-                    <div class="item">OSTEOPATHY</div>
-                </a>
-                {{-- <a href="">
-                    <div class="item">FIND OSTEOPATH</div>
-                </a> --}}
-                <a href="">
-                    <div class="item">EDUCATION</div>
-                </a>
-                <a href="">
-                    <div class="item">OSTEOEGYPT</div>
-                </a>
-                <a href="">
-                    <div class="item">CLINIC</div>
-                </a>
+                @foreach ($navSections as $navSection)
+                        <a href="">
+                            <div class="item font-bold">{{ strtoupper($navSection->name) }}</div>
+                        </a>
+                @endforeach
+                
 
             </div>
         </div>
@@ -114,12 +106,12 @@
         @endauth
     </div>
     @yield('contents-outside-wrapper')
-    <div class="wrapper">
+    <div class="wrapper px-4 md:px-12 lg:px-36">
         
         @yield('contents')
 
     </div>
-    <div id="footer">
+    <div id="footer" class="overflow-hidden w-full ">
         <div class="f flex">
             <div class="logo fl-1">
                 <a rel="canonical" href="/">
