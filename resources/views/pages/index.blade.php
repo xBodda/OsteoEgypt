@@ -157,7 +157,11 @@ In spite of recent increased interest in holistic approaches to patient care, th
         </div>
         <x-button class="mx-auto mt-8 relative z-10" text="See More >>"></x-button>
 
+
+        
     </div>
+
+    
     
     
     {{-- <div class="flex mt-8">
