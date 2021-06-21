@@ -22,22 +22,36 @@
                     <a href="#privacypolicy" class="menu-items-about">Privacy Policy</a>
                 </div>
         </div>
-<div class="flex flex-col border-solid border-black w-3/4">
-        <div class="m-4">
+<div class="flex flex-col w-3/4">
+        <div class="m-2">
         <h1 class="">FAQ</h1>
         </div>
-        <div class="questionsSection m-2">
-                <button class="question bg-blue-600">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit quo omnis non veritatis praesentium. Laborum in possimus excepturi quae deleniti sed minima velit rem architecto quas. Laudantium ducimus vitae dolorum.</button>
-                <p class="answer bg-green-200">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem nobis ex facere neque ab molestias fugit atque, cum id animi debitis velit tempore et illum repellendus iusto minima consectetur error.</p>
+        <div class="question p-1 border-none rounded-lg bg-blue-600">
+                <button class=""></button>
+                <span class="answer p-2 border-none rounded-lg bg-green-200 hidden">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem nobis ex facere neque ab molestias fugit atque, cum id animi debitis velit tempore et illum repellendus iusto minima consectetur error.</span>
         </div>
     </div>
 </div>
     <script>
+        // var x = document.getElementsByClassName("answer");
+        // if (window.getComputedStyle(x).display === "none"){
+        //     $(document).ready(function() {
+        //             $(".question").click(function(){
+        //             $(".answer").slideUp();
+        //             });
+        //     });
+        // }
+        // else{
+        //     $(document).ready(function() {
+        //             $(".question").click(function(){
+        //             $(".answer").slideDown();
+        //             });
+        //     });
+        // }
         $(document).ready(function() {
-                $(".question").click(function(){
-                $(".answer").toggle();
-                });
-        });
-          
-     </script>
+                    $(".question").click(function(){
+                    $(".answer").slideToggle();
+                    });
+            });
+    </script>
 @endsection()
