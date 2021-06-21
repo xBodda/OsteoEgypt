@@ -84,4 +84,11 @@ class PagesController extends Controller
 
         return redirect()->route('control');
     }
+
+    public function viewPages($section, $page) {
+        $pageData = Page::where('id',$page)->first();
+
+        return view('pages.blank')->with('pageData',$pageData);
+    }
+
 }
