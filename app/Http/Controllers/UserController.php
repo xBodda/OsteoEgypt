@@ -144,7 +144,7 @@ class UserController extends Controller
 
         $user->save();    	  	
 
-        return redirect('profile/about');
+        return back()->with('success','Your info has been updated successfully!');
 
     }
 }

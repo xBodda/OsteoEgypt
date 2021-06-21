@@ -30,7 +30,7 @@
                     </div>
                     @else
                     <div class="mt-5 flex">
-                        <div onclick="window.location='{{ route('edit-profile',$user->id) }}'" class="flex-1 text-center rounded-3xl bg-chillBlue hover:bg-chillBlue-dark text-white px-8 py-2 text-lg font-bold cursor-pointer">Edit Profile</div>
+                        <div onclick="window.location='{{ route('edit-profile') }}'" class="flex-1 text-center rounded-3xl bg-chillBlue hover:bg-chillBlue-dark text-white px-8 py-2 text-lg font-bold cursor-pointer">Edit Profile</div>
                         <div class="p-1"></div>
                     </div>
                     @endif
