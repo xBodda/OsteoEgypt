@@ -32,7 +32,7 @@
 
 @section('profile-data')
     <div class="w-full p-1 md-p-4 bg-white border border-solid border-blueGray-light flex items-center relative">
-        <div class="w-24 h-24 md:w-24 md:h-24 mr-2 md:mr-10">
+        <div class="w-24 h-24 mr-2 md:mr-10">
             <img class="w-full h-full object-cover" src="{{ asset('assets/image/profile-img0.png') }}"/>
         </div>
 
@@ -41,7 +41,7 @@
             <p class="mt-0 md:mt-2 text-xs md:text-base text-gray-500 ">Physical therapist - IAO Fifth year</p>
         </div>
 
-        <button class="w-22 md:w-52 absolute right-0 bottom-0 px-1 md:px-10 font-bold py-1 md:py-3 md:text-sm border-none bg-chillBlue text-white cursor-pointer hover:bg-chillBlue-dark">
+        <button class="w-36 md:w-52 absolute right-0 bottom-0 px-1 md:px-10 font-bold py-1 md:py-3 md:text-sm border-none bg-chillBlue text-white cursor-pointer hover:bg-chillBlue-dark">
             View Profile
         </button>
     </div>
