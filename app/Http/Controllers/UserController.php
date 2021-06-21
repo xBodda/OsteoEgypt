@@ -10,7 +10,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
-// use Auth;
 use Image;
 
 class UserController extends Controller
@@ -145,7 +144,7 @@ class UserController extends Controller
 
         $user->save();    	  	
 
-        return redirect('profile/about');
+        return back()->with('success','Your info has been updated successfully!');
 
     }
 }
