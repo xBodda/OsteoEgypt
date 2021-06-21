@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\SignUpController;
 use App\Http\Controllers\Dashboard\BookOnSpotController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PagesController;
 use App\Models\AppointmentAvailableTime;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
@@ -30,6 +31,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'App\Http\Controllers\PagesController@home')->name('home');
 
 Route::get('/about', 'App\Http\Controllers\PagesController@about')->name('about');
+Route::get('/faq', 'App\Http\Controllers\PagesController@faq')->name('faq');
 
 Route::get('/terms', 'App\Http\Controllers\PagesController@terms')->name('terms');
 Route::get( '/services', 'App\Http\Controllers\PagesController@services')->name('services');
@@ -64,6 +66,8 @@ Route::post( 'changePassword', [UserController::class, 'changePassword'])->name(
 Route::get( 'edit-profile-personalize', [UserController::class, 'editprofilepersonalize'])->name('edit-profile-personalize');
 Route::get( 'gallery', [UserController::class, 'gallery'])->name('gallery');
 Route::get( 'videos-gallery', [UserController::class, 'videosGallery'])->name('videos-gallery');
+
+Route::get( 'page/{section}/{page}', [PagesController::class, 'viewPages'])->name('view-page');
 
 
 Route::post( '/save-edit-profile', 'App\Http\Controllers\UserController@saveEditProfile')->name('save-edit-profile');

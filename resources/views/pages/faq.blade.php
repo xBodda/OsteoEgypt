@@ -5,6 +5,7 @@
 @endsection
 
 @section('contents')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <div id="about-us-main-container">
         <div class="sidebars-about-us">
                 <div id="sidenav-t" class="mb-4">
@@ -21,117 +22,99 @@
                     <a href="#privacypolicy" class="menu-items-about">Privacy Policy</a>
                 </div>
         </div>
-        <div id="about-us-content">
-        <h1 class="about-us-h1s">FAQ</h1>
-        <section class="faq-section">
+<div class="flex flex-col w-3/4">
+        <div class="m-2">
+        <h1 class="mb-4 text-chillBlue">Frequently Asked Questions</h1>
+        </div>
+        <div class="question flex flex-col p-1 rounded-lg bg-white p-4 pl-0.5 mb-4 shadow">
+            <div class="flex flex-row ">
+                <button class="b fas fa-plus-circle fa-lg w-1/12 border-none bg-white text-chillBlue" ></button>
+                <h2 class="text-gray-400 ">Is OsteoPathic treatment Safe?</h2>
+            </div>
+                <p class="answer p-2 ml-8 border-none rounded-lg hidden text-gray-400">Osteopathy has one of the best safety records of any medically related professions. It respects responses from the body during and after treatment, and adjusts accordingly. Osteopaths are highly trained to recognize any condition where treatments may not be recommended and referral to other medical professional is made, whenever needed.
 
-                    <div class="col-md-6 offset-md-3">
-
-                     
-                    </div>
-                    <div class="col-md-6 offset-md-3">
-                        <div class="faq" id="accordion">
-                            <div class="card">
-                                <div class="card-header" id="faqHeading-1">
-                                    <div class="mb-0">
-                                        <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-1" data-aria-expanded="true" data-aria-controls="faqCollapse-1">
-                                            <span class="badge">1</span>What is Lorem Ipsum?
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div id="faqCollapse-1" class="collapse" aria-labelledby="faqHeading-1" data-parent="#accordion">
-                                    <div class="card-body">
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" id="faqHeading-2">
-                                    <div class="mb-0">
-                                        <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-2" data-aria-expanded="false" data-aria-controls="faqCollapse-2">
-                                            <span class="badge">2</span> Where does it come from?
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div id="faqCollapse-2" class="collapse" aria-labelledby="faqHeading-2" data-parent="#accordion">
-                                    <div class="card-body">
-                                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" id="faqHeading-3">
-                                    <div class="mb-0">
-                                        <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-3" data-aria-expanded="false" data-aria-controls="faqCollapse-3">
-                                            <span class="badge">3</span>Why do we use it?
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div id="faqCollapse-3" class="collapse" aria-labelledby="faqHeading-3" data-parent="#accordion">
-                                    <div class="card-body">
-                                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" id="faqHeading-4">
-                                    <div class="mb-0">
-                                        <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-4" data-aria-expanded="false" data-aria-controls="faqCollapse-4">
-                                            <span class="badge">4</span> Where can I get some?
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div id="faqCollapse-4" class="collapse" aria-labelledby="faqHeading-4" data-parent="#accordion">
-                                    <div class="card-body">
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" id="faqHeading-5">
-                                    <div class="mb-0">
-                                        <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-5" data-aria-expanded="false" data-aria-controls="faqCollapse-5">
-                                            <span class="badge">5</span> What is Lorem Ipsum?
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div id="faqCollapse-5" class="collapse" aria-labelledby="faqHeading-5" data-parent="#accordion">
-                                    <div class="card-body">
-                                        <p> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" id="faqHeading-6">
-                                    <div class="mb-0">
-                                        <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-6" data-aria-expanded="false" data-aria-controls="faqCollapse-6">
-                                            <span class="badge">6</span> Where does it come from?
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div id="faqCollapse-6" class="collapse" aria-labelledby="faqHeading-6" data-parent="#accordion">
-                                    <div class="card-body">
-                                        <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" id="faqHeading-7">
-                                    <div class="mb-0">
-                                        <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-7" data-aria-expanded="false" data-aria-controls="faqCollapse-7">
-                                            <span class="badge">7</span> Why do we use it?
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div id="faqCollapse-7" class="collapse" aria-labelledby="faqHeading-7" data-parent="#accordion">
-                                    <div class="card-body">
-                                        <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                    Osteopaths will choose techniques that are suitable of each individual patient, and safety is always the prime consideration.</p>
+        </div>
+        <div class="question flex flex-col p-1 rounded-lg bg-white p-4 pl-0.5 mb-4 shadow">
+            <div class="flex flex-row ">
+                <button class="b fas fa-plus-circle fa-lg w-1/12 border-none bg-white text-chillBlue" ></button>
+                <h2 class="text-gray-400 ">What can i expect at an appointment?</h2>
+            </div>
+                <p class="answer p-2 ml-8 border-none rounded-lg hidden text-gray-400">When you arrive at the Osteo Egypt, the staff will greet you and seat you at the waiting room. We will examine you as quick as possible – average waiting time is 15 minutes.</p>
+        </div>
+        <div class="question flex flex-col p-1 rounded-lg bg-white p-4 pl-0.5 mb-4 shadow">
+            <div class="flex flex-row ">
+                <button class="b fas fa-plus-circle fa-lg w-1/12 border-none bg-white text-chillBlue" ></button>
+                <h2 class="text-gray-400 ">How can an OsteoPath detect the problem area?</h2>
+            </div>
+                <p class="answer p-2 ml-8 border-none rounded-lg hidden text-gray-400">In the same way your medical doctor uses her/his palpatory skills to examine various parts of your body, an Osteopath uses specialized, highly trained palpatory skills to feel for the tensions, and possible restrictions of the tissues. As your body is made up of a great amount of water, your Osteopath, by applying various gentle pressures to different depths, is able to recognize the feel of well-functioning and malfunctioning organ.
+                    “Osteopathy is all in Anatomy and its governing laws…” Andrew Taylor Still, medical doctor and surgeon, the founder of the Osteopathy as a science, at the end of the 19th century.</p>
+        </div>
+        <div class="question flex flex-col p-1 rounded-lg bg-white p-4 pl-0.5 mb-4 shadow">
+            <div class="flex flex-row ">
+                <button class="b fas fa-plus-circle fa-lg w-1/12 border-none bg-white text-chillBlue" ></button>
+                <h2 class="text-gray-400 ">Is OsteoPathy working with the bones?</h2>
+            </div>
+                <p class="answer p-2 ml-8 border-none rounded-lg hidden text-gray-400">Yes… but not exactly. The word Osteopath comes from 2 root words: osteo and path(os). We commonly use the root osteo to talk about bone (as in osteoporosis) however literally translated the root osteo refers to the structure of a living thing – In terms of osteopathy this may mean the bones, or the position and structure of an organ, or a nerve or blood vessel etc. and more importantly how this intricate structure lends to the proper functioning of the body. The root path or pathos is commonly used to describe the disease process (as in pathology – the study of disease). However, the ancient Greek word pathos was used to describe an actors ability to portray an emotion or feeling to an audience. Therefore an Osteopath is someone who treats, through the structure, that which the body is trying to portray or show.</p>
+        </div>
+        <div class="question flex flex-col p-1 rounded-lg bg-white p-4 pl-0.5 mb-4 shadow">
+            <div class="flex flex-row ">
+                <button class="b fas fa-plus-circle fa-lg w-1/12 border-none bg-white text-chillBlue" ></button>
+                <h2 class="text-gray-400 ">Why choose an Osteopath?</h2>
+            </div>
+                <p class="answer p-2 ml-8 border-none rounded-lg hidden text-gray-400">Millions of patients today are turning to Osteopaths as their physicians of choice. They recognize that a DO, doctor of osteopathy, offers a variety of non invasive healing treatments not available from allopathic (conventional) doctors.
+                    Long before it was fashionable, DOs advised their patients that the “best drugs” are contained in the body’s immune system. So strongly do Osteopaths believe in the body’s innate healing ability that many have devoted years of additional training, after medical school, to specialize in Osteopathic Manual Medicine (OMM).</p>
         </div>
     </div>
+</div>
+    <script>
+        $(document).ready(function() {
+                    $(".question").click(function(){
+                        $(".question").children(".b").addClass("fa-minus-circle")
+                        $(".question").children(".b").removeClass("fa-plus-circle")
+                    $(".answer").slideToggle();
+                    });
+                     $('.question').click(function() {
+                          $('.b').toggleClass('fas fa-plus-circle fas fa-minus-circle');
+                     });
+            });
+
+            // $(document).ready(function() {
+            //         $(".question2").click(function(){
+            //         $(".answer2").slideToggle();
+            //         });
+            //         $('.question2').click(function() {
+            //               $('.b2').toggleClass('fas fa-plus-circle fas fa-minus-circle');
+            //          });
+
+            // });
+            // $(document).ready(function() {
+            //         $(".question3").click(function(){
+            //         $(".answer3").slideToggle();
+            //         });
+            //         $('.question3').click(function() {
+            //               $('.b3').toggleClass('fas fa-plus-circle fas fa-minus-circle');
+            //          });
+
+            // });
+            // $(document).ready(function() {
+            //         $(".question4").click(function(){
+            //         $(".answer4").slideToggle();
+            //         });
+            //         $('.question4').click(function() {
+            //               $('.b4').toggleClass('fas fa-plus-circle fas fa-minus-circle');
+            //          });
+
+            // });
+            // $(document).ready(function() {
+            //         $(".question5").click(function(){
+            //         $(".answer5").slideToggle();
+            //         });
+            //         $('.question5').click(function() {
+            //               $('.b5').toggleClass('fas fa-plus-circle fas fa-minus-circle');
+            //          });
+
+            // });
+
+    </script>
 @endsection()
