@@ -5,8 +5,11 @@
 @endsection
 
 @section('contents')
+
+    <div class="break-all">
+        {!! str_replace('&nbsp;', ' ', $pageData->content ) !!}
+    </div>
     
-    {!! $pageData->content !!}
 
     {{--
     <form action="{{ route('login') }}" method="POST">

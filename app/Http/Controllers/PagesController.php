@@ -76,6 +76,7 @@ class PagesController extends Controller
 
         $page->section = $REQUEST->section;
         $page->page_name = $REQUEST->pageName;
+        $page->content = $REQUEST->content;
 
         $page->save();
 

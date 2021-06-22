@@ -95,7 +95,7 @@
                         </a>
                         <div class="menu-content shadow hidden absolute w-40 bg-white">
                             @foreach ($navSection->page as $item)
-                            <a class="links-hidden hover:bg-chillBlue hover:text-white px-2 py-2 m-0 text-gray-600 font-bold block transition-all text-center" style="margin: 0" href="page/{{$navSection->name }}/{{$item->id}}">{{$item->page_name}}</a>
+                            <a class="links-hidden hover:bg-chillBlue-lightest px-2 py-2 m-0 text-gray-600 font-bold block transition-all text-center" style="margin: 0" href="{{ route('view-page',[$navSection->name,$item->id]) }}">{{$item->page_name}}</a>
                             @endforeach
                         </div>
                     </div>
