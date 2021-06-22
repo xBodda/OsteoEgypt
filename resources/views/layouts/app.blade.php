@@ -87,7 +87,7 @@
                     }
                     </style>
 
-
+                @if(isset($navSections))
                 @foreach ($navSections as $navSection)
                     <div class="dropdown-menu relative">
                         <a href="">
@@ -100,7 +100,7 @@
                         </div>
                     </div>
                 @endforeach
-                
+                @endif
 
             </div>
         </div>
