@@ -38,6 +38,18 @@
                 
             </div>
         </div>
+        <div class="question flex flex-col bg-white p-4 pl-0.5 mb-4 border border-gray-300 border-solid">
+            <div class="flex flex-row ">
+                <button class="b fa-lg w-1/12 border-none bg-white text-chillBlue cursor-pointer" ><i class="fas fa-plus-circle iconn"></i></button>
+                <h2 class="text-chillBlue-dark">Is OsteoPathic treatment Safe?</h2>
+            </div>
+            <div class="faq_answer_container">
+                <div class="faq-answer h-0  overflow-hidden">
+                    <p class="answer ml-8 border-none text-gray-400">Osteopathy has one of the best safety records of any medically related professions. It respects responses from the body during and after treatment, and adjusts accordingly. Osteopaths are highly trained to recognize any condition where treatments may not be recommended and referral to other medical professional is made, whenever needed.Osteopaths will choose techniques that are suitable of each individual patient, and safety is always the prime consideration.</p>
+                </div>
+                
+            </div>
+        </div>
     </div>
 </div>
     <script>
