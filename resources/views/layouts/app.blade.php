@@ -20,34 +20,34 @@
 
 <body>
     <div class="header z-10 relative" >
-        <div class="first-header flex">
-            <div class="about-section fl-1 flex">
-                <a href="">
-                    <div class="item">FAQ</div>
+        <div class=" flex py-4 px-36 w-full items-center">
+            <div class="flex-1 flex">
+                <a class="mx-4" href="">
+                    <div>FAQ</div>
                 </a>
-                <a href="{{ route('appointment-booking') }}">
-                    <div class="item">REQUEST AN APPOINTMENT</div>
+                <a class="mx-4" href="{{ route('appointment-booking') }}">
+                    <div>REQUEST AN APPOINTMENT</div>
                 </a>
-                <a href="{{ route('contact') }}">
-                    <div class="item">CONTACT US</div>
+                <a class="mx-4" href="{{ route('contact') }}">
+                    <div>CONTACT US</div>
                 </a>
             </div>
             {{-- callto:, while supported by Skype, is not a standard and should be avoided unless specifically targeting Skype users. --}}
-            <div class="call-section fl-1 flex">
-                <p><a href="tel:+201158999135"><i class="fas fa-phone-alt"></i>
+            <div class="call-section flex-1 flex">
+                <p class="w-full text-right cursor-pointer text-blueGray-dark"><a href="tel:+201158999135"><i class="fas fa-phone-alt"></i>
                     Call Us (+20) 11 5899 9135</a></p>
             </div>
         </div>
         <div class="sep"></div>
-        <div class="second-header flex">
+        <div class="flex py-4 px-36 w-full items-center">
             <div class="logo fl-1 flex">
                 <a rel="canonical" href="{{ route('home') }}"><img src="{{ asset('assets/png/logo.png') }}" alt=""></a>
             </div>
-            <div class="nav-section fl-1 flex items-center">
+            <div class="nav-section fl-1 flex items-center flex-row-reverse">
                 @guest
 
                     <a href="{{ route('login') }}">
-                        <div class="text-sm  font-bold bg-chillBlue hover:bg-blueGray-dark transition-colors px-5 py-1 rounded-2xl text-white">
+                        <div class="ml-4 text-sm  font-bold bg-chillBlue hover:bg-blueGray-dark transition-colors px-5 py-1 rounded-2xl text-white">
                             Login
                         </div>
                     </a>
@@ -91,7 +91,7 @@
                 @foreach ($navSections as $navSection)
                     <div class="dropdown-menu relative">
                         <a href="">
-                            <div class="item font-bold menu-btn">{{ strtoupper($navSection->name) }}</div>
+                            <div class="mx-4 item font-bold menu-btn">{{ strtoupper($navSection->name) }}</div>
                         </a>
                         <div class="menu-content shadow hidden absolute w-40 bg-white">
                             @foreach ($navSection->page as $item)
