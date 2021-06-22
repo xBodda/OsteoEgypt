@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    faq
+    FAQ
 @endsection
 
 @section('contents')
@@ -37,35 +37,6 @@
                 </div>
                 
             </div>
-                
-        </div>
-
-        <div class="question flex flex-col bg-white p-4 pl-0.5 mb-4 border border-gray-300 border-solid">
-            <div class="flex flex-row ">
-                <button class="b fa-lg w-1/12 border-none bg-white text-chillBlue" ><i class="fas fa-plus-circle iconn"></i></button>
-                <h2 class="text-chillBlue-dark">Is OsteoPathic treatment Safe?</h2>
-            </div>
-            <div class="faq_answer_container">
-                <div class="faq-answer">
-                    <p class="answer p-2 ml-8 border-none h-0 text-gray-400">Osteopathy has one of the best safety records of any medically related professions. It respects responses from the body during and after treatment, and adjusts accordingly. Osteopaths are highly trained to recognize any condition where treatments may not be recommended and referral to other medical professional is made, whenever needed.Osteopaths will choose techniques that are suitable of each individual patient, and safety is always the prime consideration.</p>
-                </div>
-                
-            </div>
-                
-        </div>
-
-        <div class="question flex flex-col bg-white p-4 pl-0.5 mb-4 border border-gray-300 border-solid">
-            <div class="flex flex-row ">
-                <button class="b fa-lg w-1/12 border-none bg-white text-chillBlue" ><i class="fas fa-plus-circle iconn"></i></button>
-                <h2 class="text-chillBlue-dark">Is OsteoPathic treatment Safe?</h2>
-            </div>
-            <div class="faq_answer_container">
-                <div class="faq-answer">
-                    <p class="answer p-2 ml-8 border-none  h-0 text-gray-400">Osteopathy has one of the best safety records of any medically related professions. It respects responses from the body during and after treatment, and adjusts accordingly. Osteopaths are highly trained to recognize any condition where treatments may not be recommended and referral to other medical professional is made, whenever needed.Osteopaths will choose techniques that are suitable of each individual patient, and safety is always the prime consideration.</p>
-                </div>
-                
-            </div>
-                
         </div>
     </div>
 </div>
