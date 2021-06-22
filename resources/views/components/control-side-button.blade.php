@@ -4,7 +4,6 @@
     @if (strtolower(trim($__env->yieldContent('title'))) == strtolower($name))
         text-chillBlue
     @endif
-
     ">
         <i class="fas fa-{{ $icon }} mr-2 text-sm text-blueGray-300"></i>
         {{ $name }}
