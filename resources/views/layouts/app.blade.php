@@ -102,7 +102,7 @@
         @endauth
     </div>
     @yield('contents-outside-wrapper')
-    <div class="wrapper px-4 md:px-12 lg:px-36">
+    <div class="md:wrapper pt-4 md:px-12 lg:px-36">
         
         @yield('contents')
 
