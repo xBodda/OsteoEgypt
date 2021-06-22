@@ -125,13 +125,13 @@
         @yield('contents')
 
     </div>
-    <div id="footer" class="overflow-hidden w-full ">
-        <div class="f flex">
-            <div class="logo fl-1">
+    <div id="footer" class="overflow-hidden w-full  relative mt-8 rounded-t-3xl box-content">
+        <div class="f flex flex-wrap justify-between px-24 py-12">
+            <div class="logo fl-1 mb-2 w-full pr-12">
                 <a rel="canonical" href="/">
-                    <img src="{{ asset('assets/png/logo_grey.png') }}">
+                    <img src="{{ asset('assets/png/logo_grey.png') }}" class="w-96">
                 </a>
-                <div class="content">
+                <div class="content mt-8 text-white text-justify">
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, exercitationem? Ut adipisci reprehenderit?
                 </div>
                 <div class="contact-heading">
@@ -140,7 +140,7 @@
                     <p>Mohandseen Branch : 010 224 555 02</p>
                     <p>El Tagamo’ Branch : 010 224 555 05</p>
                 </div>
-                <div class="contact-icons mt-10">
+                <div class="contact-icons mt-12">
                     <div class="contact-icon mb-3 flex ai-c">
                         <div class="icon-data">
                             <i class="fas fa-phone-alt"></i>
@@ -167,28 +167,28 @@
                     </div>
                 </div>
             </div>
-            <div class="">
-                <div class="links flex">
-                    <div class="col">
+            <div class="w-2/4 ">
+                <div class="links flex w-full justify-center">
+                    <div class="col w-full">
                         <ul>
-                            <li><a href=''>CLINIC</a></li>
-                            <li><a href=''>OSTEOEGYPT</a></li>
-                            <li><a href=''>EDUCATION</a></li>
-                            <li><a href=''>FIND OSTEOPATH</a></li>
-                            <li><a href=''>OSTEOPATHY</a></li>
-                            <li><a href=''>RESEARCH</a></li>
-                            <li><a href='{{ route('about') }}'>ABOUT US</a></li>
+                            <li class="mb-8 list-none font-bold"><a class="text-gray-100" href=''>CLINIC</a></li>
+                            <li class="mb-8 list-none font-bold"><a class="text-gray-100" href=''>OSTEOEGYPT</a></li>
+                            <li class="mb-8 list-none font-bold"><a class="text-gray-100" href=''>EDUCATION</a></li>
+                            <li class="mb-8 list-none font-bold"><a class="text-gray-100" href=''>FIND OSTEOPATH</a></li>
+                            <li class="mb-8 list-none font-bold"><a class="text-gray-100" href=''>OSTEOPATHY</a></li>
+                            <li class="mb-8 list-none font-bold"><a class="text-gray-100" href=''>RESEARCH</a></li>
+                            <li class="mb-8 list-none font-bold"><a class="text-gray-100" href='{{ route('about') }}'>ABOUT US</a></li>
                         </ul>
                     </div>
-                    <div class="col">
+                    <div class="col w-full">
                         <ul>
-                            <li><a href=''>HOW OSTEOPATHY WORKS?</a></li>
-                            <li><a href=''>OUR DOCTORS</a></li>
-                            <li><a href="">MEDICAL SERVICES</a></li>
-                            <li><a href="">FAQ</a></li>
-                            <li><a href="">REQUEST AN APPOINTMENT</a></li>
-                            <li><a href="{{ route('contact') }}">CONTACT US</a></li>
-                            <li><a href="{{ route('terms') }}">TERMS</a></li>
+                            <li class="mb-8 list-none font-bold"><a class="text-gray-100" href=''>HOW OSTEOPATHY WORKS?</a></li>
+                            <li class="mb-8 list-none font-bold"><a class="text-gray-100" href=''>OUR DOCTORS</a></li>
+                            <li class="mb-8 list-none font-bold"><a class="text-gray-100" href="">MEDICAL SERVICES</a></li>
+                            <li class="mb-8 list-none font-bold"><a class="text-gray-100" href="">FAQ</a></li>
+                            <li class="mb-8 list-none font-bold"><a class="text-gray-100" href="">REQUEST AN APPOINTMENT</a></li>
+                            <li class="mb-8 list-none font-bold"><a class="text-gray-100" href="{{ route('contact') }}">CONTACT US</a></li>
+                            <li class="mb-8 list-none font-bold"><a class="text-gray-100" href="{{ route('terms') }}">TERMS</a></li>
                         </ul>
                     </div>
                 </div>
@@ -199,14 +199,14 @@
             </div>
         </div>
 
-        <div class="footer-end">
+        <div class="footer-end h-12 pr-16 pb-24 pt-12 ">
             @if(isset($linkss->facebook))
-                <div class="social">
-                    <a href="{{ $linkss->facebook }}"><i class="fab fa-facebook-f"></i></a>
-                    <a href="{{ $linkss->instagram }}"><i class="fab fa-instagram"></i></a>
-                    <a href="{{ $linkss->linkedin }}"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="{{ $linkss->twitter }}"><i class="fab fa-twitter"></i></a>
-                    <a href="{{ $linkss->youtube }}"><i class="fab fa-youtube"></i></a>
+                <div class="social flex float-right">
+                    <a class="w-20 h-20" href="{{ $linkss->facebook }}"><i class="fab fa-facebook-f text-4xl w-16 h-16 bg-white rounded-full p-3 text-center"></i></a>
+                    <a class="w-20 h-20" href="{{ $linkss->instagram }}"><i class="fab fa-instagram text-5xl w-16 h-16 bg-white rounded-full p-2 text-center"></i></a>
+                    <a class="w-20 h-20" href="{{ $linkss->linkedin }}"><i class="fab fa-linkedin-in text-4xl w-16 h-16 bg-white rounded-full p-3 text-center"></i></a>
+                    <a class="w-20 h-20" href="{{ $linkss->twitter }}"><i class="fab fa-twitter text-4xl w-16 h-16 bg-white rounded-full p-3 text-center"></i></a>
+                    <a class="w-20 h-20" href="{{ $linkss->youtube }}"><i class="fab fa-youtube text-4xl w-16 h-16 bg-white rounded-full p-3 text-center"></i></a>
                 </div>
             @endif
         </div>
