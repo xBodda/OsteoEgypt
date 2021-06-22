@@ -1,4 +1,5 @@
 var moment = require('moment');
+var $ = require( "jquery" );
 import EmblaCarousel from 'embla-carousel'
 import "../css/embla.css";
 

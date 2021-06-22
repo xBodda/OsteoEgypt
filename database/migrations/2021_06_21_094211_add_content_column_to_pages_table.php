@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePagesTable extends Migration
+class AddContentColumnToPagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreatePagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('pages', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('section')->constrained('sections')->onDelete('cascade');
-            $table->string('page_name','80');
-            $table->timestamps();
+        Schema::table('pages', function (Blueprint $table) {
+            $table->text('content');
         });
     }
 
@@ -28,6 +25,8 @@ class CreatePagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pages');
+        Schema::table('pages', function (Blueprint $table) {
+            $table->dropColumn('content');
+        });
     }
 }

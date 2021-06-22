@@ -68,6 +68,24 @@
                     >
                     </h6>
                     </div>
+                    <div class="flex flex-wrap">
+                      <div class="w-full lg:w-12/12 px-4">
+                        <div class="relative w-full mb-3">
+                          <label
+                            class="block uppercase text-gray-600 text-xs font-bold mb-2"
+                            htmlFor="grid-password"
+                          >
+                            Page Content
+                          </label>
+                          <textarea id="summernote" rows="10" class="h-28" name="content"></textarea>
+                        </div>
+                      </div>
+                      <h6
+                      class="text-gray-400 text-sm mt-3 mb-3 font-bold uppercase w-full px-4"
+                    >
+                    </h6>
+                    </div>
+                    
                     <input type="submit" value="Add Page" name="add" class="py-3 px-6 mx-4 text-white bg-emerald-500 border-none outline-none rounded shadow-lg hover:bg-emerald-600 transition-colors cursor-pointer focus:bg-emerald-700">
                   </form>
                 </div>
@@ -76,4 +94,9 @@
           </div>
 
         </div>
+        <script>
+          $(document).ready(function() {
+            $('#summernote').summernote();
+          });
+        </script>
 @endsection

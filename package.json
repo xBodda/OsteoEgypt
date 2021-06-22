@@ -20,7 +20,9 @@
     "dependencies": {
         "embla-carousel": "^4.5.3",
         "intl-tel-input": "^17.0.12",
+        "jquery": "^3.6.0",
         "libphonenumber-js": "^1.9.16",
-        "moment": "^2.29.1"
+        "moment": "^2.29.1",
+        "summernote": "^0.8.18"
     }
 }
