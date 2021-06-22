@@ -22,7 +22,7 @@
     <div class="header z-10 relative overflow-hidden w-full " >
         <div class="first-header flex">
             <div class="about-section fl-1 flex">
-                <a href="">
+                <a href="{{ route('faq') }}">
                     <div class="item">FAQ</div>
                 </a>
                 <a href="{{ route('appointment-booking') }}">
