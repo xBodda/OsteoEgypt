@@ -5,15 +5,15 @@
 @endsection
 
 @section('contents-outside-wrapper')
-    <div class="text-white w-full relative home-top-banner flex justify-center items-center flex-col">
-        <h1>Your Health is our priority</h1>
+    <div class="text-white w-full -mt-8 relative home-top-banner flex justify-center items-center flex-col p-4 md:p-8">
+        <h1 class="text-2xl md:text-3xl">Your Health is our priority</h1>
         <div class="max-w-2xl text-center mt-5">
-            <p>Doctors of Osteopathic Medicine are fully licensed physicians who practice in all areas of medicine, emphasizing a whole-person approach to treatment and care. Our primary team work to keep you and your whole family healthy and strong each and every day.</p>
+            <p class="text-lg md:text-xl">Doctors of Osteopathic Medicine are fully licensed physicians who practice in all areas of medicine, emphasizing a whole-person approach to treatment and care. Our primary team work to keep you and your whole family healthy and strong each and every day.</p>
         </div>
         <x-button class="mt-12" text="Learn More"/>
     </div>
 
-    <div class="flex justify-center items-center max-w-4-xl flex-wrap md:flex-nowrap transform -translate-y-20 md:-translate-y-1/3">
+    <div class="flex justify-center px-8 -mt-4 lg:px-0 items-center max-w-4-xl flex-wrap md:flex-nowrap transform -translate-y-10 md:-translate-y-1/4">
         <div class="text-center home-info-item flex justify-center items-center flex-col mb-12 md:mx-12 w-full md:w-96">
             <div class="item rounded-3xl bg-white flex justify-center items-center shadow-xl flex-col">
                 <img src="{{ asset('assets/svg/Mask Group 3.svg') }}">
@@ -37,7 +37,7 @@
         </div>
     </div>
 
-    <div id="section-1" class='text-center paddingx-144'>
+    <div id="section-1" class='text-center px-4 lg:px-36'>
     <div class="text-2xl">
         <h1 class="text-chillBlue ">
             Welcome to OsteoEgypt
@@ -46,7 +46,7 @@
     <p class="max-w-3xl mx-auto mt-8">
         Personalized patient care is what sets OsteoEgypt apart. When you visit our clinic you can expect to receive world class care. Expert physician specialists and caring clinical staff provide you with an exceptional health care experience. OsteoEgypt Clinic is a center set up and run by Dr. Hesham Khalil to promote osteopathy to the medical community and the general public and to ensure osteopathic excellence in Egypt and the Middle East. We want to give you the best treatment you can get.
     </p>
-    <div class="mt-8 grid grid-cols-3 grid-rows-1 gap-2 h-96">
+    <div class="mt-8 grid grid-cols-1 grid-rows-3 md:grid-cols-3 md:grid-rows-1 gap-2">
         <div >
             <img class="w-full h-full object-cover object-center" src="{{ asset('assets/image/Group 534.jpg') }}" alt="">
         </div>
@@ -61,7 +61,7 @@
         Osteopathy is an approach to health that is rapidly growing in popularity and recognition throughout the world.  It was developed in the 1870’s by Andrew Taylor Still, a doctor from Missouri, USA, and is now seen as one of the most comprehensive, effective and scientifically valid forms of treatment available. Your body is designed to heal itself. Osteopathy is drug-free non-invasive manual medicine that help your body to heal by treating and strengthening the musculoskeletal framework, which includes the joints, muscles and spine
     </p>
 </div>
-<div id="section-2" class="flex mt-20 paddingx-144">
+<div id="section-2" class="flex mt-20 px-4 lg:px-36">
     <div class="w-full lg:w-3/5">
         <div class="text-chillBlue text-xl pr-20 mb-8">
             <h1>How Osteopathy Works?</h1>
@@ -78,7 +78,7 @@
         </div>
     </div>
 </div>
-<div id="section-3" class="w-full h-96 sm:h-80 bg-chillBlue mt-20 relative paddingx-144">
+<div id="section-3" class="w-full h-96 sm:h-80 bg-chillBlue mt-20 relative py-8 lg:py-0 px-4 lg:px-36">
     <div class="absolute w-full h-full top-0 left-0">
         <img src="{{ asset('assets/image/pexels-karolina-grabowska-4506113.jpg') }}" class="w-full h-full object-center object-cover">
     </div>
@@ -114,13 +114,15 @@
     </div>
 
 </div>
-<div id="section-4" class="mt-20">
-    <div class="text-chillBlue text-xl text-center">
-        <h1>Our High Qualified Doctors</h1>
+<div id="section-4" class="mt-20  ">
+    <div class="px-4 lg:px-36 mb-8">
+        <div class="text-chillBlue text-xl text-center">
+            <h1>Our High Qualified Doctors</h1>
+        </div>
+        <p class="text-center mx-auto max-w-3xl mt-8">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata.
+        </p>
     </div>
-    <p class="text-center mx-auto max-w-3xl mt-8">
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata.
-    </p>
     <div class="w-full py-14 relative">
         <div class="absolute top-0 left-0 w-full h-full">
             <img src="{{ asset('assets/image/doctors-carousel-background.jpg') }}" class="h-full w-full object-cover object-left" alt="">
@@ -128,27 +130,27 @@
         <div class="embla relative z-10">
             <div class="embla__viewport">
                 <div class="embla__container ml-0 xl:ml-96">
-                    @for ($i = 0; $i <15; $i++)
+                    @foreach ($doctors as $doctor)
                         <div class="embla__slide min-w-full sm:min-w-1/2 lg:min-w-1/4">
                             <div class="p-5 w-full border border-solid border-gray-500 bg-white">
                                 <div class="w-full h-52 overflow-hidden border border-solid border-gray-200">
-                                    <img class="w-full h-full object-top object-cover" src="{{ asset('assets/image/pexels-cedric-fauntleroy-4270371.jpg') }}" >
+                                    <img class="w-full h-full object-top object-cover" src="{{ asset('storage/images/'.$doctor->image) }}" >
                                     
                                 </div>
                                 <div class="w-full text-center mt-2">
                                     <div class="text-blueGray-dark text-xl font-extrabold">
-                                        Doctor's Name
+                                        {{ $doctor->name }}
                                     </div>
                                     <div class="text-gray-500 text-lg">
                                         Lorem ipsum dolor sit amet 
                                     </div>
-                                    <a href="#"><div class="rounded-full py-2 px-4 md:px-8  lg:px-18 mt-4 text-white table mx-auto bg-chillBlue text-while font-bold hover:bg-chillBlue-dark">
+                                    <a href="{{ route('profile-about',$doctor->id) }}"><div class="rounded-full py-2 px-4 md:px-8  lg:px-18 mt-4 text-white table mx-auto bg-chillBlue text-while font-bold hover:bg-chillBlue-dark">
                                         View Profile
                                     </div></a>
                                 </div>
                             </div>
                         </div>
-                    @endfor
+                    @endforeach
                 </div>
             </div>
         </div>

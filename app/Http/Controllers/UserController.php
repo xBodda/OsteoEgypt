@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Exports\UsersExport;
 use App\Http\Controllers\Controller;
 use App\Imports\UsersImport;
+use App\Models\Appointment;
 use App\Models\User;
+use App\Models\UserFavorite;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -31,8 +34,7 @@ class UserController extends Controller
             $user = User::find($id);
         }
         if(Auth::user()->id != $id){
-            if(Auth::user()->user_type == 1){
-                var_dump(2);
+            if(Auth::user()->user_type == 1 && $user->user_type != 2){
                 return false;
             }
         }
@@ -59,7 +61,12 @@ class UserController extends Controller
         if (!$user) {
             return redirect()->route('home');
         }
-        return view('pages.profile-appointments', ['user' => $user]);
+        $upcoming_appointments = Appointment::where([['user_id',$id],])->with(['appointment_available_time'=>function($q){
+            $q->whereDate('appointment_time', '>=', Carbon::now()->toDateString())->with('doctor')->with('branch')->with('type'); }])->get();
+        $history_appointments = Appointment::where([['user_id', $id],])->with(['appointment_available_time' => function ($q) {
+            $q->whereDate('appointment_time', '<', Carbon::now()->toDateString())->with('doctor')->with('branch')->with('type');
+        }])->get();
+        return view('pages.profile-appointments', ['user' => $user,'upcoming'=> $upcoming_appointments,'history'=> $history_appointments]);
     }
 
     public function profilePayment($id = null){
@@ -75,7 +82,9 @@ class UserController extends Controller
         if (!$user) {
             return redirect()->route('home');
         }
-        return view('pages.profile-doctors', ['user' => $user]);
+
+        $favorites = UserFavorite::where('user_id',$id)->with('favorite')->get();
+        return view('pages.profile-doctors', ['user' => $user,'favorites'=> $favorites]);
     }
 
     public function profileBadges($id = null){
@@ -184,5 +193,27 @@ class UserController extends Controller
         $user->save();
 
         return back()->with("success","Password changed successfully !");
+    }
+
+    public function add_user_to_favorites(Request $request){
+        if(Auth::user()->id == $request['user_id']){
+            return back()->with('Error','You can\'t add your self as favorite');
+        }
+        $record = UserFavorite::where([ 
+                ['user_id', Auth::user()->id],
+                ['favorite_id',$request['user_id'] ]
+            ])->first();
+        if($record !== null){
+            $record->delete();
+            return back()->with('Message', 'User removed from favorites');
+        }else{
+            UserFavorite::create(
+                [
+                    'user_id' => Auth::user()->id,
+                    'favorite_id' => $request['user_id']
+                ]
+            );
+            return back()->with('Message', 'User added to favorites');
+        }
     }
 }

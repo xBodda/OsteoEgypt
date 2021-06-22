@@ -20,28 +20,28 @@
 
 <body>
     <div class="header z-10 relative" >
-        <div class=" flex py-4 px-36 w-full items-center">
-            <div class="flex-1 flex">
-                <a class="mx-4" href="">
+        <div class="lg:flex py-4 px-4 lg:px-36 w-full items-center hidden  justify-between">
+            <div class="flex">
+                <a class="mx-4 text-sm xl:text-base" href="">
                     <div>FAQ</div>
                 </a>
-                <a class="mx-4" href="{{ route('appointment-booking') }}">
+                <a class="mx-4 text-sm xl:text-base" href="{{ route('appointment-booking') }}">
                     <div>REQUEST AN APPOINTMENT</div>
                 </a>
-                <a class="mx-4" href="{{ route('contact') }}">
+                <a class="mx-4 text-sm xl:text-base" href="{{ route('contact') }}">
                     <div>CONTACT US</div>
                 </a>
             </div>
             {{-- callto:, while supported by Skype, is not a standard and should be avoided unless specifically targeting Skype users. --}}
-            <div class="call-section flex-1 flex">
-                <p class="w-full text-right cursor-pointer text-blueGray-dark"><a href="tel:+201158999135"><i class="fas fa-phone-alt"></i>
+            <div class="call-section flex">
+                <p class=" text-right cursor-pointer xl:text-base text-sm text-blueGray-dark"><a href="tel:+201158999135"><i class="fas fa-phone-alt"></i>
                     Call Us (+20) 11 5899 9135</a></p>
             </div>
         </div>
         <div class="sep"></div>
-        <div class="flex py-4 px-36 w-full items-center">
-            <div class="logo fl-1 flex">
-                <a rel="canonical" href="{{ route('home') }}"><img src="{{ asset('assets/png/logo.png') }}" alt=""></a>
+        <div class="flex py-4 px-4 md:px-12 lg:px-36 w-full items-center">
+            <div class="fl-1 flex h-16 xl:h-24">
+                <a class="h-full" rel="canonical" href="{{ route('home') }}"><img class="h-full" src="{{ asset('assets/png/logo.png') }}" alt=""></a>
             </div>
             <div class="nav-section fl-1 flex items-center flex-row-reverse">
                 @guest
@@ -95,7 +95,7 @@
                         </a>
                         <div class="menu-content shadow hidden absolute w-40 bg-white">
                             @foreach ($navSection->page as $item)
-                            <a class="links-hidden hover:bg-chillBlue hover:text-white px-2 py-2 m-0 text-gray-600 font-bold block transition-all text-center" style="margin: 0" href="page/{{$navSection->name }}/{{$item->id}}">{{$item->page_name}}</a>
+                            <a class="links-hidden hover:bg-chillBlue-lightest px-2 py-2 m-0 text-gray-600 font-bold block transition-all text-center" style="margin: 0" href="{{ route('view-page',[$navSection->name,$item->id]) }}">{{$item->page_name}}</a>
                             @endforeach
                         </div>
                     </div>
@@ -120,12 +120,12 @@
         @endauth
     </div>
     @yield('contents-outside-wrapper')
-    <div class="wrapper">
+    <div class="wrapper px-4 md:px-12 lg:px-36">
         
         @yield('contents')
 
     </div>
-    <div id="footer">
+    <div id="footer" class="overflow-hidden w-full ">
         <div class="f flex">
             <div class="logo fl-1">
                 <a rel="canonical" href="/">

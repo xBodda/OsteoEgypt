@@ -14,7 +14,10 @@ class PagesController extends Controller
 {
     public function home()
     {
-        return view('pages.index');
+        $doctors = User::where('user_type',2)->get();
+        $data = ['doctors'=>$doctors];
+
+        return view('pages.index',$data);
     }
 
     public function services()
@@ -76,6 +79,7 @@ class PagesController extends Controller
 
         $page->section = $REQUEST->section;
         $page->page_name = $REQUEST->pageName;
+        $page->content = $REQUEST->content;
 
         $page->save();
 
