@@ -37,6 +37,7 @@
                 <div class="submit-button-container">
                     <input type="submit" class="submit-button" value="Next">
                 </div>
+                
                 <div class="center-text">
                     Already have an account? <a class="link-decoration" href="{{ route('login') }}">Login</a>
                 </div>

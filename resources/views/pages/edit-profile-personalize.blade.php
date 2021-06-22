@@ -66,7 +66,7 @@
                     </div>
                     <div class="h-32 w-full grid grid-cols-5 grid-rows-1 gap-2">
                         <div class="w-full h-full bg-black float-left relative rounded-xl">
-                            <img src="{{asset('assets/image/Cover1.png')}}" class=" h-full w-full object-cover object-center cursor-pointer  border-solid border-8 rounded-xl border-green-600">
+                            <img src="{{asset('assets/image/Cover1.png')}}" class=" h-full w-full object-cover object-center cursor-pointer  border-solid border-8 rounded-xl border-chillBlue">
                         </div>
                         <div class="w-full h-full bg-black">
                             <img src="{{asset('assets/image/Cover2.png')}}" class="h-full w-full object-cover object-center cursor-pointer">

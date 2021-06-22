@@ -15,21 +15,21 @@
 
     <div class="flex justify-center px-8 -mt-4 lg:px-0 items-center max-w-4-xl flex-wrap md:flex-nowrap transform -translate-y-10 md:-translate-y-1/4">
         <div class="text-center home-info-item flex justify-center items-center flex-col mb-12 md:mx-12 w-full md:w-96">
-            <div class="item rounded-3xl bg-white flex justify-center items-center shadow-xl flex-col">
+            <div class="item rounded-3xl bg-white flex justify-center items-center shadow-xl flex-col hover:bg-chillBlue-lightest cursor-pointer">
                 <img src="{{ asset('assets/svg/Mask Group 3.svg') }}">
                 <p class="text-chillBlue text-2xl mt-2 font-bold">Schedule An Appointment</p>
             </div>
             <p class="text-md mt-3">When you visit our clinic you can expect to receive world class care. Expert osteopath specialists and caring clinical staff provide you with an exceptional health care experience.</p>
         </div>
         <div class="text-center home-info-item flex justify-center items-center flex-col mb-12 md:mx-12 w-full md:w-96">
-            <div class="item rounded-3xl bg-white flex justify-center items-center shadow-xl flex-col">
+            <div class="item rounded-3xl bg-white flex justify-center items-center shadow-xl flex-col hover:bg-chillBlue-lightest cursor-pointer">
                 <img src="{{ asset('assets/svg/Mask Group 2.svg') }}">
                 <p class="text-chillBlue text-2xl mt-2 font-bold">Our Doctors</p>
             </div>
             <p class="text-md mt-3">Personalized patient care is what sets OsteoEgypt apart. When you visit our clinic you can expect to receive world class care. Expert physician specialists and caring clinical staff provide you with an exceptional health care experience.</p>
         </div>
         <div class="text-center home-info-item flex justify-center items-center flex-col mb-12 md:mx-12 w-full md:w-96">
-            <div class="item rounded-3xl bg-white flex justify-center items-center shadow-xl flex-col">
+            <div class="item rounded-3xl bg-white flex justify-center items-center shadow-xl flex-col hover:bg-chillBlue-lightest cursor-pointer">
                 <img src="{{ asset('assets/svg/Mask Group 1.svg') }}">
                 <p class="text-chillBlue text-2xl mt-2 font-bold">Medical Services</p>
             </div>
@@ -67,8 +67,11 @@
             <h1>How Osteopathy Works?</h1>
         </div>
         <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.
+            The first of the major principles of osteopathic medicine is that the human body is a unit, an integrated organism in which no part functions independently. This regulation, coordination and integration of the body through multiple biological systems is often referred to as the principle of body unity. According to this principle, abnormalities in the structure or function of one part of the body may unfavorably influence other parts, and eventually, the body as a whole. Thus the body is viewed as an interrelated group of organ systems, each one dependent on the others, and each one compensating along with the others in order to meet the demands of the internal and external environments of the body.
+
+Doctor Still believed that diseases affecting the viscera of the body would also affect the musculoskeletal system. Similarly, abnormalities in the structure or function of the musculoskeletal system could also adversely affect the viscera. Until Still’s time, treatment of disease was focused on individual organs or organ systems. Consideration was not given to the musculoskeletal system, which in itself comprises more than sixty percent of the body’s mass. Doctor Still recognized the importance of the musculoskeletal system and its relationship to health and disease, and added the treatment of this system to his use of traditional methods such as pharmaceutical agents and surgery.
+
+In spite of recent increased interest in holistic approaches to patient care, there is still a common tendency among physicians to isolate illness within a certain organ or system in the body. The osteopathic physician, however, is trained to recognize that when the body is sick, it is sick all over. A specific organ or system may become the prime focus of illness, but the effects of that illness can be felt in some degree throughout the entire body.
         </p>
         <x-button class="mt-10" text="Read More >>"/>
     </div>
@@ -132,7 +135,7 @@
                 <div class="embla__container ml-0 xl:ml-96">
                     @foreach ($doctors as $doctor)
                         <div class="embla__slide min-w-full sm:min-w-1/2 lg:min-w-1/4">
-                            <div class="p-5 w-full border border-solid border-gray-500 bg-white">
+                            <div class="p-5 w-full border border-solid border-gray-400 bg-white">
                                 <div class="w-full h-52 overflow-hidden border border-solid border-gray-200">
                                     <img class="w-full h-full object-top object-cover" src="{{ asset('storage/images/'.$doctor->image) }}" >
                                     
@@ -156,7 +159,11 @@
         </div>
         <x-button class="mx-auto mt-8 relative z-10" text="See More >>"></x-button>
 
+
+        
     </div>
+
+    
     
     
     {{-- <div class="flex mt-8">
