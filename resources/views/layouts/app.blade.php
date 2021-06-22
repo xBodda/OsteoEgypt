@@ -22,7 +22,7 @@
     <div class="header z-10 relative" >
         <div class="lg:flex py-4 px-4 lg:px-36 w-full items-center hidden  justify-between">
             <div class="flex">
-                <a class="mx-4 text-sm xl:text-base" href="">
+                <a class="mx-4 text-sm xl:text-base" href="{{ route('faq') }}">
                     <div>FAQ</div>
                 </a>
                 <a class="mx-4 text-sm xl:text-base" href="{{ route('appointment-booking') }}">
