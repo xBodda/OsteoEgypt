@@ -31,20 +31,23 @@
 @endsection
 
 @section('profile-data')
-    <div class="w-full p-1 md-p-4 bg-white border border-solid border-blueGray-light flex items-center relative">
-        <div class="w-24 h-24 mr-2 md:mr-10">
-            <img class="w-full h-full object-cover" src="{{ asset('assets/image/profile-img0.png') }}"/>
-        </div>
 
-        <div>
-            <b class="text-sm md:text-xl">Dr. Manyara Nkruma Arendse</b>
-            <p class="mt-0 md:mt-2 text-xs md:text-base text-gray-500 ">Physical therapist - IAO Fifth year</p>
-        </div>
+    @foreach ($favorites as $fav)
+        <div class="w-full p-1 md-p-4 mb-4 bg-white border border-solid border-blueGray-light flex items-center relative">
+            <div class="w-24 h-24 mr-2 md:mr-10">
+                <img class="w-full h-full object-cover" src="{{ asset('storage/images/'.$fav->favorite->image) }}"/>
+            </div>
 
-        <button class="w-36 md:w-52 absolute right-0 bottom-0 px-1 md:px-10 font-bold py-1 md:py-3 md:text-sm border-none bg-chillBlue text-white cursor-pointer hover:bg-chillBlue-dark">
-            View Profile
-        </button>
-    </div>
+            <div>
+                <b class="text-sm md:text-xl">{{ $fav->favorite->name }}</b>
+                <p class="mt-0 md:mt-2 text-xs md:text-base text-gray-500 ">Physical therapist - IAO Fifth year</p>
+            </div>
+
+            <a href="{{ route('profile-about',$fav->favorite->id) }}"><button class="w-36 md:w-52 absolute right-0 bottom-0 px-1 md:px-10 font-bold py-1 md:py-3 md:text-sm border-none bg-chillBlue text-white cursor-pointer hover:bg-chillBlue-dark">
+                View Profile
+            </button></a>
+        </div>
+    @endforeach
 
     
     

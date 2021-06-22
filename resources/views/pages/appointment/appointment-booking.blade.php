@@ -8,8 +8,8 @@
 
 @section('contents')
 
-<div id="appointment_booking_page" class="contact-container flex">
-    <div class="contact-form fl-1">
+<div id="appointment_booking_page" class="contact-container flex flex-wrap md:flex-nowrap">
+    <div class="contact-form fl-1 ml-4 md:ml-0 mb-8 md:mb-0 md:mr-8">
         <div class="heading">
             <h1>Schedule An Appointment</h1>
         </div>
@@ -24,8 +24,8 @@
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, doloremque.</p>
         <form action="{{ route('appointment-booking') }}" method="POST">
             {{csrf_field()}}
-            <div class="flex">
-                <div class="error fl-1 mr-2">
+            <div class="flex flex-wrap md:flex-nowrap w-full">
+                <div class="error md:f-1 w-full md:mr-2">
                     <div class="flex">
                         <label for="location">Location <b class="req">*</b></label>
                         <p></p>
@@ -37,7 +37,7 @@
                         @endforeach
                     </select>
                 </div>
-                <div class="error fl-1">
+                <div class="error md:f-1 w-full ">
                     <div class="flex">
                         <label for="visit_type">Visit Type <b class="req">*</b></label>
                         <p></p>
@@ -62,7 +62,7 @@
                     @endforeach
                 </select>
             </div>
-            <div class="flex">
+            <div class="flex-wrap md:flex">
                 <div class="error fl-1 mr-2">
                     <div class="flex">
                         <label for="notes"> Notes <span class="text-gray-400 text-sm">(Optional)</span> </label>
@@ -70,7 +70,7 @@
                     </div>
                     <textarea name="notes" id="notes" cols="30" rows="10" class="input h-64" placeholder="Tell us what you want..."></textarea>
                 </div>
-                <div class="error fl-1">
+                <div class="error fl-1 flex-nowrap ">
                     <div class="flex">
                         <label for="name"> Attach X-ray, Scan or Picture(s) <span class="text-gray-400 text-sm">(Optional)</span> </label>
                         <p></p>
@@ -98,7 +98,7 @@
             </div>
         </form>
     </div>
-    <div class="contact-address fl-1 relative">
+    <div class="contact-address fl-1 relative w-6/12 md:w-12/12">
         <div class="contact-img">
             <img src="{{ asset('assets/png/logo_grey.png') }}" alt="image">
         </div>

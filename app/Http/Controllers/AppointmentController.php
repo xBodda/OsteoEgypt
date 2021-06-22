@@ -10,6 +10,7 @@ use App\Models\AppointmentType;
 use App\Models\Branch;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Maatwebsite\Excel\Facades\Excel;
 
 class AppointmentController extends Controller
@@ -34,7 +35,12 @@ class AppointmentController extends Controller
             'date' => 'required|integer',
             'notes' => 'nullable'
         ]);
-
+        Appointment::create(
+            [
+                'user_id' => Auth::user()->id,
+                'appointment_available_time_id' => $request['date']
+            ]
+        );
         return back()->with("success","Success, you've booked your appointment. We will contact you as soon as possible ");
     }
 

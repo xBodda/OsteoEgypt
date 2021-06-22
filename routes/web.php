@@ -57,7 +57,8 @@ Route::get('profile/{id}/appointments', [UserController::class, 'profileAppointm
 Route::get('profile/{id}/payment', [UserController::class, 'profilePayment'])->name('profile-payment');
 Route::get('profile/{id}/doctors', [UserController::class, 'profileDoctors'])->name('profile-doctors');
 Route::get('profile/{id}/badges', [UserController::class, 'profileBadges'])->name('profile-badges');
-Route::get( 'edit-profile', [UserController::class, 'editProfile'])->name('edit-profile');
+Route::get( 'edit-profile', [ UserController::class, 'editProfile'])->name('edit-profile');
+Route::post('/user/add_to_favorite', [UserController::class, 'add_user_to_favorites'])->name('add-to-fav');
 
 
 Route::get( 'edit-profile-security', [UserController::class, 'editprofilesecurity'])->name('edit-profile-security');

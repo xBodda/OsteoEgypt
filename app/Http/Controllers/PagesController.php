@@ -14,7 +14,10 @@ class PagesController extends Controller
 {
     public function home()
     {
-        return view('pages.index');
+        $doctors = User::where('user_type',2)->get();
+        $data = ['doctors'=>$doctors];
+
+        return view('pages.index',$data);
     }
 
     public function services()

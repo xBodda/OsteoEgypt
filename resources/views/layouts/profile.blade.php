@@ -12,7 +12,7 @@
 @endsection
 
 @section('contents')
-<div class="flex flex-wrap md:flex-nowrap fl relative z-10 justify-center md:justify-start ">
+<div class="flex flex-wrap lg:flex-nowrap fl relative z-10 justify-center lg:justify-start ">
     <div class="flex-initial -mt-72 ">
         <div class="w-80 shadow-lg mb-8">
             <div class="w-full p-4 bg-white border-0 border-b border-solid">
@@ -26,7 +26,13 @@
                     <div class="mt-5 flex">
                         <div class="flex-1 text-center rounded-3xl bg-chillBlue text-white px-8 py-2 text-lg font-bold">Contact</div>
                         <div class="p-1"></div>
-                        <div class=" text-center  bg-lightBlue-300 rounded-3xl text-chillBlue px-5 py-2 text-lg font-bold"> <i class="fas fa-star"></i> </div>
+                        <form method="POST" action="{{ route('add-to-fav') }}">
+                            @csrf
+                            <input type="hidden" name="user_id" value="{{ $user->id }}">
+                            <button type="submit" class="cursor-pointer text-center border-0 bg-chillBlue-light rounded-3xl text-chillBlue hover:text-chillBlue-dark transition-colors hover:bg-chillBlue px-5 py-2 text-lg font-bold"> 
+                                <i class="fas fa-star"></i>
+                            </button>
+                        </form>
                     </div>
                     @else
                     <div class="mt-5 flex">
@@ -68,6 +74,13 @@
         </div>
     </div>
     <div class="flex-auto ml-6 w-full md:w-auto">
+        @if(Session::has('Message'))
+        <div class="border-0 border-l-4 border-solid border-green-600">
+            <div class="w-full px-8 py-4 mb-4 rounded bg-green-100 text-green-900">
+                {{ Session::get('Message') }}
+            </div>
+        </div>
+    @endif
         <div class="w-full">
             <h1 class="text-3xl text-blueGray-dark font-bold">
                 @yield('profile-title')
