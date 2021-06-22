@@ -12,9 +12,9 @@
 @endsection
 
 @section('contents')
-<div class="flex justify-start relative z-10">
-    <div class="flex-initial -mt-72">
-        <div class="w-80 shadow-lg">
+<div class="flex flex-wrap md:flex-nowrap fl relative z-10 justify-center md:justify-start ">
+    <div class="flex-initial -mt-72 ">
+        <div class="w-80 shadow-lg mb-8">
             <div class="w-full p-4 bg-white border-0 border-b border-solid">
                 <div class="w-full h-64 bg-black">
                     <img src="{{ asset('storage/images/'.$user->image) }}" class="w-full h-full object-center object-cover" alt="">
@@ -31,7 +31,7 @@
                     @else
                     <div class="mt-5 flex">
                         <div onclick="window.location='{{ route('edit-profile') }}'" class="flex-1 text-center rounded-3xl bg-chillBlue hover:bg-chillBlue-dark text-white px-8 py-2 text-lg font-bold cursor-pointer">Edit Profile</div>
-                        <div class="p-1"></div>
+                        <div class="p-1 lg:p-2"></div>
                     </div>
                     @endif
                 </div>
@@ -67,12 +67,14 @@
             </div>
         </div>
     </div>
-    <div class="flex-auto ml-6">
+    <div class="flex-auto ml-6 w-full md:w-auto">
         <div class="w-full">
             <h1 class="text-3xl text-blueGray-dark font-bold">
                 @yield('profile-title')
             </h1>
+            <div class="overflow-x-scroll md:overflow-x-auto">
             @yield('profile-nav')
+            </div>
             @yield('profile-data')
         </div>
     </div>

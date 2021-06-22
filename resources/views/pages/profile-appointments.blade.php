@@ -34,45 +34,45 @@
 <h1 class="text-2xl font-extrabold text-blueGray-dark">
     Upcoming
 </h1>
-<div class="flex w-full h-44 border border-solid border-blueGray-light mt-3 relative mb-8 bg-white">
-    <div class="flex-initial w-2/12 h-full bg-chillBlue text-white flex flex-col justify-center items-center">
-        <h1 class="text-4xl uppercase">Jan 06</h1>
-        <p class="text-lg">08:00 PM</p>
+<div class="flex w-full h-52 border border-solid border-blueGray-light mt-3 relative mb-8 bg-white">
+    <div class="flex-initial w-5/12 md:w-4/12 h-full bg-chillBlue text-white flex flex-col justify-center items-center">
+        <h1 class="text-lg md:text-4xl uppercase">Jan 06</h1>
+        <p class="text-base md:text-lg">08:00 PM</p>
     </div>
-    <div class="w-8/12 p-6 flex flex-col justify-between ">
-        <div class="flex">
-            <div class="flex-1 flex text-lg">
-                <div class="text-gray-400 mr-8 uppercase w-32">Location</div>
+    <div class="w-8/12 p-4 md:p-8 flex flex-col md:justify-between ">
+        <div class="md:flex">
+            <div class="flex-1 flex text-base md:text-lg">
+                <div class="text-gray-400 mr-8 uppercase w-14 md:w-32">Location</div>
                 <div class="text-blueGray-dark font-bold flex-initial">Masr-elgedida-cairo</div>
             </div>
-            <div class="flex-1 flex text-lg">
-                <div class="text-gray-400 mr-4 uppercase w-32">Date</div>
+            <div class="flex-1 flex text-base md:text-lg">
+                <div class="text-gray-400 mr-2 uppercase w-14 md:w-32">Date</div>
                 <div class="text-blueGray-dark font-bold">xxxxxxxxxxx</div>
             </div>
         </div>
         <div class="flex">
-            <div class="flex-1 flex text-lg">
-                <div class="text-gray-400 mr-8 uppercase w-32">Visit type</div>
+            <div class="flex-1 flex text-base md:text-lg">
+                <div class="text-gray-400 mr-2 md:mr-8 uppercase w-14 md:w-32">Visit type</div>
                 <div class="text-blueGray-dark font-bold">xxxxx</div>
             </div>
-            <div class="flex-1 flex text-lg">
-                <div class="text-gray-400 mr-4 uppercase w-32">Time</div>
+            <div class="flex-1 flex text-base md:text-lg">
+                <div class="text-gray-400 mr-2 md:mr-4 uppercase w-14 md:w-32">Time</div>
                 <div class="text-blueGray-dark font-bold">xxxxx</div>
             </div>
         </div>
         <div class="flex">
-            <div class="flex-1 flex text-lg">
-                <div class="text-gray-400 mr-8 uppercase w-32">Doctor</div>
+            <div class="flex-1 flex text-base md:text-lg">
+                <div class="text-gray-400 mr-8 uppercase w-14 md:w-32">Doctor</div>
                 <div class="text-blueGray-dark font-bold">xxxx</div>
             </div>
         </div>
         
     </div>
-    <div class="absolute flex h-10 bottom-0 right-0">
-        <button class="w-52 flex items-center justify-center px-8 py-3 border-none bg-chillBlue-lighter text-chillBlue cursor-pointer font-bold hover:bg-chillBlue-light">
-            <i class="fas fa-paperclip text-blueGray-dark text-lg mr-3 "></i> View Attachment
+    <div class="absolute flex h-10 bottom-0 right-0 ">
+        <button class="w-40 flex items-center justify-center px-2 md:px-8 py-3 border-none bg-chillBlue-lighter text-chillBlue cursor-pointer font-bold hover:bg-chillBlue-light">
+            <i class="fas fa-paperclip text-blueGray-dark text-base mr-3 "></i> View Attachment
         </button>
-        <button class="w-52 px-10 py-3 border-none bg-xred-lightest text-xred-dark cursor-pointer font-bold hover:bg-xred-light">
+        <button class="w-36 px-10 py-3 border-none bg-xred-lightest text-xred-dark cursor-pointer font-bold hover:bg-xred-light">
             Cancel
         </button>
     </div>
@@ -83,30 +83,30 @@
 </h1>
 <div class="flex w-full h-44 border border-solid border-blueGray-light mt-3 relative bg-white">
 
-    <div class="w-8/12 p-6 flex flex-col justify-between ">
+    <div class="w-12/12 md:w-8/12 p-6 flex flex-col justify-between ">
         <div class="flex">
-            <div class="flex-1 flex text-lg">
-                <div class="text-gray-400 mr-8 uppercase w-32">Location</div>
+            <div class="flex-1 flex text-base md:text-lg">
+                <div class="text-gray-400 mr-12 md:mr-8 uppercase w-12 md:w-32">Location</div>
                 <div class="text-blueGray-dark font-bold flex-initial">Masr-elgedida-cairo</div>
             </div>
-            <div class="flex-1 flex text-lg">
-                <div class="text-gray-400 mr-4 uppercase w-32">Date</div>
+            <div class="flex-1 flex text-base md:text-lg">
+                <div class="text-gray-400 mr-2 md:mr-4 uppercase w-11 md:w-32">Date</div>
                 <div class="text-blueGray-dark font-bold">xxxxxxxxxxx</div>
             </div>
         </div>
         <div class="flex">
-            <div class="flex-1 flex text-lg">
-                <div class="text-gray-400 mr-8 uppercase w-32">Visit type</div>
+            <div class="flex-1 flex text-base md:text-lg">
+                <div class="text-gray-400 mr-4 md:mr-8 uppercase w-11 md:w-32">Visit type</div>
                 <div class="text-blueGray-dark font-bold">xxxxx</div>
             </div>
-            <div class="flex-1 flex text-lg">
-                <div class="text-gray-400 mr-4 uppercase w-32">Time</div>
+            <div class="flex-1 flex text-base md:text-lg">
+                <div class="text-gray-400 mr-2 md:mr-4 uppercase w-11 md:w-32">Time</div>
                 <div class="text-blueGray-dark font-bold">xxxxx</div>
             </div>
         </div>
         <div class="flex">
-            <div class="flex-1 flex text-lg">
-                <div class="text-gray-400 mr-8 uppercase w-32">Doctor</div>
+            <div class="flex-1 flex text-base md:text-lg">
+                <div class="text-gray-400 mr-8 uppercase w-11 md:w-32">Doctor</div>
                 <div class="text-blueGray-dark font-bold">xxxx</div>
             </div>
         </div>

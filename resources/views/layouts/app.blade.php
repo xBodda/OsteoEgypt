@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <div class="header z-10 relative" >
+    <div class="header z-10 relative overflow-hidden w-full " >
         <div class="first-header flex">
             <div class="about-section fl-1 flex">
                 <a href="">
@@ -120,12 +120,12 @@
         @endauth
     </div>
     @yield('contents-outside-wrapper')
-    <div class="wrapper">
+    <div class="wrapper px-4 md:px-12 lg:px-36">
         
         @yield('contents')
 
     </div>
-    <div id="footer">
+    <div id="footer" class="overflow-hidden w-full ">
         <div class="f flex">
             <div class="logo fl-1">
                 <a rel="canonical" href="/">
